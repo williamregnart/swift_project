@@ -14,8 +14,8 @@ protocol PersonSetViewModelDelegate {
 }
 
 class PersonSetViewModel {
-    
-    private let modelSet : PersonSet
+    /*
+    var modelSet : PersonSet
     var dataset : [Person] = []
     var delegate : PersonSetViewModelDelegate? = nil
     
@@ -33,4 +33,5 @@ class PersonSetViewModel {
         self.init()
         self.delegate = delegate
     }
+ */
 }
