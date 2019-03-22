@@ -10,8 +10,8 @@ import UIKit
 
 class TripTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var nameVoyageLabel: UILabel!
-    @IBOutlet weak var imageLabel: UIImageView!
+    
+    @IBOutlet weak var voyage: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

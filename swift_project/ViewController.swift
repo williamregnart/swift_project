@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
+    @IBOutlet weak var titleApp: UILabel!
+    
     @IBOutlet weak var tripTable: UITableView!
     var names:[String]=["toto","tata"]
 
@@ -20,7 +22,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tripTable.dequeueReusableCell(withIdentifier: "tripCell", for: indexPath) as! TripTableViewCell
-        cell.nameVoyageLabel.text = self.names[indexPath.row]
+        cell.voyage.text = self.names[indexPath.row]
         return cell
     }
     
