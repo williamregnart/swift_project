@@ -15,6 +15,14 @@
 		2C1B25672244D96B00AD2E80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C1B25652244D96B00AD2E80 /* LaunchScreen.storyboard */; };
 		2C1B25722244D96B00AD2E80 /* swift_projectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1B25712244D96B00AD2E80 /* swift_projectTests.swift */; };
 		2C1B257D2244D96B00AD2E80 /* swift_projectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1B257C2244D96B00AD2E80 /* swift_projectUITests.swift */; };
+		2C1B258C2244E15700AD2E80 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1B258B2244E15700AD2E80 /* Person.swift */; };
+		2C1B258E2244E24000AD2E80 /* PersonSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1B258D2244E24000AD2E80 /* PersonSet.swift */; };
+		2C1B25902244E28E00AD2E80 /* ItPersonSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1B258F2244E28E00AD2E80 /* ItPersonSet.swift */; };
+		2C1B25922244E2C100AD2E80 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1B25912244E2C100AD2E80 /* Trip.swift */; };
+		2C1B25942244E9C100AD2E80 /* Cost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1B25932244E9C100AD2E80 /* Cost.swift */; };
+		2C1B25962244EAB200AD2E80 /* CostPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1B25952244EAB200AD2E80 /* CostPerson.swift */; };
+		2C1B25982244EB1000AD2E80 /* CostPersonSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1B25972244EB1000AD2E80 /* CostPersonSet.swift */; };
+		2C1B259A2244FBAA00AD2E80 /* CostSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1B25992244FBAA00AD2E80 /* CostSet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +57,14 @@
 		2C1B25782244D96B00AD2E80 /* swift_projectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = swift_projectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C1B257C2244D96B00AD2E80 /* swift_projectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swift_projectUITests.swift; sourceTree = "<group>"; };
 		2C1B257E2244D96B00AD2E80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C1B258B2244E15700AD2E80 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		2C1B258D2244E24000AD2E80 /* PersonSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonSet.swift; sourceTree = "<group>"; };
+		2C1B258F2244E28E00AD2E80 /* ItPersonSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItPersonSet.swift; sourceTree = "<group>"; };
+		2C1B25912244E2C100AD2E80 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		2C1B25932244E9C100AD2E80 /* Cost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cost.swift; sourceTree = "<group>"; };
+		2C1B25952244EAB200AD2E80 /* CostPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostPerson.swift; sourceTree = "<group>"; };
+		2C1B25972244EB1000AD2E80 /* CostPersonSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostPersonSet.swift; sourceTree = "<group>"; };
+		2C1B25992244FBAA00AD2E80 /* CostSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostSet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +115,7 @@
 		2C1B25582244D96A00AD2E80 /* swift_project */ = {
 			isa = PBXGroup;
 			children = (
+				2C1B258A2244DF3B00AD2E80 /* Model */,
 				2C1B25592244D96A00AD2E80 /* AppDelegate.swift */,
 				2C1B255B2244D96A00AD2E80 /* ViewController.swift */,
 				2C1B255D2244D96A00AD2E80 /* Main.storyboard */,
@@ -126,6 +143,21 @@
 				2C1B257E2244D96B00AD2E80 /* Info.plist */,
 			);
 			path = swift_projectUITests;
+			sourceTree = "<group>";
+		};
+		2C1B258A2244DF3B00AD2E80 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2C1B258B2244E15700AD2E80 /* Person.swift */,
+				2C1B258D2244E24000AD2E80 /* PersonSet.swift */,
+				2C1B258F2244E28E00AD2E80 /* ItPersonSet.swift */,
+				2C1B25912244E2C100AD2E80 /* Trip.swift */,
+				2C1B25932244E9C100AD2E80 /* Cost.swift */,
+				2C1B25952244EAB200AD2E80 /* CostPerson.swift */,
+				2C1B25972244EB1000AD2E80 /* CostPersonSet.swift */,
+				2C1B25992244FBAA00AD2E80 /* CostSet.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +291,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C1B25902244E28E00AD2E80 /* ItPersonSet.swift in Sources */,
+				2C1B258E2244E24000AD2E80 /* PersonSet.swift in Sources */,
 				2C1B255C2244D96A00AD2E80 /* ViewController.swift in Sources */,
 				2C1B25622244D96A00AD2E80 /* swift_project.xcdatamodeld in Sources */,
+				2C1B25982244EB1000AD2E80 /* CostPersonSet.swift in Sources */,
+				2C1B258C2244E15700AD2E80 /* Person.swift in Sources */,
+				2C1B25962244EAB200AD2E80 /* CostPerson.swift in Sources */,
+				2C1B25922244E2C100AD2E80 /* Trip.swift in Sources */,
+				2C1B259A2244FBAA00AD2E80 /* CostSet.swift in Sources */,
+				2C1B25942244E9C100AD2E80 /* Cost.swift in Sources */,
 				2C1B255A2244D96A00AD2E80 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
