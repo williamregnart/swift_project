@@ -17,12 +17,14 @@ class Trip{
     let date_creation:Date
     let date_begin:Date? = nil
     let date_end:Date? = nil
+    var costSet:CostSet
     
     init(name:String,descriptive:String){
         self.name=name
         self.descriptive=descriptive
         self.group=PersonSet.init()
         self.date_creation=Date()
+        self.costSet = CostSet(Costs: [])
     }
     
     init(name:String){
@@ -30,5 +32,6 @@ class Trip{
         self.descriptive=""
         self.group=PersonSet.init()
         self.date_creation=Date()
+        self.costSet = CostSet(Costs: [])
     }
 }

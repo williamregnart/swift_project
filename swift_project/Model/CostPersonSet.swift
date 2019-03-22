@@ -49,10 +49,20 @@ class CostPersonSet{
         return i
     }
     
-    func contains(personCost : CostPerson)-> Bool {
+    func contains(person : Person)-> Bool {
         var cont : Bool = false
         for p in personsCost {
-            if p.person==personCost.person {
+            if p.person==person {
+                cont = true
+            }
+        }
+        return cont
+    }
+    
+    func contains(personCost : CostPerson) -> Bool {
+        var cont : Bool = false
+        for p in personsCost {
+            if p == personCost {
                 cont = true
             }
         }

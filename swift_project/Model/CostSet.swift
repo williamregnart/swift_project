@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CostSet {
+class CostSet: Sequence {
     
     var costList : [Cost]
     

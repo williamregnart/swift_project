@@ -93,7 +93,6 @@ class PersonSet {
     func contains(firstname: String, lastname: String, date : Date) -> Bool {
         var cont : Bool = false
         let p1:Person=Person(firstName: firstname, lastName: lastname)
-        p1.birthDate = date
         for p2 in personList {
             if p1 == p2{
                 cont = true
@@ -112,9 +111,8 @@ class PersonSet {
         return persons
     }
     
-    func look(lastname: String, firstname: String, date: Date?) -> Person?{
+    func look(lastname: String, firstname: String) -> Person?{
         let person: Person = Person(firstName : firstname, lastName: lastname)
-        person.birthDate = date
         guard let index = indexOf(person: person) else {
             return nil
         }
