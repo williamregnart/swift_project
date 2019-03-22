@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CostPersonSet{
+class CostPersonSet: Sequence{
     
     var personsCost:[CostPerson]
     
@@ -74,6 +74,11 @@ class CostPersonSet{
             return nil
         }
         return personsCost[index]
+    }
+    
+    func makeIterator() -> ItCostPersonSet{
+        let iterator: ItCostPersonSet = ItCostPersonSet(costPerson: self)
+        return iterator
     }
     
 }

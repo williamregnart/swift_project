@@ -19,7 +19,7 @@ class Cost{
         self.personsWhoPaid=personsWhoPaid
     }
     
-    var amount:Double{
+    var amount :  Double{
         var total:Double=0
         for costPerson in self.personsWhoPaid.personsCost {
             total += costPerson.cost

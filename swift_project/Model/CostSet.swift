@@ -70,6 +70,10 @@ class CostSet: Sequence {
         return costList[index]
     }
     
+    func makeIterator() -> ItCostSet{
+        let iterator: ItCostSet = ItCostSet(costs: self)
+        return iterator
+    }
 
 
     

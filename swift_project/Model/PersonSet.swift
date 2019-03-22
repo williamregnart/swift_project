@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PersonSet {
+class PersonSet: Sequence {
     
     var personList : [Person]
     
@@ -119,7 +119,7 @@ class PersonSet {
         return personList[index]
     }
     
-    var makeIterator:ItPersonSet{
+    func makeIterator() -> ItPersonSet{
         let iterator: ItPersonSet = ItPersonSet(persons: self)
         return iterator
     }

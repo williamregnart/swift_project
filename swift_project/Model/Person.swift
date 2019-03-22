@@ -45,13 +45,13 @@ class Person : Equatable {
             //Si la personne est concernée, on a payé pour elle donc on retire le montant de la dépense divisé par le nombre de personnes concernées de sa balance
             for person in cost.personsConcerned{
                 if self == person {
-                    balance -= cost.amount / cost.personsConcerned.size
+                    balance -= cost.amount / Double(cost.personsConcerned.count)
                 }
             }
             //Parcours de la liste des personnes ayant payé pour la dépense
             //Si la personne a payé, on ajoute le montant qu'elle a payé à sa balance
             for costPerson in cost.personsWhoPaid{
-                if self == costPerson {
+                if self == costPerson.person {
                     balance += costPerson.cost
                 }
             }

@@ -25,6 +25,9 @@
 		2C1B259A2244FBAA00AD2E80 /* CostSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1B25992244FBAA00AD2E80 /* CostSet.swift */; };
 		2C1B259D22451FCB00AD2E80 /* TripsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1B259C22451FCB00AD2E80 /* TripsTableViewController.swift */; };
 		2C1B259F2245261C00AD2E80 /* TripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1B259E2245261C00AD2E80 /* TripTableViewCell.swift */; };
+		90AF496822452DFA0090C242 /* PersonSetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AF496722452DFA0090C242 /* PersonSetViewModel.swift */; };
+		90AF496A224534570090C242 /* ItCostSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AF4969224534570090C242 /* ItCostSet.swift */; };
+		90D306FC224537590060BF51 /* ItCostPersonSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D306FB224537590060BF51 /* ItCostPersonSet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,9 @@
 		2C1B25992244FBAA00AD2E80 /* CostSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostSet.swift; sourceTree = "<group>"; };
 		2C1B259C22451FCB00AD2E80 /* TripsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsTableViewController.swift; sourceTree = "<group>"; };
 		2C1B259E2245261C00AD2E80 /* TripTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTableViewCell.swift; sourceTree = "<group>"; };
+		90AF496722452DFA0090C242 /* PersonSetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonSetViewModel.swift; sourceTree = "<group>"; };
+		90AF4969224534570090C242 /* ItCostSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItCostSet.swift; sourceTree = "<group>"; };
+		90D306FB224537590060BF51 /* ItCostPersonSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItCostPersonSet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +125,7 @@
 		2C1B25582244D96A00AD2E80 /* swift_project */ = {
 			isa = PBXGroup;
 			children = (
+				90AF496622452DD30090C242 /* ViewModel */,
 				2C1B259B22451E6B00AD2E80 /* Controller */,
 				2C1B258A2244DF3B00AD2E80 /* Model */,
 				2C1B25592244D96A00AD2E80 /* AppDelegate.swift */,
@@ -161,7 +168,9 @@
 				2C1B25932244E9C100AD2E80 /* Cost.swift */,
 				2C1B25952244EAB200AD2E80 /* CostPerson.swift */,
 				2C1B25972244EB1000AD2E80 /* CostPersonSet.swift */,
+				90D306FB224537590060BF51 /* ItCostPersonSet.swift */,
 				2C1B25992244FBAA00AD2E80 /* CostSet.swift */,
+				90AF4969224534570090C242 /* ItCostSet.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -172,6 +181,14 @@
 				2C1B259C22451FCB00AD2E80 /* TripsTableViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		90AF496622452DD30090C242 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				90AF496722452DFA0090C242 /* PersonSetViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,7 +329,10 @@
 				2C1B25982244EB1000AD2E80 /* CostPersonSet.swift in Sources */,
 				2C1B258C2244E15700AD2E80 /* Person.swift in Sources */,
 				2C1B259D22451FCB00AD2E80 /* TripsTableViewController.swift in Sources */,
+				90AF496A224534570090C242 /* ItCostSet.swift in Sources */,
 				2C1B25962244EAB200AD2E80 /* CostPerson.swift in Sources */,
+				90D306FC224537590060BF51 /* ItCostPersonSet.swift in Sources */,
+				90AF496822452DFA0090C242 /* PersonSetViewModel.swift in Sources */,
 				2C1B25922244E2C100AD2E80 /* Trip.swift in Sources */,
 				2C1B259F2245261C00AD2E80 /* TripTableViewCell.swift in Sources */,
 				2C1B259A2244FBAA00AD2E80 /* CostSet.swift in Sources */,
