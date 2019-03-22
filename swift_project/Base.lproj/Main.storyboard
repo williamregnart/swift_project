@@ -86,6 +86,7 @@
                     </view>
                     <connections>
                         <outlet property="TripTableView" destination="FvL-B7-WDd" id="PT8-z1-YZK"/>
+                        <outlet property="tripTable" destination="FvL-B7-WDd" id="aqu-rI-pjZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
