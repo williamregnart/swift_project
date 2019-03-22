@@ -20,10 +20,6 @@ class PersonSetViewModel {
     var delegate : PersonSetViewModelDelegate? = nil
     
     init() {
-        guard let appDelegate = UIApplication.shared.delegate  else{
-            fatalError()
-        }
-        
         for p in self.modelSet{
             self.dataset.append(p)
         }
