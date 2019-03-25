@@ -7,22 +7,24 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
     @IBOutlet weak var titleApp: UILabel!
     
     @IBOutlet weak var tripTable: UITableView!
-    var names:[String]=["toto","tata"]
+    var trips:[Trip_Data]=[]
+    
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.names.count
+        return self.trips.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tripTable.dequeueReusableCell(withIdentifier: "tripCell", for: indexPath) as! TripTableViewCell
-        cell.voyage.text = self.names[indexPath.row]
+        cell.voyage.text = self.trips[indexPath.row].name
         return cell
     }
     
