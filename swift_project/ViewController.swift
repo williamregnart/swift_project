@@ -32,6 +32,11 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    @IBAction func unwindAfterSaveTrip(segue:UIStoryBoardSegue){
+        let newTripController = segue.source as! NewTripViewController
+        let name = newTripController.nameInput
+    }
 
 
 }

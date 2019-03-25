@@ -27,7 +27,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cs-l0-ufB">
                                 <rect key="frame" x="286" y="615" width="22" height="22"/>
                                 <connections>
-                                    <segue destination="Uc8-7j-FCu" kind="show" identifier="addTrip" id="GpK-ea-Fbq"/>
+                                    <segue destination="Uc8-7j-FCu" kind="presentation" id="gcQ-dD-EbD"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zB5-bL-ZK9">
@@ -292,10 +292,10 @@
             </objects>
             <point key="canvasLocation" x="1084" y="813.64317841079469"/>
         </scene>
-        <!--View Controller-->
+        <!--New Trip View Controller-->
         <scene sceneID="zeL-F2-cV1">
             <objects>
-                <viewController id="Uc8-7j-FCu" sceneMemberID="viewController">
+                <viewController id="Uc8-7j-FCu" customClass="NewTripViewController" customModule="swift_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oap-dq-6Qa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -314,6 +314,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Uc8-7j-FCu" id="Qfo-dz-Iig"/>
+                                </connections>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9tI-D8-Suk">
                                 <rect key="frame" x="155" y="201" width="200" height="200"/>
@@ -325,10 +328,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lz7-mT-3kG">
                                 <rect key="frame" x="10" y="286" width="125" height="30"/>
                                 <state key="normal" title="Ajouter une image"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcM-M9-F8G">
-                                <rect key="frame" x="129" y="622" width="117" height="30"/>
-                                <state key="normal" title="Valider et ajouter"/>
                             </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="z3g-we-519">
                                 <rect key="frame" x="105" y="536" width="250" height="100"/>
@@ -362,6 +361,25 @@
                                     <!--2019-03-25 18:29:38 +0000-->
                                 </date>
                             </datePicker>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EYp-PX-WQh">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="3Cu-Cl-VF2"/>
+                                    <barButtonItem title="Annuler" id="DIk-uD-9Nf">
+                                        <connections>
+                                            <action selector="cancel:" destination="Uc8-7j-FCu" id="NGZ-WX-v5A"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="bt8-h8-zpJ"/>
+                                    <barButtonItem title="Ajouter" id="ZYu-Ka-tzC">
+                                        <connections>
+                                            <action selector="unwindAfterSaveTripWithSegue:" destination="nac-F5-cl7" id="VdK-va-CMU"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ZVb-FE-eBj"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -373,9 +391,7 @@
                             <constraint firstAttribute="trailing" secondItem="yKi-VE-lxX" secondAttribute="trailing" constant="20" id="Vov-Gy-Ig1"/>
                             <constraint firstItem="q0f-0J-9nm" firstAttribute="top" secondItem="Wlp-IY-hKx" secondAttribute="bottom" constant="50" id="bNP-IM-E1V"/>
                             <constraint firstItem="5uH-Hp-Wzc" firstAttribute="trailing" secondItem="z3g-we-519" secondAttribute="trailing" constant="20" id="e3c-fL-HqM"/>
-                            <constraint firstItem="5uH-Hp-Wzc" firstAttribute="bottom" secondItem="tcM-M9-F8G" secondAttribute="bottom" constant="15" id="hEU-Vu-viw"/>
                             <constraint firstItem="6Xf-9c-eCd" firstAttribute="top" secondItem="rVT-4J-MA1" secondAttribute="bottom" constant="84" id="hNs-Le-Ecw"/>
-                            <constraint firstItem="tcM-M9-F8G" firstAttribute="centerX" secondItem="oap-dq-6Qa" secondAttribute="centerX" id="nwY-U2-zxN"/>
                             <constraint firstItem="Lz7-mT-3kG" firstAttribute="top" secondItem="q0f-0J-9nm" secondAttribute="bottom" constant="135" id="ovS-pM-Cst"/>
                             <constraint firstItem="6Xf-9c-eCd" firstAttribute="leading" secondItem="5uH-Hp-Wzc" secondAttribute="leading" constant="20" id="p9C-Ya-4Vr"/>
                             <constraint firstItem="5uH-Hp-Wzc" firstAttribute="trailing" secondItem="9tI-D8-Suk" secondAttribute="trailing" constant="20" id="qlh-Wf-Mv2"/>
@@ -386,6 +402,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5uH-Hp-Wzc"/>
                     </view>
+                    <connections>
+                        <outlet property="date_begin_input" destination="yKi-VE-lxX" id="MSo-NV-uD3"/>
+                        <outlet property="date_end_input" destination="z3g-we-519" id="kzW-ta-FJG"/>
+                        <outlet property="nameInput" destination="q0f-0J-9nm" id="YUm-YM-vmw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nac-F5-cl7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
