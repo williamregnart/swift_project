@@ -26,6 +26,9 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cs-l0-ufB">
                                 <rect key="frame" x="286" y="615" width="22" height="22"/>
+                                <connections>
+                                    <segue destination="Uc8-7j-FCu" kind="show" identifier="addTrip" id="GpK-ea-Fbq"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zB5-bL-ZK9">
                                 <rect key="frame" x="16" y="97" width="343" height="494"/>
@@ -81,6 +84,92 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="37.600000000000001" y="26.53673163418291"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Vpd-YM-9CM">
+            <objects>
+                <viewController id="WLD-8s-XYb" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Cr-8F-44P">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Détails du voyage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vR-Eb-KHb">
+                                <rect key="frame" x="119.5" y="50" width="136" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2vR-Eb-KHb" firstAttribute="centerX" secondItem="2Cr-8F-44P" secondAttribute="centerX" id="bE1-Pp-fOf"/>
+                            <constraint firstItem="2vR-Eb-KHb" firstAttribute="top" secondItem="SFP-Mp-3t8" secondAttribute="top" constant="30" id="w6t-fp-KH9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SFP-Mp-3t8"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ogD-Ql-s91" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1084" y="26.53673163418291"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="zeL-F2-cV1">
+            <objects>
+                <viewController id="Uc8-7j-FCu" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oap-dq-6Qa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ajouter un voyage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wlp-IY-hKx">
+                                <rect key="frame" x="118.5" y="50" width="138" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nom du voyage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q0f-0J-9nm">
+                                <rect key="frame" x="87.5" y="121" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="eO4-g8-elr"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9tI-D8-Suk">
+                                <rect key="frame" x="155" y="201" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Ysq-dR-1f3"/>
+                                    <constraint firstAttribute="height" constant="200" id="mMO-Sg-uds"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lz7-mT-3kG">
+                                <rect key="frame" x="10" y="286" width="125" height="30"/>
+                                <state key="normal" title="Ajouter une image"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcM-M9-F8G">
+                                <rect key="frame" x="129" y="587" width="117" height="30"/>
+                                <state key="normal" title="Valider et ajouter"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9tI-D8-Suk" firstAttribute="top" secondItem="q0f-0J-9nm" secondAttribute="bottom" constant="50" id="5am-7V-SYx"/>
+                            <constraint firstItem="Lz7-mT-3kG" firstAttribute="leading" secondItem="5uH-Hp-Wzc" secondAttribute="leading" constant="10" id="OZy-DR-bhB"/>
+                            <constraint firstItem="Wlp-IY-hKx" firstAttribute="centerX" secondItem="oap-dq-6Qa" secondAttribute="centerX" id="PVc-u7-2sD"/>
+                            <constraint firstItem="q0f-0J-9nm" firstAttribute="top" secondItem="Wlp-IY-hKx" secondAttribute="bottom" constant="50" id="bNP-IM-E1V"/>
+                            <constraint firstItem="tcM-M9-F8G" firstAttribute="centerX" secondItem="oap-dq-6Qa" secondAttribute="centerX" id="nwY-U2-zxN"/>
+                            <constraint firstItem="Lz7-mT-3kG" firstAttribute="top" secondItem="q0f-0J-9nm" secondAttribute="bottom" constant="135" id="ovS-pM-Cst"/>
+                            <constraint firstItem="5uH-Hp-Wzc" firstAttribute="trailing" secondItem="9tI-D8-Suk" secondAttribute="trailing" constant="20" id="qlh-Wf-Mv2"/>
+                            <constraint firstItem="5uH-Hp-Wzc" firstAttribute="bottom" secondItem="tcM-M9-F8G" secondAttribute="bottom" constant="50" id="ryM-sQ-bPc"/>
+                            <constraint firstItem="Wlp-IY-hKx" firstAttribute="top" secondItem="5uH-Hp-Wzc" secondAttribute="top" constant="30" id="xtB-He-3RY"/>
+                            <constraint firstItem="q0f-0J-9nm" firstAttribute="centerX" secondItem="oap-dq-6Qa" secondAttribute="centerX" id="y2l-T6-Y4f"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5uH-Hp-Wzc"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nac-F5-cl7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="37.600000000000001" y="813.64317841079469"/>
         </scene>
     </scenes>
 </document>
