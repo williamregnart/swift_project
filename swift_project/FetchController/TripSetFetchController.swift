@@ -23,10 +23,40 @@ class TripSetFetchController: NSObject, NSFetchedResultsControllerDelegate {
         }
     }
     
-    lazy var tripsFetched : NSFetchedResultsController<Trip> {
+    var tripsFetched : NSFetchedResultsController<Trip> {
         let request : NSFetchRequest<Trip> = Trip.fetchRequest()
-        
+        request.sortDescriptors = [NSSortDescriptor(key:#keyPath(Trip.date_begin), ascending: true)]
+        let fetchResultController = NSFetchedResultsController(fetchRequest: request, managedObjectContext:
+            CoreDataManager.context, sectionNameKeyPath: nil, cacheName: nil)
+        fetchResultController.delegate = self
+        return fetchResultController
     }
+    
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>){
+        self.tripTableView.beginUpdates()
+    }
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>){
+        self.tripTableView.endUpdates()
+        CoreDataManager.save()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at
+        indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .insert:
+            if let newIndexPath = newIndexPath{
+                self.tripTableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
+        case .delete:
+            if let indexPath = indexPath{
+                self.tripTableView.deleteRows(at: [indexPath], with: .automatic)
+            }
+        case .update:
+            if let indexPath = indexPath{
+                self.tripTableView.reloadRows(at: [indexPath], with: .automatic)
+            } default:
+            break
+        } }
     
     
 }

@@ -30,37 +30,9 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let context = self.getContext(errorMsg: "Save failed") else {return}
-        
-        let request : NSFetchRequest<Trip_Data> = Trip_Data.fetchRequest()
-        do{
-            try self.trips = context.fetch(request)
-        }
-        catch let error as NSError{
-            self.alertError(errorMsg: "\(error)",userInfo: "\(error.userInfo)")
-        }
+        guard self.getContext(errorMsg: "Save failed") != nil else {return}
         
         // Do any additional setup after loading the view, typically from a nib.
-    }
-    
-    func saveNewTrip(Name:String,Image:UIImage?,Date_begin:Date?,Date_end:Date?){
-        print("my old friend")
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{
-            return
-        }
-        let context = appDelegate.persistentContainer.viewContext
-        let trip = Trip_Data(context: context)
-        trip.name = Name
-        trip.date_creation = Date()
-        trip.date_begin = Date_begin
-        trip.date_end = Date_end
-        do{
-            try context.save()
-            self.trips.append(trip)
-        }
-        catch let error as NSError{
-            self.alertError(errorMsg: "\(error)",userInfo: "\(error.userInfo)")
-        }
     }
     
     func alertError(errorMsg error : String, userInfo user: String = ""){

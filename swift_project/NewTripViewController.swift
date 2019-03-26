@@ -9,7 +9,8 @@
 import UIKit
 
 class NewTripViewController: UIViewController,UITextFieldDelegate {
-
+    
+    @IBOutlet weak var 
     @IBOutlet weak var nameInput: UITextField!
     @IBOutlet weak var date_begin_input: UIDatePicker!
     @IBOutlet weak var date_end_input: UIDatePicker!
@@ -29,6 +30,27 @@ class NewTripViewController: UIViewController,UITextFieldDelegate {
     
     @IBAction func cancel(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    func saveNewTrip(Name:String,Image:UIImage?,Date_begin:Date?,Date_end:Date?){
+        print("my old friend")
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{
+            return
+        }
+        let context = appDelegate.persistentContainer.viewContext
+        let trip = Trip(context: context)
+        trip.name = Name
+        trip.date_creation = Date()
+        trip.date_begin = Date_begin
+        trip.date_end = Date_end
+        do{
+            try context.save()
+            self.trips.append(trip)
+        }
+        catch let error as NSError{
+            self.alertError(errorMsg: "\(error)",userInfo: "\(error.userInfo)")
+        }
     }
     
     /*

@@ -336,16 +336,16 @@
             </objects>
             <point key="canvasLocation" x="37.600000000000001" y="813.64317841079469"/>
         </scene>
-        <!--View Controller-->
+        <!--Trip Container Controller-->
         <scene sceneID="kkb-wd-X74">
             <objects>
-                <viewController id="XGN-d5-I6l" sceneMemberID="viewController">
+                <viewController id="XGN-d5-I6l" customClass="tripContainerController" customModule="swift_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GGU-dJ-atT">
                         <rect key="frame" x="0.0" y="0.0" width="382" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dV4-Hc-nOo">
-                                <rect key="frame" x="0.0" y="0.0" width="382" height="44"/>
+                                <rect key="frame" x="0.0" y="2" width="382" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Title" id="Bbj-cG-hG5"/>
@@ -371,6 +371,9 @@
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wxq-eN-G2O">
                                 <rect key="frame" x="10" y="286" width="125" height="30"/>
                                 <state key="normal" title="Ajouter une image"/>
+                                <connections>
+                                    <action selector="addImage:" destination="XGN-d5-I6l" eventType="touchUpInside" id="zOd-9W-bBe"/>
+                                </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Cwg-Lg-zxY">
                                 <rect key="frame" x="105" y="536" width="250" height="100"/>
@@ -410,11 +413,15 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="WfV-t3-MLX"/>
                                     <barButtonItem title="Annuler" id="6to-Qk-Svj">
                                         <connections>
-                                            <action selector="cancel:" destination="Uc8-7j-FCu" id="9dq-9S-tO9"/>
+                                            <action selector="tripCancel:" destination="XGN-d5-I6l" id="5zK-vf-BYW"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="u3s-vJ-lFR"/>
-                                    <barButtonItem title="Ajouter" id="hf0-Gv-Npx"/>
+                                    <barButtonItem title="Ajouter" id="hf0-Gv-Npx">
+                                        <connections>
+                                            <action selector="tripValidation:" destination="XGN-d5-I6l" id="bbP-pa-twl"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Q2n-bx-Hbh"/>
                                 </items>
                             </toolbar>
@@ -431,7 +438,16 @@
                             <constraint firstItem="d4J-2G-aeB" firstAttribute="top" secondItem="YwQ-i9-Mdf" secondAttribute="bottom" constant="26" id="cwA-HE-AbY"/>
                             <constraint firstItem="K0c-BI-ok8" firstAttribute="top" secondItem="Wxq-eN-G2O" secondAttribute="bottom" constant="155" id="o3E-fu-xOw"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZUj-RY-na1"/>
                     </view>
+                    <connections>
+                        <outlet property="beginDatePicker" destination="6zK-nR-shw" id="vUl-kg-NtS"/>
+                        <outlet property="endDatePicker" destination="Cwg-Lg-zxY" id="hyp-a3-85f"/>
+                        <outlet property="nameTextField" destination="ULR-eo-sgT" id="JZ0-WO-Z64"/>
+                        <outlet property="titleLabel" destination="dV4-Hc-nOo" id="ltN-wQ-sPd"/>
+                        <outlet property="tripImage" destination="JdZ-tF-8Zl" id="N7V-mE-6hS"/>
+                        <outlet property="validateName" destination="hf0-Gv-Npx" id="cqf-DD-rRm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="meF-he-OZ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
