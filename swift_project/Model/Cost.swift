@@ -8,20 +8,20 @@
 
 import Foundation
 
-class Cost{
-    let name:String
-    var personsConcerned:PersonSet
-    var personsWhoPaid:CostPersonSet
+extension Cost{
+    var cname:String {return self.name ?? ""}
+    var cpersonsConcerned:PersonSet {return PersonSet()}
+    var cpersonsWhoPaid:CostPersonSet {return CostPersonSet()}
     
-    init(name:String, personsConcerned:PersonSet,personsWhoPaid:CostPersonSet){
+    convenience init(name:String, personsConcerned:PersonSet,personsWhoPaid:CostPersonSet){
         self.name=name
-        self.personsConcerned=personsConcerned
-        self.personsWhoPaid=personsWhoPaid
+        //self.cpersonsConcerned=personsConcerned
+        //self.cpersonsWhoPaid=personsWhoPaid
     }
     
     var amount :  Double{
         var total:Double=0
-        for costPerson in self.personsWhoPaid.personsCost {
+        for costPerson in self.cpersonsWhoPaid.personsCost {
             total += costPerson.cost
         }
         return total

@@ -29,11 +29,11 @@
 		90AF496822452DFA0090C242 /* TripSetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AF496722452DFA0090C242 /* TripSetViewModel.swift */; };
 		90AF496A224534570090C242 /* ItCostSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AF4969224534570090C242 /* ItCostSet.swift */; };
 		90B1EAE8224A2AE800A5C36A /* TripSetFetchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B1EAE7224A2AE800A5C36A /* TripSetFetchController.swift */; };
+		90B1EAEA224A362400A5C36A /* tripContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B1EAE9224A362400A5C36A /* tripContainerController.swift */; };
 		90D306FC224537590060BF51 /* ItCostPersonSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D306FB224537590060BF51 /* ItCostPersonSet.swift */; };
 		C40D845F224A11D1007864CC /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D845E224A11D1007864CC /* CoreDataManager.swift */; };
 		C40D8461224A136B007864CC /* TripSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D8460224A136B007864CC /* TripSet.swift */; };
 		C40D8463224A1528007864CC /* ItTripSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D8462224A1528007864CC /* ItTripSet.swift */; };
-		C40D8465224A210B007864CC /* TripsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D8464224A210B007864CC /* TripsTable.swift */; };
 		C44C3E622249A19100AAA767 /* ShowTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C3E612249A19100AAA767 /* ShowTripViewController.swift */; };
 		C44C3E642249AAA000AAA767 /* EditTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C3E632249AAA000AAA767 /* EditTripViewController.swift */; };
 /* End PBXBuildFile section */
@@ -84,11 +84,11 @@
 		90AF496722452DFA0090C242 /* TripSetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripSetViewModel.swift; sourceTree = "<group>"; };
 		90AF4969224534570090C242 /* ItCostSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItCostSet.swift; sourceTree = "<group>"; };
 		90B1EAE7224A2AE800A5C36A /* TripSetFetchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripSetFetchController.swift; sourceTree = "<group>"; };
+		90B1EAE9224A362400A5C36A /* tripContainerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tripContainerController.swift; sourceTree = "<group>"; };
 		90D306FB224537590060BF51 /* ItCostPersonSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItCostPersonSet.swift; sourceTree = "<group>"; };
 		C40D845E224A11D1007864CC /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		C40D8460224A136B007864CC /* TripSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripSet.swift; sourceTree = "<group>"; };
 		C40D8462224A1528007864CC /* ItTripSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItTripSet.swift; sourceTree = "<group>"; };
-		C40D8464224A210B007864CC /* TripsTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsTable.swift; sourceTree = "<group>"; };
 		C44C3E612249A19100AAA767 /* ShowTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTripViewController.swift; sourceTree = "<group>"; };
 		C44C3E632249AAA000AAA767 /* EditTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTripViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,8 +152,8 @@
 				C44C3E612249A19100AAA767 /* ShowTripViewController.swift */,
 				2C1F600722495E7C00039118 /* NewTripViewController.swift */,
 				2C1B255D2244D96A00AD2E80 /* Main.storyboard */,
+				90B1EAE9224A362400A5C36A /* tripContainerController.swift */,
 				2C1B259E2245261C00AD2E80 /* TripTableViewCell.swift */,
-				C40D8464224A210B007864CC /* TripsTable.swift */,
 				2C1B25632244D96B00AD2E80 /* Assets.xcassets */,
 				2C1B25652244D96B00AD2E80 /* LaunchScreen.storyboard */,
 				2C1B25682244D96B00AD2E80 /* Info.plist */,
@@ -372,7 +372,6 @@
 				2C1B25982244EB1000AD2E80 /* CostPersonSet.swift in Sources */,
 				2C1B258C2244E15700AD2E80 /* Person.swift in Sources */,
 				2C1B259D22451FCB00AD2E80 /* TripsTableViewController.swift in Sources */,
-				C40D8465224A210B007864CC /* TripsTable.swift in Sources */,
 				C40D8461224A136B007864CC /* TripSet.swift in Sources */,
 				90AF496A224534570090C242 /* ItCostSet.swift in Sources */,
 				2C1B25962244EAB200AD2E80 /* CostPerson.swift in Sources */,
@@ -387,6 +386,7 @@
 				2C1B259A2244FBAA00AD2E80 /* CostSet.swift in Sources */,
 				2C1B25942244E9C100AD2E80 /* Cost.swift in Sources */,
 				2C1B255A2244D96A00AD2E80 /* AppDelegate.swift in Sources */,
+				90B1EAEA224A362400A5C36A /* tripContainerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
