@@ -10,6 +10,7 @@ import UIKit
 
 class NewTripViewController: UIViewController,UITextFieldDelegate {
     
+    
     @IBOutlet weak var nameInput: UITextField!
     @IBOutlet weak var date_begin_input: UIDatePicker!
     @IBOutlet weak var date_end_input: UIDatePicker!
@@ -45,10 +46,10 @@ class NewTripViewController: UIViewController,UITextFieldDelegate {
         trip.date_end = Date_end
         do{
             try context.save()
-            self.trips.append(trip)
+            //self.trips.append(trip)
         }
         catch let error as NSError{
-            self.alertError(errorMsg: "\(error)",userInfo: "\(error.userInfo)")
+            //self.alertError(errorMsg: "\(error)",userInfo: "\(error.userInfo)")
         }
     }
     

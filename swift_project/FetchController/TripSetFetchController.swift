@@ -25,7 +25,7 @@ class TripSetFetchController: NSObject, NSFetchedResultsControllerDelegate {
     
     var tripsFetched : NSFetchedResultsController<Trip> {
         let request : NSFetchRequest<Trip> = Trip.fetchRequest()
-        request.sortDescriptors = [NSSortDescriptor(key:#keyPath(Trip.date_begin), ascending: true)]
+        request.sortDescriptors = [NSSortDescriptor(key:#keyPath(Trip.name), ascending: true)]
         let fetchResultController = NSFetchedResultsController(fetchRequest: request, managedObjectContext:
             CoreDataManager.context, sectionNameKeyPath: nil, cacheName: nil)
         fetchResultController.delegate = self
@@ -35,6 +35,7 @@ class TripSetFetchController: NSObject, NSFetchedResultsControllerDelegate {
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>){
         self.tripTableView.beginUpdates()
     }
+    
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>){
         self.tripTableView.endUpdates()
         CoreDataManager.save()

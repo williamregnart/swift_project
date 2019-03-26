@@ -147,12 +147,7 @@
 				2C1B259B22451E6B00AD2E80 /* Controller */,
 				2C1B258A2244DF3B00AD2E80 /* Model */,
 				2C1B25592244D96A00AD2E80 /* AppDelegate.swift */,
-				2C1B255B2244D96A00AD2E80 /* ViewController.swift */,
-				C44C3E632249AAA000AAA767 /* EditTripViewController.swift */,
-				C44C3E612249A19100AAA767 /* ShowTripViewController.swift */,
-				2C1F600722495E7C00039118 /* NewTripViewController.swift */,
 				2C1B255D2244D96A00AD2E80 /* Main.storyboard */,
-				90B1EAE9224A362400A5C36A /* tripContainerController.swift */,
 				2C1B259E2245261C00AD2E80 /* TripTableViewCell.swift */,
 				2C1B25632244D96B00AD2E80 /* Assets.xcassets */,
 				2C1B25652244D96B00AD2E80 /* LaunchScreen.storyboard */,
@@ -203,6 +198,11 @@
 		2C1B259B22451E6B00AD2E80 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				90B1EAE9224A362400A5C36A /* tripContainerController.swift */,
+				2C1B255B2244D96A00AD2E80 /* ViewController.swift */,
+				C44C3E632249AAA000AAA767 /* EditTripViewController.swift */,
+				C44C3E612249A19100AAA767 /* ShowTripViewController.swift */,
+				2C1F600722495E7C00039118 /* NewTripViewController.swift */,
 				2C1B259C22451FCB00AD2E80 /* TripsTableViewController.swift */,
 			);
 			path = Controller;

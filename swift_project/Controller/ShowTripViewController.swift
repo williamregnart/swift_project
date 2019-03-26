@@ -10,7 +10,7 @@ import UIKit
 
 class ShowTripViewController: UIViewController,UITextFieldDelegate {
 
-    var trip: Trip_Data? = nil
+    var trip: Trip? = nil
     @IBOutlet weak var nameTrip: UILabel!
     
     override func viewDidLoad() {

@@ -53,7 +53,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     @IBAction func unwindAfterSaveTrip(segue: UIStoryboardSegue){
         let newTripController = segue.source as! NewTripViewController
         if let name = newTripController.nameInput.text{
-            self.saveNewTrip(Name: name, Image: nil, Date_begin: nil, Date_end: nil)
+            newTripController.saveNewTrip(Name: name, Image: nil, Date_begin: nil, Date_end: nil)
             self.tripTable.reloadData()
         }
     }
