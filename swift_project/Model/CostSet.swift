@@ -13,27 +13,24 @@ class CostSet: Sequence {
     var costList : [Cost]
     
     init(){
-        self.costList = []
-    }
-    
-    init(Costs : [Cost]){
-        self.costList = Costs
+        self.costList = CostDAO.getAllCost()
     }
     
     var isEmpty : Bool {
         return self.costList.isEmpty
     }
     
-    func add(Cost : Cost){
-        if self.contains(Cost : Cost){
+    func add(cost : Cost){
+        if self.contains(cost : cost){
             return
         } else {
-            costList.append(Cost)
+            costList.append(cost)
+            CostDAO.insert(cost: cost)
         }
     }
     
-    func remove(Cost : Cost){
-        guard let index = self.indexOf(Cost: Cost) else {
+    func remove(cost : Cost){
+        guard let index = self.indexOf(cost: cost) else {
             return
         }
         costList.remove(at: index)
@@ -43,28 +40,28 @@ class CostSet: Sequence {
         return self.costList.count
     }
     
-    func indexOf(Cost : Cost) -> Int? {
+    func indexOf(cost : Cost) -> Int? {
         var i : Int? = nil
         for index in 0..<costList.count {
-            if costList[index]==Cost {
+            if costList[index] == cost {
                 i = index
             }
         }
         return i
     }
     
-    func contains(Cost : Cost)-> Bool {
+    func contains(cost : Cost)-> Bool {
         var cont : Bool = false
         for c in costList {
-            if c.name==Cost.name {
+            if c.name==cost.name {
                 cont = true
             }
         }
         return cont
     }
     
-    func look(Cost: Cost) -> Cost? {
-        guard let index = indexOf(Cost: Cost) else{
+    func look(cost: Cost) -> Cost? {
+        guard let index = indexOf(cost: cost) else{
             return nil
         }
         return costList[index]
@@ -74,9 +71,4 @@ class CostSet: Sequence {
         let iterator: ItCostSet = ItCostSet(costs: self)
         return iterator
     }
-
-
-    
-    
-    
 }
