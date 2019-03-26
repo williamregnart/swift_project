@@ -7,31 +7,32 @@
 //
 
 import Foundation
+import UIKit
+import CoreData
 
-class Trip{
+extension Trip{
     
-    let name:String
-    //RAJOUTER IMAGE
-    let descriptive:String
-    let group:PersonSet
-    let date_creation:Date
-    let date_begin:Date? = nil
-    let date_end:Date? = nil
-    var costSet:CostSet
+    var tname:String {return self.name ?? ""}
+    var timage: UIImageView? {return self.image as UIImageView}
+    var tgroup:PersonSet {return PersonSet(persons: [])}
+    var tdate_creation:Date {return self.date_creation}
+    var tdate_begin:Date? {return self.date_begin}
+    var tdate_end:Date? {return self.date_end}
+    var tcostSet:CostSet {return CostSet(Costs: [])}
     
     init(name:String,descriptive:String){
         self.name=name
-        self.descriptive=descriptive
         self.group=PersonSet.init()
         self.date_creation=Date()
         self.costSet = CostSet(Costs: [])
+        self.image = nil
     }
     
     init(name:String){
         self.name=name
-        self.descriptive=""
         self.group=PersonSet.init()
         self.date_creation=Date()
         self.costSet = CostSet(Costs: [])
+        self.image = nil
     }
 }

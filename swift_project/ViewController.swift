@@ -14,7 +14,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     @IBOutlet weak var titleApp: UILabel!
     
     @IBOutlet weak var tripTable: UITableView!
-    var trips:[Trip_Data]=[]
+    var trips:[Trip]=[]
     
 
     

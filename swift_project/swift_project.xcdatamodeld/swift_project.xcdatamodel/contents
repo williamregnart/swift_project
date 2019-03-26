@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18C54" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Trip_Data" representedClassName="Trip_Data" syncable="YES" codeGenerationType="class">
+    <entity name="Cost" representedClassName="Cost" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="concernsTrip" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trip" syncable="YES"/>
+        <relationship name="paidBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" syncable="YES"/>
+        <relationship name="paidFor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" syncable="YES"/>
+    </entity>
+    <entity name="Person" representedClassName="Person" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="belongsTo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trip" syncable="YES"/>
+    </entity>
+    <entity name="Trip" representedClassName="Trip" syncable="YES" codeGenerationType="class">
         <attribute name="date_begin" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="date_creation" transient="YES" attributeType="Date" defaultDateTimeInterval="575231400" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="date_end" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -8,6 +18,8 @@
         <attribute name="name" attributeType="String" minValueString="3" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Trip_Data" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="Trip" positionX="204.7421875" positionY="-310.10546875" width="128" height="120"/>
+        <element name="Cost" positionX="59.3203125" positionY="151.16015625" width="128" height="105"/>
+        <element name="Person" positionX="-177.85546875" positionY="70.26953125" width="128" height="75"/>
     </elements>
 </model>

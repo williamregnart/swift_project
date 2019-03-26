@@ -24,6 +24,7 @@ class TripSetFetchController: NSObject, NSFetchedResultsControllerDelegate {
     }
     
     lazy var tripsFetched : NSFetchedResultsController<Trip> {
+        let request : NSFetchRequest<Trip> = Trip.fetchRequest()
         
     }
     
