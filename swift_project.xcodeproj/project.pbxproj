@@ -37,7 +37,6 @@
 		C40D8463224A1528007864CC /* ItTripSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D8462224A1528007864CC /* ItTripSet.swift */; };
 		C40D8467224A5F4A007864CC /* CostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D8466224A5F4A007864CC /* CostTableViewController.swift */; };
 		C40D846B224A6288007864CC /* CostDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D846A224A6288007864CC /* CostDAO.swift */; };
-		C40D846F224A9A99007864CC /* CostPersonDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D846E224A9A99007864CC /* CostPersonDAO.swift */; };
 		C44C3E622249A19100AAA767 /* ShowTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C3E612249A19100AAA767 /* ShowTripViewController.swift */; };
 		C44C3E642249AAA000AAA767 /* EditTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C3E632249AAA000AAA767 /* EditTripViewController.swift */; };
 /* End PBXBuildFile section */
@@ -96,7 +95,6 @@
 		C40D8462224A1528007864CC /* ItTripSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItTripSet.swift; sourceTree = "<group>"; };
 		C40D8466224A5F4A007864CC /* CostTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostTableViewController.swift; sourceTree = "<group>"; };
 		C40D846A224A6288007864CC /* CostDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostDAO.swift; sourceTree = "<group>"; };
-		C40D846E224A9A99007864CC /* CostPersonDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CostPersonDAO.swift; path = ../../../swift_project/swift_project/DAO/CostPersonDAO.swift; sourceTree = "<group>"; };
 		C44C3E612249A19100AAA767 /* ShowTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTripViewController.swift; sourceTree = "<group>"; };
 		C44C3E632249AAA000AAA767 /* EditTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTripViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -236,7 +234,6 @@
 		C40D845B224A0BAE007864CC /* DAO */ = {
 			isa = PBXGroup;
 			children = (
-				C40D846E224A9A99007864CC /* CostPersonDAO.swift */,
 				C40D845E224A11D1007864CC /* CoreDataManager.swift */,
 				C40D846A224A6288007864CC /* CostDAO.swift */,
 				90361C11224A878B0062E27C /* PersonDAO.swift */,
@@ -393,7 +390,6 @@
 				C40D845F224A11D1007864CC /* CoreDataManager.swift in Sources */,
 				C40D846B224A6288007864CC /* CostDAO.swift in Sources */,
 				90AF496822452DFA0090C242 /* TripSetViewModel.swift in Sources */,
-				C40D846F224A9A99007864CC /* CostPersonDAO.swift in Sources */,
 				90B1EAE8224A2AE800A5C36A /* TripSetFetchController.swift in Sources */,
 				2C1B25922244E2C100AD2E80 /* Trip.swift in Sources */,
 				2C1B259F2245261C00AD2E80 /* TripTableViewCell.swift in Sources */,
