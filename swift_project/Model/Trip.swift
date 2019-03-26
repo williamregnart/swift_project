@@ -13,7 +13,10 @@ import CoreData
 extension Trip{
     
     var tname:String {return self.name ?? ""}
-    var timage: UIImageView? {return self.image as UIImageView}
+    var timage: UIImage? {
+        get{return UIImage(data: self.image!)}
+        set{self.image = newValue?.pngData()}
+    }
     var tgroup:PersonSet {return PersonSet(persons: [])}
     var tdate_creation:Date {return self.date_creation}
     var tdate_begin:Date? {return self.date_begin}
