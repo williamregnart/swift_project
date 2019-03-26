@@ -13,6 +13,27 @@ extension Person{
     
     var pname: String{return self.name!}
     
+    
+    //Liste de type CostSet des depenses de la personne
+    var costs: CostSet{
+        let costList = CostDAO.getCostbyPerson(person: self)
+        let result = CostSet()
+        for cost in costList{
+            result.add(cost: cost)
+        }
+        return result
+    }
+    
+    //Liste de type CostSet des creances de la personne
+    var creances: CostSet{
+        let creanceList = CostDAO.getCreanceByPerson(person: self)
+        let result = CostSet()
+        for creance in creanceList{
+            result.add(cost: creance)
+        }
+        return result
+    }
+    
     convenience init(name: String){
         self.init(context: CoreDataManager.context)
         self.name = name
