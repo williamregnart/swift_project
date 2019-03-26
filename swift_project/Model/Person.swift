@@ -9,23 +9,16 @@
 import Foundation
 import CoreData
 
-extension Person : Equatable {
+extension Person{
     
-    var pname: String{return self.name}
+    var pname: String{return self.name!}
     
-    convenient init(firstName fname: String, lastName lname: String){
-        self.firstName = fname
-        self.lastName = lname
-    }
-    
-    var fullname : String{
-        return self.firstName + " " + self.lastName
+    convenience init(name: String){
+        self.name = name
     }
     
     static func == (p1: Person, p2: Person) -> Bool{
-        let lname = (p1.firstName == p2.firstName)
-        let fname = (p1.lastName == p2.lastName)
-        return lname && fname
+        return p1.name == p2.name
     }
     
     static func !=(p1: Person, p2: Person) -> Bool{
@@ -39,20 +32,20 @@ extension Person : Equatable {
         var balance : Double = 0.0
         
         //Parcours de la liste des dépenses pour le voyage
-        for cost in trip.costSet {
+        for cost in trip.tcostSet {
             
             //Parcours de la liste des personnes concernées par la dépense
             //Si la personne est concernée, on a payé pour elle donc on retire le montant de la dépense divisé par le nombre de personnes concernées de sa balance
-            for person in cost.personsConcerned{
+            for person in cost.cpersonsConcerned{
                 if self == person {
-                    balance -= cost.amount / Double(cost.personsConcerned.count)
+                    balance -= cost.amount / Double(cost.cpersonsConcerned.count)
                 }
             }
             //Parcours de la liste des personnes ayant payé pour la dépense
             //Si la personne a payé, on ajoute le montant qu'elle a payé à sa balance
-            for costPerson in cost.personsWhoPaid{
-                if self == costPerson.person {
-                    balance += costPerson.cost
+            for costPerson in cost.cpersonsWhoPaid{
+                if self == costPerson.cpperson {
+                    balance += costPerson.cpcost
                 }
             }
         }
