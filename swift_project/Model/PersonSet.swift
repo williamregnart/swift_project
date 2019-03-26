@@ -56,7 +56,7 @@ class PersonSet: Sequence {
     func contains(person : Person)-> Bool {
         var cont : Bool = false
         for p in personList {
-            if p.lastName==person.lastName {
+            if p.pname==person.pname {
                 cont = true
             }
         }
@@ -70,53 +70,14 @@ class PersonSet: Sequence {
         return personList[index]
     }
     
-    func contains(firstname: String, lastname: String) -> Bool {
-        var cont : Bool = false
-        for p in personList {
-            if p.lastName==lastname && p.firstName == firstname{
-                cont = true
-            }
-        }
-        return cont
-    }
-    
-    func look(lastname: String) -> [Person]{
+    func look(pname: String) -> [Person]{
         var persons : [Person] = []
         for p in self.personList {
-            if p.lastName == lastname {
+            if p.pname == pname {
                 persons.append(p)
             }
         }
         return persons
-    }
-    
-    func contains(firstname: String, lastname: String, date : Date) -> Bool {
-        var cont : Bool = false
-        let p1:Person=Person(firstName: firstname, lastName: lastname)
-        for p2 in personList {
-            if p1 == p2{
-                cont = true
-            }
-        }
-        return cont
-    }
-    
-    func look(lastname: String, firstname: String) -> [Person]{
-        var persons : [Person] = []
-        for p in self.personList {
-            if p.lastName == lastname && p.firstName == firstname{
-                persons.append(p)
-            }
-        }
-        return persons
-    }
-    
-    func look(lastname: String, firstname: String) -> Person?{
-        let person: Person = Person(firstName : firstname, lastName: lastname)
-        guard let index = indexOf(person: person) else {
-            return nil
-        }
-        return personList[index]
     }
     
     func makeIterator() -> ItPersonSet{

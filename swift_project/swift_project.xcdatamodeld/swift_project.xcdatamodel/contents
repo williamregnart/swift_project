@@ -10,7 +10,7 @@
         <relationship name="concernCost" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cost" inverseName="paidBy" inverseEntity="Cost" syncable="YES"/>
         <relationship name="concernPerson" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="payCost" inverseEntity="Person" syncable="YES"/>
     </entity>
-    <entity name="Person" representedClassName="Person" syncable="YES">
+    <entity name="Person" representedClassName="Person" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="belongsTo" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Trip" inverseName="hasPerson" inverseEntity="Trip" syncable="YES"/>
         <relationship name="newRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cost" inverseName="paidFor" inverseEntity="Cost" syncable="YES"/>
