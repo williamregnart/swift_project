@@ -31,7 +31,8 @@ protocol TripSetViewModelDelegate {
 //----------------------------------------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------------------------------------
 // MARK: -
-class TripSetViewModel{//} : PersonFetchResultController{
+
+class TripSetViewModel {
     // MARK: -
     var delegate : TripSetViewModelDelegate? = nil
     
@@ -53,6 +54,7 @@ class TripSetViewModel{//} : PersonFetchResultController{
     public var count : Int {
         return self.tripsFetched.fetchedObjects?.count ?? 0
     }
+    
     public func get(tripAt index: Int) -> Trip_Data?{
         return self.tripsFetched.object(at: IndexPath(row: index, section: 0))
     }
