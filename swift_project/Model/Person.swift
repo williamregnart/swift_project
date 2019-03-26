@@ -7,13 +7,13 @@
 //
 
 import Foundation
+import CoreData
 
-class Person : Equatable {
+extension Person : Equatable {
     
-    let lastName: String
-    let firstName: String
+    var pname: String{return self.name}
     
-    init(firstName fname: String, lastName lname: String){
+    convenient init(firstName fname: String, lastName lname: String){
         self.firstName = fname
         self.lastName = lname
     }
