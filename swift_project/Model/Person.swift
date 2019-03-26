@@ -16,7 +16,7 @@ extension Person{
     
     //Liste de type CostSet des depenses de la personne
     var costs: CostSet{
-        let costList = CostDAO.getCostbyPerson(person: self)
+        let costList = CostDAO.getDebtByPerson(person: self)
         let result = CostSet()
         for cost in costList{
             result.add(cost: cost)

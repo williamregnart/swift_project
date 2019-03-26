@@ -35,7 +35,7 @@ class CostDAO{
         }
     }
     
-    static func getCostbyPerson(person: Person) -> [Cost]{
+    static func getDebtByPerson(person: Person) -> [Cost]{
         let costs = person.hasToPayCost
         return costs as! [Cost]? ?? []
     }

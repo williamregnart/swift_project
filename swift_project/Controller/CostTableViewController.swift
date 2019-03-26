@@ -8,19 +8,16 @@
 
 import UIKit
 
-class CostTableViewController: UIViewController, UITableViewDataSource,UITextFieldDelegate {
+class CostTableViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var creancesTable: UITableViewCell!
     @IBOutlet weak var costsTable: UITableView!
-    var costs : CostSetViewModel
+    //var costs : CostSetViewModel
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+        return 1
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
-    }
+    
     
 
     override func viewDidLoad() {

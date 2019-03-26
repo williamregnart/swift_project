@@ -257,16 +257,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FHm-YA-b1v">
                                 <rect key="frame" x="20" y="237" width="335" height="173"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="PDV-Jx-K0z">
-                                        <rect key="frame" x="0.0" y="28" width="335" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PDV-Jx-K0z" id="5em-Yb-lFy">
-                                            <rect key="frame" x="0.0" y="0.0" width="335" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="haV-Ft-03s" id="hb5-KL-H8C"/>
                                     <outlet property="delegate" destination="haV-Ft-03s" id="Bu9-6K-R5C"/>
@@ -317,7 +307,6 @@
                 <customObject id="haV-Ft-03s" customClass="CostTableViewController" customModule="swift_project" customModuleProvider="target">
                     <connections>
                         <outlet property="costsTable" destination="Ejz-3n-30f" id="uzc-5q-QIU"/>
-                        <outlet property="creancesTable" destination="PDV-Jx-K0z" id="4xx-S0-wkl"/>
                     </connections>
                 </customObject>
             </objects>

@@ -21,7 +21,9 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     
     required init?(coder decoder: NSCoder) {
         //self.tripCont = tripContainerController()
-        super.init(coder: decoder)        
+        self.tripCont = tripContainerController(coder: decoder)!
+        super.init(coder: decoder)
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

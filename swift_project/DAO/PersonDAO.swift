@@ -37,7 +37,7 @@ class PersonDAO{
     }
     
     static func getPerson(person p : Person)->Person{
-        var result : Person
+        var result : Person = Person(name: "")
         let persons : [Person] = getAllPerson()
         for person : Person in persons {
             if person == p {
