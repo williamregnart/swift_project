@@ -30,12 +30,78 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard let context = self.getContext(errorMsg: "Save failed") else {return}
+        
+        let request : NSFetchRequest<Trip_Data> = Trip_Data.fetchRequest()
+        do{
+            try self.trips = context.fetch(request)
+        }
+        catch let error as NSError{
+            self.alertError(errorMsg: "\(error)",userInfo: "\(error.userInfo)")
+        }
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    @IBAction func unwindAfterSaveTrip(segue:UIStoryBoardSegue){
+    func saveNewTrip(Name:String,Image:UIImage?,Date_begin:Date?,Date_end:Date?){
+        print("my old friend")
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{
+            return
+        }
+        let context = appDelegate.persistentContainer.viewContext
+        let trip = Trip_Data(context: context)
+        trip.name = Name
+        trip.date_creation = Date()
+        trip.date_begin = Date_begin
+        trip.date_end = Date_end
+        do{
+            try context.save()
+            self.trips.append(trip)
+        }
+        catch let error as NSError{
+            self.alertError(errorMsg: "\(error)",userInfo: "\(error.userInfo)")
+        }
+    }
+    
+    func alertError(errorMsg error : String, userInfo user: String = ""){
+        let alert = UIAlertController(title: error, message: user, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title:"OK",style:.default)
+        alert.addAction(cancelAction)
+        present(alert,animated: true)
+    }
+    
+    func alert(WithTitle title: String, andMessage msg: String = ""){
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title:"OK",style:.default)
+        alert.addAction(cancelAction)
+        present(alert,animated: true)
+    }
+    
+    
+    @IBAction func unwindAfterSaveTrip(segue: UIStoryboardSegue){
         let newTripController = segue.source as! NewTripViewController
-        let name = newTripController.nameInput
+        if let name = newTripController.nameInput.text{
+            self.saveNewTrip(Name: name, Image: nil, Date_begin: nil, Date_end: nil)
+            self.tripTable.reloadData()
+        }
+    }
+    
+    func getContext(errorMsg: String, userInfoMsg: String = "could not retrieve data context") -> NSManagedObjectContext?{
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{
+            self.alert(WithTitle: errorMsg, andMessage: userInfoMsg)
+            return nil
+        }
+        return appDelegate.persistentContainer.viewContext
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "tripDetails"{
+            if let indexPath = self.tripTable.indexPathForSelectedRow{
+                let showTripViewController = segue.destination as! ShowTripViewController
+                showTripViewController.trip = self.trips[indexPath.row]
+            }
+        }
+        
     }
 
 
