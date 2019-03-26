@@ -20,7 +20,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     
     
     required init?(coder decoder: NSCoder) {
-        self.tripCont = tripContainerController()
+        //self.tripCont = tripContainerController()
         super.init(coder: decoder)        
     }
     

@@ -11,8 +11,7 @@ import CoreData
 
 class CostDAO{
     
-    static let requestCost  :NSFetchRequest<Cost> = Cost.fetchRequest()
-    static let requestPerson :NSFetchRequest<Person> = Person.fetchRequest()
+    static let request :NSFetchRequest<Cost> = Cost.fetchRequest()
     
     static func save(){
         CoreDataManager.save()
@@ -27,9 +26,9 @@ class CostDAO{
     }
     
     static func getAllCost() -> [Cost]{
-        self.requestCost.predicate = nil
+        self.request.predicate = nil
         do{
-            return try CoreDataManager.context.fetch(self.requestCost)
+            return try CoreDataManager.context.fetch(self.request)
         }
         catch{
             return []
