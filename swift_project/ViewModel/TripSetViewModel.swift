@@ -36,8 +36,8 @@ class TripSetViewModel {
     // MARK: -
     var delegate : TripSetViewModelDelegate? = nil
     
-    var tripsFetched : NSFetchedResultsController<Trip_Data>
-    init(data: NSFetchedResultsController<Trip_Data>){
+    var tripsFetched : NSFetchedResultsController<Trip>
+    init(data: NSFetchedResultsController<Trip>){
         self.tripsFetched = data
     }
     //-------------------------------------------------------------------------------------------------
@@ -45,7 +45,7 @@ class TripSetViewModel {
     /// add a new person in set of persons
     ///
     /// - Parameter person: Person to be added
-    public func add(trip: Trip_Data){
+    public func add(trip: Trip){
         if let indexPath = self.tripsFetched.indexPath(forObject: trip){
             self.delegate?.tripAdded(at: indexPath)
         }
@@ -55,7 +55,7 @@ class TripSetViewModel {
         return self.tripsFetched.fetchedObjects?.count ?? 0
     }
     
-    public func get(tripAt index: Int) -> Trip_Data?{
+    public func get(tripAt index: Int) -> Trip?{
         return self.tripsFetched.object(at: IndexPath(row: index, section: 0))
     }
     

@@ -10,7 +10,6 @@ import UIKit
 
 class NewTripViewController: UIViewController,UITextFieldDelegate {
     
-    @IBOutlet weak var 
     @IBOutlet weak var nameInput: UITextField!
     @IBOutlet weak var date_begin_input: UIDatePicker!
     @IBOutlet weak var date_end_input: UIDatePicker!
