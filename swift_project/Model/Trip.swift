@@ -26,9 +26,10 @@ extension Trip{
     convenience init(name:String,image: UIImage?,date_begin: Date?,date_end: Date?){
         self.init(context: CoreDataManager.context)
         self.name=name
-        guard image == nil else{
-            self.image = image?.pngData()
+        guard image != nil else{
+            return
         }
+        self.image = image?.pngData()
         self.getPersons()
         self.date_creation=Date()
     }

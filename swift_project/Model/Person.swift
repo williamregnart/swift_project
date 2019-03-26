@@ -14,6 +14,7 @@ extension Person{
     var pname: String{return self.name!}
     
     convenience init(name: String){
+        self.init(context: CoreDataManager.context)
         self.name = name
     }
     
