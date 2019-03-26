@@ -8,19 +8,18 @@
 
 import Foundation
 
-class CostPerson{
+extension CostPerson{
     
-    let person:Person
-    let cost:Double
+    var cpperson: Person {return }
+    var cpcost:Double  {return 1}
     
-    init(person:Person,cost:Double){
-        self.person=person
-        self.cost=cost
+    convenience init(person:Person,cost:Double){
+        self.cpperson=person
+        self.cpcost=cost
     }
     
     static func == (p1: CostPerson, p2: CostPerson) -> Bool{
-        return (p1.person == p2.person)
-
+        return (p1.cpperson == p2.cpperson) && (p1.cpcost == p2.cpcost)
     }
     
     static func !=(p1: CostPerson, p2: CostPerson) -> Bool{
