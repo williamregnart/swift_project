@@ -11,7 +11,15 @@ import UIKit
 
 class tripContainerController: UIViewController {
     
-    @IBOutlet weak var titleLabel: UINavigationBar!
+    required init?(coder aDecoder: NSCoder, type: String) {
+        super.init(coder: aDecoder)
+        viewWillAppear(true, type: type)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var tripImage: UIImageView!
     @IBOutlet weak var beginDatePicker: UIDatePicker!
@@ -23,5 +31,9 @@ class tripContainerController: UIViewController {
     @IBAction func tripValidation(_ sender: Any) {
     }
     @IBAction func tripCancel(_ sender: Any) {
+    }
+    
+    func viewWillAppear(_ animated: Bool, type: String) {
+        navigationItem.title = type
     }
 }

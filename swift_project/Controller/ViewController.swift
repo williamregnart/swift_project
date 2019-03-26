@@ -11,12 +11,18 @@ import CoreData
 
 class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
+    var tripCont : tripContainerController
+    
     @IBOutlet weak var titleApp: UILabel!
     
     @IBOutlet weak var tripTable: UITableView!
     var trips:[Trip]=[]
     
-
+    
+    required init?(coder decoder: NSCoder) {
+        self.tripCont = tripContainerController()
+        super.init(coder: decoder)        
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.trips.count
@@ -76,6 +82,11 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         
     }
 
-
+    
+    @IBAction func addTrip(_ sender: Any) {
+        tripCont.viewWillAppear(true, type: "Création")
+        performSegue(withIdentifier: "newTrip", sender: sender)
+    }
+    
 }
 
