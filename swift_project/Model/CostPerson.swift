@@ -10,8 +10,8 @@ import Foundation
 
 extension CostPerson{
     
-    var cpperson: Person {return }
-    var cpcost:Double  {return 1}
+    var cpperson: Person {return concernPerson!}
+    var cpcost:Double  {return (concernCost?.amount)!}
     
     convenience init(person:Person,cost:Double){
         self.cpperson=person
