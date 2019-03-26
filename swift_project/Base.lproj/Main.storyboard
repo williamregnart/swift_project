@@ -42,7 +42,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gQf-og-nOA">
-                                                    <rect key="frame" x="93" y="0.0" width="250" height="130"/>
+                                                    <rect key="frame" x="93" y="0.0" width="250" height="129.5"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="voyage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uB3-Kk-SCp">
                                                     <rect key="frame" x="5" y="0.0" width="55" height="129.5"/>
@@ -222,6 +222,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ogD-Ql-s91" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1084" y="26.53673163418291"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Kex-Ni-G9z">
+            <objects>
+                <viewController id="EWM-JS-m4c" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jU7-Pz-KPN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NamePerson" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0g9-Ce-vmE">
+                                <rect key="frame" x="138.5" y="43" width="98.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ScA-vi-e9U">
+                                <rect key="frame" x="16" y="89" width="70" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Créances :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4X-Ag-Xgf">
+                                <rect key="frame" x="16" y="211" width="82" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dépenses :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wiH-2U-d6c">
+                                <rect key="frame" x="16" y="415" width="86" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wiH-2U-d6c" firstAttribute="leading" secondItem="9JY-Fp-kXT" secondAttribute="leading" constant="16" id="3xA-SF-62F"/>
+                            <constraint firstItem="0g9-Ce-vmE" firstAttribute="top" secondItem="9JY-Fp-kXT" secondAttribute="top" constant="23" id="5S8-Vz-fu8"/>
+                            <constraint firstItem="ScA-vi-e9U" firstAttribute="leading" secondItem="9JY-Fp-kXT" secondAttribute="leading" constant="16" id="Mjz-fM-ZZv"/>
+                            <constraint firstItem="wiH-2U-d6c" firstAttribute="top" secondItem="i4X-Ag-Xgf" secondAttribute="bottom" constant="183" id="QTc-Zl-d2B"/>
+                            <constraint firstItem="ScA-vi-e9U" firstAttribute="top" secondItem="9JY-Fp-kXT" secondAttribute="top" constant="69" id="bvt-hu-NmT"/>
+                            <constraint firstItem="i4X-Ag-Xgf" firstAttribute="leading" secondItem="9JY-Fp-kXT" secondAttribute="leading" constant="16" id="fRe-cI-L2M"/>
+                            <constraint firstItem="i4X-Ag-Xgf" firstAttribute="top" secondItem="ScA-vi-e9U" secondAttribute="bottom" constant="101" id="gkr-Oz-Zn5"/>
+                            <constraint firstItem="0g9-Ce-vmE" firstAttribute="centerX" secondItem="jU7-Pz-KPN" secondAttribute="centerX" id="l7i-Au-Of8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9JY-Fp-kXT"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yfQ-7g-ulB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1887" y="27"/>
         </scene>
         <!--Edit Trip View Controller-->
         <scene sceneID="s4K-f9-A63">
