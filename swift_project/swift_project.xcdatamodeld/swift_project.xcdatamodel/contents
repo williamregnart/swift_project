@@ -3,7 +3,7 @@
     <entity name="Cost" representedClassName="Cost" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="paidBy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CostPerson" inverseName="concernCost" inverseEntity="CostPerson" syncable="YES"/>
-        <relationship name="paidFor" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" inverseName="newRelationship" inverseEntity="Person" syncable="YES"/>
+        <relationship name="paidFor" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" inverseName="hasToPayCost" inverseEntity="Person" syncable="YES"/>
     </entity>
     <entity name="CostPerson" representedClassName="CostPerson" syncable="YES" codeGenerationType="class">
         <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
@@ -13,7 +13,7 @@
     <entity name="Person" representedClassName="Person" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="belongsTo" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Trip" inverseName="hasPerson" inverseEntity="Trip" syncable="YES"/>
-        <relationship name="newRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cost" inverseName="paidFor" inverseEntity="Cost" syncable="YES"/>
+        <relationship name="hasToPayCost" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Cost" inverseName="paidFor" inverseEntity="Cost" syncable="YES"/>
         <relationship name="payCost" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CostPerson" inverseName="concernPerson" inverseEntity="CostPerson" syncable="YES"/>
     </entity>
     <entity name="Trip" representedClassName="Trip" syncable="YES" codeGenerationType="class">
@@ -26,7 +26,7 @@
     </entity>
     <elements>
         <element name="Cost" positionX="148.52734375" positionY="280.46484375" width="128" height="88"/>
-        <element name="CostPerson" positionX="169.83203125" positionY="37.90234375" width="128" height="88"/>
+        <element name="CostPerson" positionX="169.83203125" positionY="37.90234375" width="128" height="90"/>
         <element name="Person" positionX="-180.87890625" positionY="25.53515625" width="128" height="105"/>
         <element name="Trip" positionX="204.7421875" positionY="-310.10546875" width="128" height="133"/>
     </elements>
