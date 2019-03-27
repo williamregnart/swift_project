@@ -183,6 +183,9 @@
                                                 <constraint firstItem="SR2-ZR-v4U" firstAttribute="leading" secondItem="WfV-BV-z1y" secondAttribute="leadingMargin" constant="4" id="zs8-l9-qQB"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="EWM-JS-m4c" kind="show" identifier="showPerson" id="3xB-go-9wB"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -216,16 +219,17 @@
                     </view>
                     <connections>
                         <outlet property="nameTrip" destination="NHl-Jt-f5c" id="9ev-Oa-39i"/>
+                        <outlet property="personsTable" destination="elO-cO-8sz" id="EQd-dT-caE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ogD-Ql-s91" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1084" y="26.53673163418291"/>
         </scene>
-        <!--View Controller-->
+        <!--Show Person View Controller-->
         <scene sceneID="Kex-Ni-G9z">
             <objects>
-                <viewController id="EWM-JS-m4c" sceneMemberID="viewController">
+                <viewController id="EWM-JS-m4c" customClass="ShowPersonViewController" customModule="swift_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jU7-Pz-KPN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -257,6 +261,16 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FHm-YA-b1v">
                                 <rect key="frame" x="20" y="237" width="335" height="173"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="creanceCell" id="B0C-VJ-6aV">
+                                        <rect key="frame" x="0.0" y="28" width="335" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B0C-VJ-6aV" id="tQx-Wg-jFy">
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="haV-Ft-03s" id="hb5-KL-H8C"/>
                                     <outlet property="delegate" destination="haV-Ft-03s" id="Bu9-6K-R5C"/>
@@ -266,7 +280,7 @@
                                 <rect key="frame" x="20" y="441" width="335" height="221"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Gft-24-RXu">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="costCell" id="Gft-24-RXu">
                                         <rect key="frame" x="0.0" y="28" width="335" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gft-24-RXu" id="xyl-sr-c8Q">
@@ -302,6 +316,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9JY-Fp-kXT"/>
                     </view>
+                    <connections>
+                        <outlet property="namePersonLabel" destination="0g9-Ce-vmE" id="iZv-9G-pt2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yfQ-7g-ulB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="haV-Ft-03s" customClass="CostTableViewController" customModule="swift_project" customModuleProvider="target">

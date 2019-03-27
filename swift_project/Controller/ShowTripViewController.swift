@@ -12,6 +12,9 @@ class ShowTripViewController: UIViewController,UITextFieldDelegate {
 
     var trip: Trip? = nil
     @IBOutlet weak var nameTrip: UILabel!
+    @IBOutlet weak var personsTable: UITableView!
+    
+    var persons:PersonSetViewModel? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +23,15 @@ class ShowTripViewController: UIViewController,UITextFieldDelegate {
         }
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "showPerson"){
+            if let indexPath = self.personsTable.indexPathForSelectedRow{
+                let showPersonViewController = segue.destination as! ShowPersonViewController
+                showPersonViewController.person = self.persons?.getPersonByIndex(index: indexPath.row)
+            }
+        }
     }
     
 
