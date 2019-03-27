@@ -31,7 +31,7 @@ class ShowTripViewController: UIViewController,UITextFieldDelegate,UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.personsTable.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as! PersonTableViewCell
-        cell.voyage.text = self.trips[indexPath.row].name
+        cell.personName.text = self.persons?.getPersonByIndex(index: indexPath.row)?.name
         return cell
     }
     
