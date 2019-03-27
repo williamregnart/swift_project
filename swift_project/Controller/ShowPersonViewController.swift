@@ -9,7 +9,9 @@
 import UIKit
 
 class ShowPersonViewController: UIViewController,UITextFieldDelegate {
-
+    @IBOutlet weak var creanceTable: UITableView!
+    
+    @IBOutlet weak var costTable: UITableView!
     @IBOutlet weak var namePersonLabel: UILabel!
     
     var person: Person? = nil

@@ -35,7 +35,7 @@ extension Person{
     }
     
     var creancesCostPerson: CostPersonSet{
-        let creanceList = CostPersonDAO.getCostPersonbyPerson(person: self)
+        let creanceList = CostPersonDAO.getCostsPersonByPerson(person: self)
         let result = CostPersonSet()
         for creance in creanceList{
             result.add(personCost: creance)

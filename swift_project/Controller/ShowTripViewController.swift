@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ShowTripViewController: UIViewController,UITextFieldDelegate {
+class ShowTripViewController: UIViewController,UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate {
 
     var trip: Trip? = nil
     @IBOutlet weak var nameTrip: UILabel!
@@ -23,6 +23,16 @@ class ShowTripViewController: UIViewController,UITextFieldDelegate {
         }
 
         // Do any additional setup after loading the view.
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.personsTable.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as! PersonTableViewCell
+        cell.voyage.text = self.trips[indexPath.row].name
+        return cell
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

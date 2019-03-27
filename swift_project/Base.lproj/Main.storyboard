@@ -317,6 +317,8 @@
                         <viewLayoutGuide key="safeArea" id="9JY-Fp-kXT"/>
                     </view>
                     <connections>
+                        <outlet property="costTable" destination="Ejz-3n-30f" id="YaP-ti-zsZ"/>
+                        <outlet property="cranceTable" destination="FHm-YA-b1v" id="cje-x0-Qhe"/>
                         <outlet property="namePersonLabel" destination="0g9-Ce-vmE" id="iZv-9G-pt2"/>
                     </connections>
                 </viewController>

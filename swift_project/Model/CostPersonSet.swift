@@ -52,7 +52,7 @@ class CostPersonSet: Sequence{
     func contains(person : Person)-> Bool {
         var cont : Bool = false
         for p in personsCost {
-            if p.cpperson==person {
+            if p.concernPerson==person {
                 cont = true
             }
         }

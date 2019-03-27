@@ -23,7 +23,7 @@ extension Cost{
     var amount :  Double{
         var total:Double=0
         for costPerson in self.cpersonsWhoPaid.personsCost {
-            total += costPerson.cpcost
+            total += costPerson.amount
         }
         return total
     }

@@ -8,22 +8,13 @@
 
 import UIKit
 
-class CostTableViewController: UIViewController, UITextFieldDelegate {
+class CostTableViewController: UITableViewCell {
     
     @IBOutlet weak var costsTable: UITableView!
     //var costs : CostSetViewModel
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
-    }
-    
-    
-    
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
 

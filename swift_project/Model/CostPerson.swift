@@ -10,29 +10,23 @@ import Foundation
 
 extension CostPerson{
     
-    var cpperson: Person {
-        get{
-            return concernPerson!
-        } set {
-            self.cpperson = newValue
-        }
-    }
-    var cpcost:Double  {
-        get {
-            return (concernCost?.amount)!
-        } set {
-            self.cpcost = newValue
-        }
+    
+    convenience init(person:Person,amount:Double, cost: Cost){
+        self.init()
+        self.concernPerson=person
+        self.concernCost=cost
+        self.amount = amount
     }
     
-    convenience init(person:Person,cost:Double){
+    convenience init(costPerson: CostPerson){
         self.init()
-        self.cpperson=person
-        self.cpcost=cost
+        self.concernPerson = costPerson.concernPerson!
+        self.concernCost = costPerson.concernCost!
+        self.amount = costPerson.amount
     }
     
     static func == (p1: CostPerson, p2: CostPerson) -> Bool{
-        return (p1.cpperson == p2.cpperson) && (p1.cpcost == p2.cpcost)
+        return (p1.concernPerson == p2.concernPerson) && (p1.concernCost == p2.concernCost)
     }
     
     static func !=(p1: CostPerson, p2: CostPerson) -> Bool{
