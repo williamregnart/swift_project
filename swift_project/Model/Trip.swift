@@ -21,7 +21,6 @@ extension Trip{
     var tdate_creation:Date {return self.date_creation!}
     var tdate_begin:Date? {return self.date_begin}
     var tdate_end:Date? {return self.date_end}
-    var tcostSet:CostSet {return CostSet()}
     
     convenience init(name:String,image: UIImage?,date_begin: Date?,date_end: Date?){
         self.init(context: CoreDataManager.context)

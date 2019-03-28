@@ -34,7 +34,6 @@ class NewTripViewController: UIViewController,UITextFieldDelegate {
     
     
     func saveNewTrip(Name:String,Image:UIImage?,Date_begin:Date?,Date_end:Date?){
-        print("my old friend")
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{
             return
         }

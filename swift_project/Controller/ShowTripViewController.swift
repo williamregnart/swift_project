@@ -10,7 +10,7 @@ import UIKit
 
 class ShowTripViewController: UIViewController,UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate {
 
-    var trip: Trip? = nil
+    var trip: TripViewModel? = nil
     @IBOutlet weak var nameTrip: UILabel!
     @IBOutlet weak var personsTable: UITableView!
     
@@ -39,7 +39,7 @@ class ShowTripViewController: UIViewController,UITextFieldDelegate,UITableViewDa
         if (segue.identifier == "showPerson"){
             if let indexPath = self.personsTable.indexPathForSelectedRow{
                 let showPersonViewController = segue.destination as! ShowPersonViewController
-                showPersonViewController.person = self.persons?.getPersonByIndex(index: indexPath.row)
+                showPersonViewController.person?.person = (self.persons?.getPersonByIndex(index: indexPath.row))!
             }
         }
     }

@@ -10,6 +10,8 @@ import Foundation
 
 class PersonViewModel{
     
+    var person : Person
+    
     var name: String
     
     var debts: [Cost] = []
@@ -19,6 +21,7 @@ class PersonViewModel{
     var creancesCostPerson: [CostPerson] = []
     
     init(person: Person){
+        self.person = person
         self.name = person.name ?? ""
         for debt in person.costs{
             self.debts.append(debt)

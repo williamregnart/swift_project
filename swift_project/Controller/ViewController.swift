@@ -6,6 +6,7 @@
 //  Copyright © 2019 REGNART-SANCHEZ. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import CoreData
 
@@ -13,10 +14,11 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     
     var tripCont : tripContainerController
     
+    
     @IBOutlet weak var titleApp: UILabel!
     
     @IBOutlet weak var tripTable: UITableView!
-    var trips:[Trip]=[]
+    var trips: TripSetViewModel2 = TripSetViewModel2(tripSet: TripSet(trips: []))
     
     
     required init?(coder decoder: NSCoder) {
@@ -25,14 +27,15 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         super.init(coder: decoder)
         
     }
+ 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.trips.count
+        return self.trips.tripSet.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tripTable.dequeueReusableCell(withIdentifier: "tripCell", for: indexPath) as! TripTableViewCell
-        cell.voyage.text = self.trips[indexPath.row].name
+        cell.voyage.text = self.trips.getTripByIndex(index: indexPath.row)?.name
         return cell
     }
     
@@ -78,7 +81,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         if segue.identifier == "tripDetails"{
             if let indexPath = self.tripTable.indexPathForSelectedRow{
                 let showTripViewController = segue.destination as! ShowTripViewController
-                showTripViewController.trip = self.trips[indexPath.row]
+                showTripViewController.trip = self.trips.getTripByIndex(index: indexPath.row)
             }
         }
         
@@ -86,7 +89,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
 
     
     @IBAction func addTrip(_ sender: Any) {
-        tripCont.viewWillAppear(true, type: "Création")
+        //tripCont.viewWillAppear(true, type: "Création")
         performSegue(withIdentifier: "newTrip", sender: sender)
     }
     
