@@ -41,6 +41,10 @@
 		C40D8475224B9740007864CC /* PersonSetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D8474224B9740007864CC /* PersonSetViewModel.swift */; };
 		C40D8477224BB03F007864CC /* CostPersonDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D8476224BB03F007864CC /* CostPersonDAO.swift */; };
 		C40D8479224BEA94007864CC /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D8478224BEA94007864CC /* PersonTableViewCell.swift */; };
+		C40D847B224BF103007864CC /* CostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D847A224BF103007864CC /* CostTableViewCell.swift */; };
+		C40D847D224BF770007864CC /* CreanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D847C224BF770007864CC /* CreanceTableViewCell.swift */; };
+		C40D847F224BFC2E007864CC /* CostSetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D847E224BFC2E007864CC /* CostSetViewModel.swift */; };
+		C40D8481224BFCF8007864CC /* PersonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D8480224BFCF8007864CC /* PersonViewModel.swift */; };
 		C44C3E622249A19100AAA767 /* ShowTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C3E612249A19100AAA767 /* ShowTripViewController.swift */; };
 		C44C3E642249AAA000AAA767 /* EditTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C3E632249AAA000AAA767 /* EditTripViewController.swift */; };
 /* End PBXBuildFile section */
@@ -103,6 +107,10 @@
 		C40D8474224B9740007864CC /* PersonSetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonSetViewModel.swift; sourceTree = "<group>"; };
 		C40D8476224BB03F007864CC /* CostPersonDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostPersonDAO.swift; sourceTree = "<group>"; };
 		C40D8478224BEA94007864CC /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
+		C40D847A224BF103007864CC /* CostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostTableViewCell.swift; sourceTree = "<group>"; };
+		C40D847C224BF770007864CC /* CreanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreanceTableViewCell.swift; sourceTree = "<group>"; };
+		C40D847E224BFC2E007864CC /* CostSetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostSetViewModel.swift; sourceTree = "<group>"; };
+		C40D8480224BFCF8007864CC /* PersonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewModel.swift; sourceTree = "<group>"; };
 		C44C3E612249A19100AAA767 /* ShowTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTripViewController.swift; sourceTree = "<group>"; };
 		C44C3E632249AAA000AAA767 /* EditTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTripViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,6 +172,8 @@
 				2C1B255D2244D96A00AD2E80 /* Main.storyboard */,
 				2C1B259E2245261C00AD2E80 /* TripTableViewCell.swift */,
 				C40D8478224BEA94007864CC /* PersonTableViewCell.swift */,
+				C40D847A224BF103007864CC /* CostTableViewCell.swift */,
+				C40D847C224BF770007864CC /* CreanceTableViewCell.swift */,
 				2C1B25632244D96B00AD2E80 /* Assets.xcassets */,
 				2C1B25652244D96B00AD2E80 /* LaunchScreen.storyboard */,
 				2C1B25682244D96B00AD2E80 /* Info.plist */,
@@ -230,6 +240,8 @@
 			children = (
 				90AF496722452DFA0090C242 /* TripSetViewModel.swift */,
 				C40D8474224B9740007864CC /* PersonSetViewModel.swift */,
+				C40D847E224BFC2E007864CC /* CostSetViewModel.swift */,
+				C40D8480224BFCF8007864CC /* PersonViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -390,14 +402,18 @@
 				2C1B25902244E28E00AD2E80 /* ItPersonSet.swift in Sources */,
 				90361C12224A878B0062E27C /* PersonDAO.swift in Sources */,
 				2C1B258E2244E24000AD2E80 /* PersonSet.swift in Sources */,
+				C40D8481224BFCF8007864CC /* PersonViewModel.swift in Sources */,
 				C44C3E642249AAA000AAA767 /* EditTripViewController.swift in Sources */,
+				C40D847D224BF770007864CC /* CreanceTableViewCell.swift in Sources */,
 				2C1B255C2244D96A00AD2E80 /* ViewController.swift in Sources */,
 				2C1B25622244D96A00AD2E80 /* swift_project.xcdatamodeld in Sources */,
 				2C1B25982244EB1000AD2E80 /* CostPersonSet.swift in Sources */,
 				2C1B258C2244E15700AD2E80 /* Person.swift in Sources */,
 				2C1B259D22451FCB00AD2E80 /* TripsTableViewController.swift in Sources */,
 				C40D8461224A136B007864CC /* TripSet.swift in Sources */,
+				C40D847F224BFC2E007864CC /* CostSetViewModel.swift in Sources */,
 				C40D8477224BB03F007864CC /* CostPersonDAO.swift in Sources */,
+				C40D847B224BF103007864CC /* CostTableViewCell.swift in Sources */,
 				90AF496A224534570090C242 /* ItCostSet.swift in Sources */,
 				2C1B25962244EAB200AD2E80 /* CostPerson.swift in Sources */,
 				C40D8467224A5F4A007864CC /* CostTableViewController.swift in Sources */,

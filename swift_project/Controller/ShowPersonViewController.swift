@@ -8,13 +8,14 @@
 
 import UIKit
 
-class ShowPersonViewController: UIViewController,UITextFieldDelegate {
-    @IBOutlet weak var creanceTable: UITableView!
+class ShowPersonViewController: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource {
     
+    
+    @IBOutlet weak var creanceTable: UITableView!
     @IBOutlet weak var costTable: UITableView!
     @IBOutlet weak var namePersonLabel: UILabel!
     
-    var person: Person? = nil
+    var person: PersonViewModel? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,25 @@ class ShowPersonViewController: UIViewController,UITextFieldDelegate {
         }
 
         // Do any additional setup after loading the view.
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if tableView == costTable{
+            let cell = self.costTable.dequeueReusableCell(withIdentifier: "costCell", for: indexPath) as! CostTableViewCell
+            cell.costConcerned.text = self.person?.getDebtByIndex(index: indexPath.row)?.cname
+            cell.amount.text = self.person?.getDebtByIndex(index: indexPath.row)?.amount as! String?
+            return cell
+        }
+        else{
+            let cell = self.costTable.dequeueReusableCell(withIdentifier: "costCell", for: indexPath) as! CreanceTableViewCell
+            cell.costConcerned.text = self.person?.getCreanceByIndex(index: indexPath.row)?.cname
+            cell.amount.text = self.person?.getCreanceByIndex(index: indexPath.row)?.amount as! String?
+            return cell
+        }
     }
     
 
