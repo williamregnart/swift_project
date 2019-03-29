@@ -27,6 +27,15 @@ class PersonSetViewModel{
         return nil
     }
     
+    func addPerson(personName name : String?){
+        if name == nil {
+            return
+        }
+        let person : Person = Person(name : name!)
+        PersonDAO.insert(person: person)
+        self.personSet = PersonDAO.getAllPerson()
+    }
+    
     func getIndexByPerson(person: Person) -> Int?{
         var indexPath = -1
         for index in 0...personSet.count{

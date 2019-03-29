@@ -10,8 +10,15 @@ import UIKit
 
 class ShowTripViewController: UIViewController,UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate {
 
+    @IBAction func addPerson(_ sender: Any) {
+        guard let namePerson = self.getNameInput(personsTable, cellForRowAt: IndexPath()) else {
+            return
+        }
+        persons?.addPerson(personName : namePerson.text)
+    }
     var trip: TripViewModel? = nil
     @IBOutlet weak var nameTrip: UILabel!
+    @IBOutlet weak var imageTrip: UIImageView!
     @IBOutlet weak var personsTable: UITableView!
     
     var persons:PersonSetViewModel? = nil
@@ -20,9 +27,15 @@ class ShowTripViewController: UIViewController,UITextFieldDelegate,UITableViewDa
         super.viewDidLoad()
         if let aTrip = self.trip{
             nameTrip.text = aTrip.name
+            imageTrip.image = aTrip.image
         }
 
         // Do any additional setup after loading the view.
+    }
+    
+    func getNameInput(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITextField? {
+        let cell = self.personsTable.dequeueReusableCell(withIdentifier: "addPersonCell", for: indexPath) as! AddPersonTableViewCell
+        return cell.nameInput
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -30,6 +43,7 @@ class ShowTripViewController: UIViewController,UITextFieldDelegate,UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = self.personsTable.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as! PersonTableViewCell
         cell.personName.text = self.persons?.getPersonByIndex(index: indexPath.row)?.name
         return cell

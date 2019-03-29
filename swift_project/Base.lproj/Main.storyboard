@@ -43,13 +43,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gQf-og-nOA">
-                                                    <rect key="frame" x="93" y="0.0" width="250" height="100"/>
+                                                    <rect key="frame" x="143" y="0.0" width="200" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="Bv2-Is-otT"/>
+                                                        <constraint firstAttribute="width" constant="200" id="cfS-eU-hyt"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="voyage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uB3-Kk-SCp">
-                                                    <rect key="frame" x="5" y="0.0" width="55" height="100"/>
+                                                    <rect key="frame" x="5" y="0.0" width="105" height="100"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -148,8 +149,42 @@
                                     <constraint firstAttribute="width" constant="375" id="WMX-Gh-xeW"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="personCell" rowHeight="59" id="PoT-2Z-VAi" customClass="PersonTableViewCell" customModule="swift_project" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="addPersonCell" rowHeight="59" id="xxq-5y-gZ2" customClass="AddPersonTableViewCell" customModule="swift_project" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="59"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xxq-5y-gZ2" id="aZx-S9-jV3">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="58.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Nom personne" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vgX-HY-uM7">
+                                                    <rect key="frame" x="15" y="14" width="160" height="30"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJO-qo-3Cq">
+                                                    <rect key="frame" x="338" y="22" width="22" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="addPerson:" destination="WLD-8s-XYb" eventType="touchUpInside" id="S61-ep-YTS"/>
+                                                        <action selector="addPerson:" destination="xxq-5y-gZ2" eventType="touchUpInside" id="iHc-Ui-709"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="vgX-HY-uM7" firstAttribute="top" secondItem="aZx-S9-jV3" secondAttribute="topMargin" constant="3" id="BVH-bU-eT6"/>
+                                                <constraint firstItem="vgX-HY-uM7" firstAttribute="leading" secondItem="aZx-S9-jV3" secondAttribute="leadingMargin" id="COu-N9-Hb0"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="vgX-HY-uM7" secondAttribute="bottom" constant="4" id="GPW-cG-YJP"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="vgX-HY-uM7" secondAttribute="trailing" constant="185" id="aZ3-Fm-zKd"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="addPerson" destination="UJO-qo-3Cq" id="buk-61-Pq4"/>
+                                            <outlet property="nameInput" destination="vgX-HY-uM7" id="RVR-a9-y5P"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="personCell" rowHeight="59" id="PoT-2Z-VAi" customClass="PersonTableViewCell" customModule="swift_project" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="87" width="375" height="59"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PoT-2Z-VAi" id="WfV-BV-z1y">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="58.5"/>
@@ -223,6 +258,7 @@
                         <viewLayoutGuide key="safeArea" id="SFP-Mp-3t8"/>
                     </view>
                     <connections>
+                        <outlet property="imageTrip" destination="CBx-V6-cZ5" id="WNT-7o-ErL"/>
                         <outlet property="nameTrip" destination="NHl-Jt-f5c" id="9ev-Oa-39i"/>
                         <outlet property="personsTable" destination="elO-cO-8sz" id="EQd-dT-caE"/>
                     </connections>
@@ -355,6 +391,15 @@
                                     <outlet property="delegate" destination="haV-Ft-03s" id="5v4-et-HQw"/>
                                 </connections>
                             </tableView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="obf-gl-jta">
+                                <rect key="frame" x="0.0" y="-1" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem leftItemsSupplementBackButton="YES" id="VwJ-Um-eWp">
+                                        <barButtonItem key="backBarButtonItem" title="Back" id="zUP-SL-s3g"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
