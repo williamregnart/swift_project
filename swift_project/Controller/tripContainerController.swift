@@ -11,14 +11,19 @@ import UIKit
 
 class tripContainerController: UIViewController {
     
+    var newTrip:  NewTripViewController
+    
     required init?(coder aDecoder: NSCoder, type: String) {
+        newTrip = NewTripViewController()
         super.init(coder: aDecoder)
         viewWillAppear(true, type: type)
     }
     
     required init?(coder aDecoder: NSCoder) {
+        newTrip = NewTripViewController()
         super.init(coder: aDecoder)
     }
+    
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var tripImage: UIImageView!
@@ -31,6 +36,7 @@ class tripContainerController: UIViewController {
     @IBAction func tripValidation(_ sender: Any) {
     }
     @IBAction func tripCancel(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     func viewWillAppear(_ animated: Bool, type: String) {

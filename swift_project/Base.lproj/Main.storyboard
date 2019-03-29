@@ -519,13 +519,14 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="WfV-t3-MLX"/>
                                     <barButtonItem title="Annuler" id="6to-Qk-Svj">
                                         <connections>
-                                            <action selector="cancel:" destination="iiG-Mu-63b" id="d7y-Ix-SYS"/>
+                                            <action selector="tripCancel:" destination="XGN-d5-I6l" id="eIX-1n-JJV"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="u3s-vJ-lFR"/>
                                     <barButtonItem title="Ajouter" id="hf0-Gv-Npx">
                                         <connections>
                                             <action selector="tripValidation:" destination="XGN-d5-I6l" id="bbP-pa-twl"/>
+                                            <segue destination="iiG-Mu-63b" kind="unwind" unwindAction="unwindAfterSaveTripWithSegue:" id="bwb-Gl-5yR"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Q2n-bx-Hbh"/>

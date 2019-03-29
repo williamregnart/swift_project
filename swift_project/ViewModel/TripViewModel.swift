@@ -11,6 +11,7 @@ import UIKit
 
 class TripViewModel{
     
+    var trip: Trip
     var name:String
     var image: UIImage?
     var persons: [Person] = []
@@ -19,6 +20,7 @@ class TripViewModel{
     var date_end:Date?
     
     init(trip: Trip){
+        self.trip = trip
         self.name = trip.name ?? ""
         self.image = trip.timage
         for person in trip.persons{

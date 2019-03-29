@@ -28,10 +28,6 @@ class NewTripViewController: UIViewController,UITextFieldDelegate {
         return true
     }
     
-    @IBAction func cancel(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
     
     func saveNewTrip(Name:String,Image:UIImage?,Date_begin:Date?,Date_end:Date?){
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{
@@ -45,10 +41,11 @@ class NewTripViewController: UIViewController,UITextFieldDelegate {
         trip.date_end = Date_end
         do{
             try context.save()
+            print("save")
             //self.trips.append(trip)
         }
         catch let error as NSError{
-            //self.alertError(errorMsg: "\(error)",userInfo: "\(error.userInfo)")
+           print(error)
         }
     }
     
