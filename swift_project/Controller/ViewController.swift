@@ -66,6 +66,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         let containerTripController = segue.source as! tripContainerController
         if let name = containerTripController.nameTextField.text{
             containerTripController.newTrip.saveNewTrip(Name: name, Image: nil, Date_begin: nil, Date_end: nil)
+            self.trips = TripSetViewModel2(tripSet: TripSet())
             self.tripTable.reloadData()
         }
     }
