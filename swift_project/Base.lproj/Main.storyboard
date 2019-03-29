@@ -165,10 +165,6 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJO-qo-3Cq">
                                                     <rect key="frame" x="338" y="22" width="22" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <connections>
-                                                        <action selector="addPerson:" destination="WLD-8s-XYb" eventType="touchUpInside" id="S61-ep-YTS"/>
-                                                        <action selector="addPerson:" destination="xxq-5y-gZ2" eventType="touchUpInside" id="iHc-Ui-709"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -179,7 +175,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="addPerson" destination="UJO-qo-3Cq" id="buk-61-Pq4"/>
+                                            <outlet property="actionButton" destination="UJO-qo-3Cq" id="mS5-gK-Rmf"/>
                                             <outlet property="nameInput" destination="vgX-HY-uM7" id="RVR-a9-y5P"/>
                                         </connections>
                                     </tableViewCell>
@@ -228,6 +224,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="WLD-8s-XYb" id="HkA-11-bDF"/>
+                                    <outlet property="delegate" destination="WLD-8s-XYb" id="2Ml-KH-DNi"/>
+                                </connections>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dU6-fQ-6Wf">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

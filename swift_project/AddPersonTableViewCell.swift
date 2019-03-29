@@ -12,9 +12,8 @@ class AddPersonTableViewCell: UITableViewCell, UITextFieldDelegate {
 
     
     @IBOutlet weak var nameInput: UITextField!
+    @IBOutlet weak var actionButton: UIButton!
     
-    @IBAction func addPerson(_ sender: Any) {
-    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

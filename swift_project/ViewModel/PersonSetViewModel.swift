@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class PersonSetViewModel{
     
@@ -16,6 +17,10 @@ class PersonSetViewModel{
         for person in personSet.personList{
             self.personSet.append(person)
         }
+    }
+    
+    init(){
+        self.personSet = []
     }
     
     func getPersonByIndex(index: Int?) -> Person?{
@@ -28,11 +33,26 @@ class PersonSetViewModel{
     }
     
     func addPerson(personName name : String?){
+        print("hello")
         if name == nil {
+            print("oups")
             return
         }
-        let person : Person = Person(name : name!)
-        PersonDAO.insert(person: person)
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{
+            return
+        }
+        let context = appDelegate.persistentContainer.viewContext
+        let person = Person(context: context)
+        person.name = name
+        do{
+            try context.save()
+            print("save")
+            //self.trips.append(trip)
+        }
+        catch let error as NSError{
+            print(error)
+        }
+        print("insert done")
         self.personSet = PersonDAO.getAllPerson()
     }
     

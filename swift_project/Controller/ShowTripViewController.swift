@@ -10,18 +10,19 @@ import UIKit
 
 class ShowTripViewController: UIViewController,UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate {
 
-    @IBAction func addPerson(_ sender: Any) {
+    @objc
+    func addPerson(_ sender: Any) {
         guard let namePerson = self.getNameInput(personsTable, cellForRowAt: IndexPath()) else {
             return
         }
-        persons?.addPerson(personName : namePerson.text)
+        persons.addPerson(personName : namePerson.text)
     }
     var trip: TripViewModel? = nil
     @IBOutlet weak var nameTrip: UILabel!
     @IBOutlet weak var imageTrip: UIImageView!
     @IBOutlet weak var personsTable: UITableView!
     
-    var persons:PersonSetViewModel? = nil
+    var persons:PersonSetViewModel = PersonSetViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,17 +44,24 @@ class ShowTripViewController: UIViewController,UITextFieldDelegate,UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = self.personsTable.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as! PersonTableViewCell
-        cell.personName.text = self.persons?.getPersonByIndex(index: indexPath.row)?.name
-        return cell
+        print(indexPath.row)
+        if(indexPath.row==0){
+            let cell = self.personsTable.dequeueReusableCell(withIdentifier: "addPersonCell", for: indexPath) as! AddPersonTableViewCell
+            cell.actionButton.addTarget(self, action: #selector(addPerson), for: .touchUpInside)
+            return cell
+        }
+        else{
+            let cell = self.personsTable.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as! PersonTableViewCell
+            cell.personName.text = self.persons.getPersonByIndex(index: indexPath.row)?.name
+            return cell
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "showPerson"){
             if let indexPath = self.personsTable.indexPathForSelectedRow{
                 let showPersonViewController = segue.destination as! ShowPersonViewController
-                showPersonViewController.person?.person = (self.persons?.getPersonByIndex(index: indexPath.row))!
+                showPersonViewController.person?.person = (self.persons.getPersonByIndex(index: indexPath.row))!
             }
         }
     }
