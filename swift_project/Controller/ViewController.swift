@@ -36,6 +36,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tripTable.dequeueReusableCell(withIdentifier: "tripCell", for: indexPath) as! TripTableViewCell
         cell.voyage.text = self.trips.getTripByIndex(index: indexPath.row)?.name
+        cell.imgVoyage.image = self.trips.getTripByIndex(index: indexPath.row)?.image
         return cell
     }
     
