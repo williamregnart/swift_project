@@ -14,7 +14,10 @@ extension Trip{
     
     var tname:String {return self.name ?? ""}
     var timage: UIImage? {
-        get{return UIImage(data: self.image!)}
+        get{if(self.image == nil){
+            return UIImage(named: "img")
+            }
+            return UIImage(data: self.image!)}
         set{self.image = newValue?.pngData()}
     }
     var persons: PersonSet {return PersonSet(persons: [])}
@@ -26,6 +29,7 @@ extension Trip{
         self.init(context: CoreDataManager.context)
         self.name=name
         guard image != nil else{
+            self.image = UIImage(named: "img")?.pngData()
             return
         }
         self.image = image?.pngData()

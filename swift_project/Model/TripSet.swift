@@ -13,11 +13,7 @@ class TripSet: Sequence {
     var tripList : [Trip]
     
     init(){
-        self.tripList = []
-    }
-    
-    init(trips : [Trip]){
-        self.tripList = trips
+        self.tripList = TripDAO.getAllTrip()
     }
     
     var isEmpty : Bool {

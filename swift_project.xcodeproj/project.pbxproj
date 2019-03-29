@@ -49,6 +49,7 @@
 		C40D8485224D0E32007864CC /* TripSetViewModel2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D8484224D0E32007864CC /* TripSetViewModel2.swift */; };
 		C44C3E622249A19100AAA767 /* ShowTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C3E612249A19100AAA767 /* ShowTripViewController.swift */; };
 		C44C3E642249AAA000AAA767 /* EditTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C3E632249AAA000AAA767 /* EditTripViewController.swift */; };
+		C4E8ABA5224E2ED0007C0853 /* TripDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E8ABA4224E2ED0007C0853 /* TripDAO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		C40D8484224D0E32007864CC /* TripSetViewModel2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripSetViewModel2.swift; sourceTree = "<group>"; };
 		C44C3E612249A19100AAA767 /* ShowTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTripViewController.swift; sourceTree = "<group>"; };
 		C44C3E632249AAA000AAA767 /* EditTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTripViewController.swift; sourceTree = "<group>"; };
+		C4E8ABA4224E2ED0007C0853 /* TripDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDAO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +269,7 @@
 				C40D846A224A6288007864CC /* CostDAO.swift */,
 				90361C11224A878B0062E27C /* PersonDAO.swift */,
 				C40D8476224BB03F007864CC /* CostPersonDAO.swift */,
+				C4E8ABA4224E2ED0007C0853 /* TripDAO.swift */,
 			);
 			path = DAO;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				2C1B259D22451FCB00AD2E80 /* TripsTableViewController.swift in Sources */,
 				C40D8461224A136B007864CC /* TripSet.swift in Sources */,
 				C40D847F224BFC2E007864CC /* CostSetViewModel.swift in Sources */,
+				C4E8ABA5224E2ED0007C0853 /* TripDAO.swift in Sources */,
 				C40D8477224BB03F007864CC /* CostPersonDAO.swift in Sources */,
 				C40D847B224BF103007864CC /* CostTableViewCell.swift in Sources */,
 				90AF496A224534570090C242 /* ItCostSet.swift in Sources */,

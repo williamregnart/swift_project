@@ -18,7 +18,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     @IBOutlet weak var titleApp: UILabel!
     
     @IBOutlet weak var tripTable: UITableView!
-    var trips: TripSetViewModel2 = TripSetViewModel2(tripSet: TripSet(trips: []))
+    var trips: TripSetViewModel2 = TripSetViewModel2(tripSet: TripSet())
     
     
     required init?(coder decoder: NSCoder) {

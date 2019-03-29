@@ -1,41 +1,37 @@
 //
-//  File.swift
+//  TripDAO.swift
 //  swift_project
 //
-//  Created by DIEGO KRZYZANOWSKI on 26/03/2019.
+//  Created by DIEGO KRZYZANOWSKI on 29/03/2019.
 //  Copyright © 2019 REGNART-SANCHEZ. All rights reserved.
 //
 
 import Foundation
 import CoreData
-import UIKit
 
-class TripDAO {
-    static let request : NSFetchRequest<Trip_Data> = Trip_Data.fetchRequest()
+class TripDAO{
+    
+    static let request :NSFetchRequest<Trip> = Trip.fetchRequest()
+    
     static func save(){
         CoreDataManager.save()
     }
-    static func delete(trip: Trip_Data){
+    
+    static func delete(trip: Trip){
         CoreDataManager.context.delete(trip)
     }
-    static func fetchAll() -> [Trip_Data]?{
+    
+    static func insert(trip: Trip){
+        CoreDataManager.context.insert(trip)
+    }
+    
+    static func getAllTrip() -> [Trip]{
         self.request.predicate = nil
         do{
             return try CoreDataManager.context.fetch(self.request)
         }
         catch{
-            return nil
-        } }
-    static func search(forTrip trip: String?) -> Trip_Data?{
-        if let trip = trip{
-            self.request.predicate = NSPredicate(format: "nameTrip == %@", trip)
+            return []
         }
-        do{
-            let result = try CoreDataManager.context.fetch(request) as [Trip_Data]
-            guard result.count != 0 else { return nil }
-            guard result.count == 1 else { fatalError("duplicate entries") }
-            return result[0]
-        } catch{
-            return nil
-        } }
+    }
 }
