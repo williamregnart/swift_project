@@ -44,4 +44,9 @@ class TripViewModel{
     static func == (t1 : TripViewModel,t2 : TripViewModel)->Bool{
         return t1.name == t2.name
     }
+    
+    func addPerson(p: Person){
+        persons.append(p)
+        trip.addPerson(p: p)
+    }
 }

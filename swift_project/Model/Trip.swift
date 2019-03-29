@@ -44,4 +44,8 @@ extension Trip{
             }
         }
     }
+    
+    func addPerson(p : Person){
+        persons.add(person: p)
+    }
 }

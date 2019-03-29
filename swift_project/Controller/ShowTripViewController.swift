@@ -15,7 +15,9 @@ class ShowTripViewController: UIViewController,UITextFieldDelegate,UITableViewDa
         guard let namePerson = self.getNameInput(personsTable, cellForRowAt: IndexPath()) else {
             return
         }
+        
         persons.addPerson(personName : namePerson.text)
+        self.personsTable.reloadData()
     }
     var trip: TripViewModel? = nil
     @IBOutlet weak var nameTrip: UILabel!
