@@ -49,4 +49,5 @@ class TripViewModel{
         persons.append(p)
         trip.addPerson(p: p)
     }
+    
 }

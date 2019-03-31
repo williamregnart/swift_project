@@ -13,7 +13,6 @@ extension Person{
     
     var pname: String{return self.name!}
     
-    
     //Liste de type CostSet des depenses de la personne
     var costs: CostSet{
         let costList = CostDAO.getDebtByPerson(person: self)

@@ -20,7 +20,13 @@ extension Trip{
             return UIImage(data: self.image!)}
         set{self.image = newValue?.pngData()}
     }
-    var persons: PersonSet {return PersonSet(persons: [])}
+    var persons: PersonSet {
+        let personList = PersonSet()
+        for p in self.hasPerson!{
+            personList.add(person: p as! Person)
+        }
+        return personList
+    }
     var tdate_creation:Date {return self.date_creation!}
     var tdate_begin:Date? {return self.date_begin}
     var tdate_end:Date? {return self.date_end}
@@ -33,10 +39,10 @@ extension Trip{
             return
         }
         self.image = image?.pngData()
-        self.getPersons()
         self.date_creation=Date()
     }
     
+    /*
     func getPersons(){
         for p: Any in self.mutableArrayValue(forKey: "hasPerson"){
             if((p as! Person).belongsTo == self){
@@ -44,8 +50,14 @@ extension Trip{
             }
         }
     }
+ */
     
     func addPerson(p : Person){
         persons.add(person: p)
+        self.addToHasPerson(p)
+        self.hasPerson?.adding(p)
+        p.belongsTo = self
     }
+    
+    
 }

@@ -28,6 +28,6 @@
         <element name="Cost" positionX="148.52734375" positionY="280.46484375" width="128" height="88"/>
         <element name="CostPerson" positionX="169.83203125" positionY="37.90234375" width="128" height="90"/>
         <element name="Person" positionX="-180.87890625" positionY="25.53515625" width="128" height="105"/>
-        <element name="Trip" positionX="204.7421875" positionY="-310.10546875" width="128" height="133"/>
+        <element name="Trip" positionX="204.7421875" positionY="-310.10546875" width="128" height="135"/>
     </elements>
 </model>
