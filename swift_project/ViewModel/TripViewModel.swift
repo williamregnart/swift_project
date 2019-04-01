@@ -35,7 +35,6 @@ class TripViewModel{
     func getPersonByIndex(index: Int?) -> Person?{
         if let i = index {
             if i>=0 && i<self.persons.count {
-                print(self.persons[i].name)
                 return self.persons[i]
             }
         }

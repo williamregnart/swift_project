@@ -10,14 +10,13 @@ import UIKit
 
 class ShowTripViewController: UIViewController,UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate {
 
+    var inputPerson: UITextField!
+    
     @objc
     func addPerson(_ sender: Any) {
-        guard let namePerson = self.getNameInput(personsTable, cellForRowAt: IndexPath()) else {
-            return
-        }
-        print(namePerson)
-        let p = Person(name: namePerson)
+        let p = Person(name: self.inputPerson.text!)
         trip?.addPerson(person: p)
+        persons.append(p)
         self.personsTable.reloadData()
     }
     var trip: TripViewModel? = nil
@@ -25,26 +24,22 @@ class ShowTripViewController: UIViewController,UITextFieldDelegate,UITableViewDa
     @IBOutlet weak var imageTrip: UIImageView!
     @IBOutlet weak var personsTable: UITableView!
     
-    var persons:PersonSetViewModel = PersonSetViewModel()
+    var persons:[Person] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         if let aTrip = self.trip{
             nameTrip.text = aTrip.name
             imageTrip.image = aTrip.image
+            persons = aTrip.persons
         }
 
         // Do any additional setup after loading the view.
     }
     
-    func getNameInput(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> String? {
-        if(indexPath.row==0){
-            let cell = self.personsTable.dequeueReusableCell(withIdentifier: "addPersonCell") as! AddPersonTableViewCell
-            return cell.nameInput.text
-        }
-        else{
-            return ""
-        }
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -60,6 +55,7 @@ class ShowTripViewController: UIViewController,UITextFieldDelegate,UITableViewDa
         if(indexPath.section==0){
             let cell = self.personsTable.dequeueReusableCell(withIdentifier: "addPersonCell", for: indexPath) as! AddPersonTableViewCell
             cell.actionButton.addTarget(self, action: #selector(addPerson), for: .touchUpInside)
+            inputPerson = cell.nameInput
             return cell
         }
         else{
@@ -86,7 +82,7 @@ class ShowTripViewController: UIViewController,UITextFieldDelegate,UITableViewDa
         if (segue.identifier == "showPerson"){
             if let indexPath = self.personsTable.indexPathForSelectedRow{
                 let showPersonViewController = segue.destination as! ShowPersonViewController
-                showPersonViewController.person?.person = (self.persons.getPersonByIndex(index: indexPath.row))!
+                showPersonViewController.person?.person = (self.trip!.getPersonByIndex(index: indexPath.row))!
             }
         }
     }

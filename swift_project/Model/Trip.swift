@@ -54,7 +54,7 @@ extension Trip{
     
     func addPerson(p : Person){
         persons.add(person: p)
-        self.addToHasPerson(p)
+        self.hasPerson?.adding(p)
         p.belongsTo = self
     }
     
