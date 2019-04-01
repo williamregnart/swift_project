@@ -12,22 +12,12 @@ import CoreData
 
 class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
-    var tripCont : tripContainerController
     
     
     @IBOutlet weak var titleApp: UILabel!
     
     @IBOutlet weak var tripTable: UITableView!
     var trips: TripSetViewModel2 = TripSetViewModel2(tripSet: TripSet())
-    
-    
-    required init?(coder decoder: NSCoder) {
-        //self.tripCont = tripContainerController()
-        self.tripCont = tripContainerController(coder: decoder)!
-        super.init(coder: decoder)
-        
-    }
- 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.trips.tripSet.count
@@ -65,8 +55,9 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     @IBAction func unwindAfterSaveTrip(segue: UIStoryboardSegue){
         let newTripController = segue.source as! NewTripViewController
         if let name = newTripController.nameInput.text{
-            self.saveNewTrip(Name: name, Image: nil, Date_begin: nil, Date_end: nil)
+            self.saveNewTrip(Name: name, Image: newTripController.myImageView.image, Date_begin: newTripController.date_begin_input.date, Date_end: newTripController.date_end_input.date)
         }
+        performSegue(withIdentifier: "newTrip", sender: segue.source)
     }
     
     func getContext(errorMsg: String, userInfoMsg: String = "could not retrieve data context") -> NSManagedObjectContext?{
@@ -89,7 +80,6 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
 
     
     @IBAction func addTrip(_ sender: Any) {
-        //tripCont.viewWillAppear(true, type: "Création")
         performSegue(withIdentifier: "newTrip", sender: sender)
     }
     

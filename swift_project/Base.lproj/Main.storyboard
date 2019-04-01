@@ -69,7 +69,7 @@
                                         <connections>
                                             <outlet property="imgVoyage" destination="gQf-og-nOA" id="Nyx-fn-dgN"/>
                                             <outlet property="voyage" destination="uB3-Kk-SCp" id="eaD-Ik-MZh"/>
-                                            <segue destination="WLD-8s-XYb" kind="show" identifier="tripDetails" id="cuI-Rb-YAL"/>
+                                            <segue destination="WLD-8s-XYb" kind="showDetail" identifier="tripDetails" id="hTb-9g-YJp"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -229,11 +229,10 @@
                                     <outlet property="delegate" destination="WLD-8s-XYb" id="2Ml-KH-DNi"/>
                                 </connections>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dU6-fQ-6Wf">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dU6-fQ-6Wf">
+                                <rect key="frame" x="0.0" y="40" width="375" height="44"/>
                                 <items>
-                                    <navigationItem title="Détails du voyage" id="Zhk-mf-g5y"/>
+                                    <navigationItem leftItemsSupplementBackButton="YES" id="Zhk-mf-g5y"/>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -242,7 +241,9 @@
                             <constraint firstItem="CBx-V6-cZ5" firstAttribute="top" secondItem="NHl-Jt-f5c" secondAttribute="bottom" constant="8" symbolic="YES" id="5zT-Ha-3Jb"/>
                             <constraint firstItem="elO-cO-8sz" firstAttribute="centerX" secondItem="2Cr-8F-44P" secondAttribute="centerX" id="98G-B2-VK3"/>
                             <constraint firstItem="SFP-Mp-3t8" firstAttribute="trailing" secondItem="txN-Wf-5cW" secondAttribute="trailing" constant="20" id="D95-va-Jab"/>
+                            <constraint firstItem="dU6-fQ-6Wf" firstAttribute="trailing" secondItem="SFP-Mp-3t8" secondAttribute="trailing" id="ETG-hE-UD6"/>
                             <constraint firstItem="CBx-V6-cZ5" firstAttribute="top" secondItem="SFP-Mp-3t8" secondAttribute="top" constant="70" id="ISH-PC-dCa"/>
+                            <constraint firstItem="dU6-fQ-6Wf" firstAttribute="top" secondItem="2Cr-8F-44P" secondAttribute="topMargin" constant="20" id="KA1-Fg-aFF"/>
                             <constraint firstItem="nkr-Op-aW3" firstAttribute="trailing" secondItem="SFP-Mp-3t8" secondAttribute="trailing" id="LjH-jD-vg7"/>
                             <constraint firstItem="txN-Wf-5cW" firstAttribute="leading" secondItem="NHl-Jt-f5c" secondAttribute="trailing" constant="210" id="N0v-KK-m02"/>
                             <constraint firstItem="elO-cO-8sz" firstAttribute="top" secondItem="CBx-V6-cZ5" secondAttribute="bottom" constant="25" id="OEe-fC-uUj"/>
@@ -253,6 +254,7 @@
                             <constraint firstItem="nkr-Op-aW3" firstAttribute="bottom" secondItem="SFP-Mp-3t8" secondAttribute="bottom" id="qH7-Uw-fXI"/>
                             <constraint firstItem="NHl-Jt-f5c" firstAttribute="top" secondItem="SFP-Mp-3t8" secondAttribute="top" constant="41" id="r69-jg-fD9"/>
                             <constraint firstItem="CBx-V6-cZ5" firstAttribute="centerX" secondItem="2Cr-8F-44P" secondAttribute="centerX" id="tA1-gr-tWD"/>
+                            <constraint firstItem="dU6-fQ-6Wf" firstAttribute="leading" secondItem="SFP-Mp-3t8" secondAttribute="leading" id="uCu-ac-Eff"/>
                             <constraint firstItem="txN-Wf-5cW" firstAttribute="top" secondItem="SFP-Mp-3t8" secondAttribute="top" constant="35" id="yfI-uq-O4C"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SFP-Mp-3t8"/>
@@ -448,6 +450,9 @@
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nom du voyage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JEl-M1-5OZ">
                                 <rect key="frame" x="136" y="53" width="122" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="hSj-Ql-9uP"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -456,8 +461,11 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZzG-MS-BpB">
-                                <rect key="frame" x="16" y="217" width="125" height="30"/>
+                                <rect key="frame" x="16" y="217" width="122" height="32"/>
                                 <state key="normal" title="Ajouter une image"/>
+                                <connections>
+                                    <action selector="importImage:" destination="Fiu-0Z-8fr" eventType="touchUpInside" id="d26-FD-3AA"/>
+                                </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Jke-q8-mqT">
                                 <rect key="frame" x="125" y="483" width="320" height="100"/>
@@ -493,7 +501,11 @@
                                 </date>
                             </datePicker>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zDV-Ed-ziF">
-                                <rect key="frame" x="162" y="133" width="197" height="198"/>
+                                <rect key="frame" x="159" y="133" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="210-4c-eOe"/>
+                                    <constraint firstAttribute="width" constant="200" id="byN-mD-oP5"/>
+                                </constraints>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rg0-ox-sfD">
                                 <rect key="frame" x="0.0" y="622" width="375" height="45"/>
@@ -520,7 +532,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="oFT-bW-spW" firstAttribute="centerX" secondItem="lyE-bB-aa1" secondAttribute="centerX" id="2B9-Qg-DLL"/>
-                            <constraint firstItem="zDV-Ed-ziF" firstAttribute="top" secondItem="JEl-M1-5OZ" secondAttribute="bottom" constant="50" id="7TY-pD-aLG"/>
                             <constraint firstItem="rg0-ox-sfD" firstAttribute="bottom" secondItem="3PI-4j-iE5" secondAttribute="bottom" id="A4Y-vG-ecM"/>
                             <constraint firstItem="rg0-ox-sfD" firstAttribute="top" secondItem="Jke-q8-mqT" secondAttribute="bottom" constant="39" id="AMr-Fk-yD3"/>
                             <constraint firstItem="ZzG-MS-BpB" firstAttribute="centerY" secondItem="zDV-Ed-ziF" secondAttribute="centerY" id="IO2-qj-oa3"/>
@@ -529,6 +540,7 @@
                             <constraint firstItem="zDV-Ed-ziF" firstAttribute="leading" secondItem="ZzG-MS-BpB" secondAttribute="trailing" constant="21" id="Uln-ds-Fqz"/>
                             <constraint firstItem="oFT-bW-spW" firstAttribute="leading" secondItem="3PI-4j-iE5" secondAttribute="leading" constant="23" id="agf-7I-kJa"/>
                             <constraint firstItem="KIU-3t-cob" firstAttribute="leading" secondItem="oFT-bW-spW" secondAttribute="trailing" constant="46" id="cKJ-nh-wQa"/>
+                            <constraint firstItem="zDV-Ed-ziF" firstAttribute="top" secondItem="JEl-M1-5OZ" secondAttribute="bottom" constant="50" id="dT7-CE-U9p"/>
                             <constraint firstItem="rg0-ox-sfD" firstAttribute="top" secondItem="lyE-bB-aa1" secondAttribute="bottom" constant="97" id="fAw-HG-bfW"/>
                             <constraint firstItem="JEl-M1-5OZ" firstAttribute="top" secondItem="3PI-4j-iE5" secondAttribute="top" constant="33" id="fK5-KR-dUS"/>
                             <constraint firstItem="lyE-bB-aa1" firstAttribute="top" secondItem="oFT-bW-spW" secondAttribute="bottom" constant="84" id="gIQ-bl-y0d"/>
@@ -543,6 +555,9 @@
                         <viewLayoutGuide key="safeArea" id="3PI-4j-iE5"/>
                     </view>
                     <connections>
+                        <outlet property="dateBegin" destination="KIU-3t-cob" id="nR0-SW-ylR"/>
+                        <outlet property="dateEnd" destination="Jke-q8-mqT" id="Rzj-Lb-mze"/>
+                        <outlet property="myImageView" destination="zDV-Ed-ziF" id="TrH-qn-Oo2"/>
                         <outlet property="nameInput" destination="JEl-M1-5OZ" id="VtG-z2-RSh"/>
                     </connections>
                 </viewController>
@@ -561,6 +576,9 @@
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nom du voyage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8as-Gw-3P8">
                                 <rect key="frame" x="136" y="50" width="122" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Vkt-B4-Iao"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -570,10 +588,17 @@
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aDG-8w-WXK">
                                 <rect key="frame" x="165" y="130" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="K1w-Xj-fG9"/>
+                                    <constraint firstAttribute="width" constant="200" id="UEM-S6-7da"/>
+                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wV1-P1-8Ba">
                                 <rect key="frame" x="20" y="215" width="125" height="30"/>
                                 <state key="normal" title="Ajouter une image"/>
+                                <connections>
+                                    <action selector="importImage:" destination="Uc8-7j-FCu" eventType="touchUpInside" id="hDn-sC-kyx"/>
+                                </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Csr-Kr-T5m">
                                 <rect key="frame" x="115" y="483" width="250" height="100"/>
@@ -659,6 +684,7 @@
                     <connections>
                         <outlet property="date_begin_input" destination="N3d-ns-Aec" id="Thq-i0-9Gy"/>
                         <outlet property="date_end_input" destination="Csr-Kr-T5m" id="R1g-KV-fY9"/>
+                        <outlet property="myImageView" destination="aDG-8w-WXK" id="NgX-C7-bk5"/>
                         <outlet property="nameInput" destination="8as-Gw-3P8" id="7jv-cm-9lp"/>
                     </connections>
                 </viewController>
