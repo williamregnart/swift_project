@@ -33,9 +33,7 @@ class PersonSetViewModel{
     }
     
     func addPerson(personName name : String?){
-        print("hello")
         if name == nil {
-            print("oups")
             return
         }
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{
@@ -46,13 +44,11 @@ class PersonSetViewModel{
         person.name = name
         do{
             try context.save()
-            print("save")
             //self.trips.append(trip)
         }
         catch let error as NSError{
             print(error)
         }
-        print("insert done")
         self.personSet = PersonDAO.getAllPerson()
     }
     

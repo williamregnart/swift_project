@@ -21,7 +21,10 @@ class PersonDAO{
     }
     
     static func insert(person p : Person){
+        let personData = Person(context: CoreDataManager.context)
+        personData.name = p.name
         CoreDataManager.context.insert(p)
+        self.save()
     }
     
     static func update(person p : Person){

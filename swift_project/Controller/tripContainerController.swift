@@ -10,17 +10,13 @@ import Foundation
 import UIKit
 
 class tripContainerController: UIViewController {
-    
-    var newTrip:  NewTripViewController
-    
+   
     required init?(coder aDecoder: NSCoder, type: String) {
-        newTrip = NewTripViewController()
         super.init(coder: aDecoder)
         viewWillAppear(true, type: type)
     }
     
     required init?(coder aDecoder: NSCoder) {
-        newTrip = NewTripViewController()
         super.init(coder: aDecoder)
     }
     

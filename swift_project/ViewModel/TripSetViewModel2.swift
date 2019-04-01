@@ -40,4 +40,9 @@ class TripSetViewModel2{
         return indexPath
     }
     
+    func addTrip(trip : Trip){
+        let tripViewModel = TripViewModel(trip: trip)
+        self.tripSet.append(tripViewModel)
+        TripDAO.insert(trip: trip)
+    }
 }

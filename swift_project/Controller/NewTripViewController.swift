@@ -28,27 +28,11 @@ class NewTripViewController: UIViewController,UITextFieldDelegate {
         return true
     }
     
-    
-    func saveNewTrip(Name:String,Image:UIImage?,Date_begin:Date?,Date_end:Date?){
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{
-            return
-        }
-        let context = appDelegate.persistentContainer.viewContext
-        let trip = Trip(context: context)
-        trip.name = Name
-        trip.date_creation = Date()
-        trip.date_begin = Date_begin
-        trip.date_end = Date_end
-        do{
-            try context.save()
-            print("save")
-            //self.trips.append(trip)
-        }
-        catch let error as NSError{
-           print(error)
-        }
+    @IBAction func cancel(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
+
     /*
     // MARK: - Navigation
 

@@ -10,7 +10,9 @@ import UIKit
 
 class EditTripViewController: UIViewController, UITextFieldDelegate {
 
+
     @IBOutlet weak var nameInput: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

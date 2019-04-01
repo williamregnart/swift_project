@@ -35,6 +35,7 @@ class TripViewModel{
     func getPersonByIndex(index: Int?) -> Person?{
         if let i = index {
             if i>=0 && i<self.persons.count {
+                print(self.persons[i].name)
                 return self.persons[i]
             }
         }
@@ -45,9 +46,19 @@ class TripViewModel{
         return t1.name == t2.name
     }
     
-    func addPerson(p: Person){
-        persons.append(p)
-        trip.addPerson(p: p)
+    func addPerson(person: Person){
+        persons.append(person)
+        trip.addPerson(p: person)
+        TripDAO.save()
+        
     }
     
+    func editTrip(name: String?,image: UIImage?,date_begin: Date?,date_end: Date?){
+        self.name = name ?? self.name
+        self.image = image ?? self.image
+        self.date_begin = date_begin ?? self.date_begin
+        self.date_end = date_end ?? self.date_end
+        self.trip.editTrip(name: name,image: image,date_begin: date_begin,date_end: date_end)
+        TripDAO.save()
+    }
 }

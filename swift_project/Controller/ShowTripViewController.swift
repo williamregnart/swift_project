@@ -15,8 +15,9 @@ class ShowTripViewController: UIViewController,UITextFieldDelegate,UITableViewDa
         guard let namePerson = self.getNameInput(personsTable, cellForRowAt: IndexPath()) else {
             return
         }
-        
-        persons.addPerson(personName : namePerson.text)
+        print(namePerson)
+        let p = Person(name: namePerson)
+        trip?.addPerson(person: p)
         self.personsTable.reloadData()
     }
     var trip: TripViewModel? = nil
@@ -36,27 +37,49 @@ class ShowTripViewController: UIViewController,UITextFieldDelegate,UITableViewDa
         // Do any additional setup after loading the view.
     }
     
-    func getNameInput(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITextField? {
-        let cell = self.personsTable.dequeueReusableCell(withIdentifier: "addPersonCell", for: indexPath) as! AddPersonTableViewCell
-        return cell.nameInput
+    func getNameInput(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> String? {
+        if(indexPath.row==0){
+            let cell = self.personsTable.dequeueReusableCell(withIdentifier: "addPersonCell") as! AddPersonTableViewCell
+            return cell.nameInput.text
+        }
+        else{
+            return ""
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if (section==0){
+            return 1
+        }
+        else{
+            return self.trip?.persons.count ?? 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print(indexPath.row)
-        if(indexPath.row==0){
+        if(indexPath.section==0){
             let cell = self.personsTable.dequeueReusableCell(withIdentifier: "addPersonCell", for: indexPath) as! AddPersonTableViewCell
             cell.actionButton.addTarget(self, action: #selector(addPerson), for: .touchUpInside)
             return cell
         }
         else{
             let cell = self.personsTable.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as! PersonTableViewCell
-            cell.personName.text = self.persons.getPersonByIndex(index: indexPath.row)?.name
+            cell.personName.text = self.trip?.getPersonByIndex(index: indexPath.row)?.name
             return cell
         }
+    }
+    
+    @IBAction func unwindAfterEditTrip(segue: UIStoryboardSegue){
+        let editTripController = segue.source  as! EditTripViewController
+        if let name = editTripController.nameInput.text{
+            self.editTrip(name: name, image: nil, date_begin: nil, date_end: nil)
+        }
+
+    }
+    
+    func editTrip(name:String?,image:UIImage?,date_begin:Date?,date_end:Date?){
+        trip?.editTrip(name: name,image: image,date_begin: date_begin,date_end: date_end)
+        self.nameTrip.text = name ?? self.nameTrip.text
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

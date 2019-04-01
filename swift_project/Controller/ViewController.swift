@@ -63,11 +63,9 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     
     
     @IBAction func unwindAfterSaveTrip(segue: UIStoryboardSegue){
-        let containerTripController = segue.source as! tripContainerController
-        if let name = containerTripController.nameTextField.text{
-            containerTripController.newTrip.saveNewTrip(Name: name, Image: nil, Date_begin: nil, Date_end: nil)
-            self.trips = TripSetViewModel2(tripSet: TripSet())
-            self.tripTable.reloadData()
+        let newTripController = segue.source as! NewTripViewController
+        if let name = newTripController.nameInput.text{
+            self.saveNewTrip(Name: name, Image: nil, Date_begin: nil, Date_end: nil)
         }
     }
     
@@ -93,6 +91,12 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     @IBAction func addTrip(_ sender: Any) {
         //tripCont.viewWillAppear(true, type: "Création")
         performSegue(withIdentifier: "newTrip", sender: sender)
+    }
+    
+    func saveNewTrip(Name:String,Image:UIImage?,Date_begin:Date?,Date_end:Date?){
+        let trip = Trip(name: Name, image: Image, date_begin: Date_begin, date_end: Date_end)
+        trips.addTrip(trip: trip)
+        tripTable.reloadData()
     }
     
 }

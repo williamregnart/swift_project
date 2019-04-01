@@ -55,8 +55,14 @@ extension Trip{
     func addPerson(p : Person){
         persons.add(person: p)
         self.addToHasPerson(p)
-        self.hasPerson?.adding(p)
         p.belongsTo = self
+    }
+    
+    func editTrip(name: String?,image: UIImage?,date_begin: Date?,date_end: Date?){
+        self.name = name ?? self.name
+        self.image = image?.pngData() ?? self.image
+        self.date_begin = date_begin ?? self.date_begin
+        self.date_end = date_end ?? self.date_end
     }
     
     
