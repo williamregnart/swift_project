@@ -23,14 +23,12 @@
 		2C1B25962244EAB200AD2E80 /* CostPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1B25952244EAB200AD2E80 /* CostPerson.swift */; };
 		2C1B25982244EB1000AD2E80 /* CostPersonSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1B25972244EB1000AD2E80 /* CostPersonSet.swift */; };
 		2C1B259A2244FBAA00AD2E80 /* CostSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1B25992244FBAA00AD2E80 /* CostSet.swift */; };
-		2C1B259D22451FCB00AD2E80 /* TripsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1B259C22451FCB00AD2E80 /* TripsTableViewController.swift */; };
 		2C1B259F2245261C00AD2E80 /* TripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1B259E2245261C00AD2E80 /* TripTableViewCell.swift */; };
 		2C1F600822495E7C00039118 /* NewTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1F600722495E7C00039118 /* NewTripViewController.swift */; };
 		90361C12224A878B0062E27C /* PersonDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90361C11224A878B0062E27C /* PersonDAO.swift */; };
 		90AF496822452DFA0090C242 /* TripSetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AF496722452DFA0090C242 /* TripSetViewModel.swift */; };
 		90AF496A224534570090C242 /* ItCostSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AF4969224534570090C242 /* ItCostSet.swift */; };
 		90B1EAE8224A2AE800A5C36A /* TripSetFetchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B1EAE7224A2AE800A5C36A /* TripSetFetchController.swift */; };
-		90B1EAEA224A362400A5C36A /* tripContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B1EAE9224A362400A5C36A /* tripContainerController.swift */; };
 		90D306FC224537590060BF51 /* ItCostPersonSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D306FB224537590060BF51 /* ItCostPersonSet.swift */; };
 		C40D845F224A11D1007864CC /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D845E224A11D1007864CC /* CoreDataManager.swift */; };
 		C40D8461224A136B007864CC /* TripSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D8460224A136B007864CC /* TripSet.swift */; };
@@ -93,14 +91,12 @@
 		2C1B25952244EAB200AD2E80 /* CostPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostPerson.swift; sourceTree = "<group>"; };
 		2C1B25972244EB1000AD2E80 /* CostPersonSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostPersonSet.swift; sourceTree = "<group>"; };
 		2C1B25992244FBAA00AD2E80 /* CostSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostSet.swift; sourceTree = "<group>"; };
-		2C1B259C22451FCB00AD2E80 /* TripsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsTableViewController.swift; sourceTree = "<group>"; };
 		2C1B259E2245261C00AD2E80 /* TripTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTableViewCell.swift; sourceTree = "<group>"; };
 		2C1F600722495E7C00039118 /* NewTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTripViewController.swift; sourceTree = "<group>"; };
 		90361C11224A878B0062E27C /* PersonDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDAO.swift; sourceTree = "<group>"; };
 		90AF496722452DFA0090C242 /* TripSetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripSetViewModel.swift; sourceTree = "<group>"; };
 		90AF4969224534570090C242 /* ItCostSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItCostSet.swift; sourceTree = "<group>"; };
 		90B1EAE7224A2AE800A5C36A /* TripSetFetchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripSetFetchController.swift; sourceTree = "<group>"; };
-		90B1EAE9224A362400A5C36A /* tripContainerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tripContainerController.swift; sourceTree = "<group>"; };
 		90D306FB224537590060BF51 /* ItCostPersonSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItCostPersonSet.swift; sourceTree = "<group>"; };
 		C40D845E224A11D1007864CC /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		C40D8460224A136B007864CC /* TripSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripSet.swift; sourceTree = "<group>"; };
@@ -233,12 +229,10 @@
 		2C1B259B22451E6B00AD2E80 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				90B1EAE9224A362400A5C36A /* tripContainerController.swift */,
 				2C1B255B2244D96A00AD2E80 /* ViewController.swift */,
 				C44C3E632249AAA000AAA767 /* EditTripViewController.swift */,
 				C44C3E612249A19100AAA767 /* ShowTripViewController.swift */,
 				2C1F600722495E7C00039118 /* NewTripViewController.swift */,
-				2C1B259C22451FCB00AD2E80 /* TripsTableViewController.swift */,
 				C40D8466224A5F4A007864CC /* CostTableViewController.swift */,
 				C40D8472224B91C7007864CC /* ShowPersonViewController.swift */,
 			);
@@ -423,7 +417,6 @@
 				2C1B25982244EB1000AD2E80 /* CostPersonSet.swift in Sources */,
 				2C1B258C2244E15700AD2E80 /* Person.swift in Sources */,
 				C40D8483224D0B16007864CC /* TripViewModel.swift in Sources */,
-				2C1B259D22451FCB00AD2E80 /* TripsTableViewController.swift in Sources */,
 				C40D8461224A136B007864CC /* TripSet.swift in Sources */,
 				C40D847F224BFC2E007864CC /* CostSetViewModel.swift in Sources */,
 				C4E8ABA5224E2ED0007C0853 /* TripDAO.swift in Sources */,
@@ -446,7 +439,6 @@
 				2C1B259A2244FBAA00AD2E80 /* CostSet.swift in Sources */,
 				2C1B25942244E9C100AD2E80 /* Cost.swift in Sources */,
 				2C1B255A2244D96A00AD2E80 /* AppDelegate.swift in Sources */,
-				90B1EAEA224A362400A5C36A /* tripContainerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

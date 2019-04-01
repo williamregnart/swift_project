@@ -9,7 +9,7 @@
 import UIKit
 
 class ShowTripViewController: UIViewController,UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate {
-
+    
     @objc
     func addPerson(_ sender: Any) {
         guard let namePerson = self.getNameInput(personsTable, cellForRowAt: IndexPath()) else {

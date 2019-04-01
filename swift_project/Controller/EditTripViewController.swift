@@ -8,15 +8,38 @@
 
 import UIKit
 
-class EditTripViewController: UIViewController, UITextFieldDelegate {
+class EditTripViewController: UIViewController, UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
-
+    @IBOutlet weak var myImageView: UIImageView!
     @IBOutlet weak var nameInput: UITextField!
+    @IBOutlet weak var dateBegin: UIDatePicker!
+    @IBOutlet weak var dateEnd: UIDatePicker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func importImage(_ sender: Any) {
+        let image = UIImagePickerController()
+        image.delegate = self
+        image.sourceType = UIImagePickerController.SourceType.photoLibrary
+        image.allowsEditing = false
+        
+        self.present(image, animated: true){
+            
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+            myImageView.image = image
+        } else {
+            print("error : Image wasn't uploaded properly")
+        }
+        self.dismiss(animated: true, completion: nil)
+        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

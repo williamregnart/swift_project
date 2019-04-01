@@ -8,12 +8,34 @@
 
 import UIKit
 
-class NewTripViewController: UIViewController,UITextFieldDelegate {
+class NewTripViewController: UIViewController,UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
     @IBOutlet weak var nameInput: UITextField!
     @IBOutlet weak var date_begin_input: UIDatePicker!
     @IBOutlet weak var date_end_input: UIDatePicker!
+    
+    @IBOutlet weak var myImageView: UIImageView!
+    @IBAction func importImage(_ sender: Any) {
+        let image = UIImagePickerController()
+        image.delegate = self
+        image.sourceType = UIImagePickerController.SourceType.photoLibrary
+        image.allowsEditing = false
+        
+        self.present(image, animated: true){
+            
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+            myImageView.image = image
+        } else {
+            print("error : Image wasn't uploaded properly")
+        }
+        self.dismiss(animated: true, completion: nil)
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
