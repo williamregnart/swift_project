@@ -35,6 +35,11 @@ class ExpensesViewController: UIViewController,UITextFieldDelegate,UITableViewDa
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func addExpense(_ sender: Any) {
+        performSegue(withIdentifier: "newExpense", sender: sender)
+        
+    }
+    
     /*@IBAction func unwindAfterSaveExpense(segue: UIStoryboardSegue){
         let newExpenseController = segue.source as! NewExpenseViewController
         self.saveNewExpense(cname: newExpenseController.cname, personsWhoPaid: newExpenseController.personsWhoPaid, personsWhoHaveToPay: newExpenseController.personsWhoHaveToPay)
@@ -57,6 +62,7 @@ class ExpensesViewController: UIViewController,UITextFieldDelegate,UITableViewDa
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
+     
      
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
          if segue.identifier == "ExpenseDetails"{
