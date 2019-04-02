@@ -22,7 +22,7 @@ class ExpensesViewController: UIViewController,UITextFieldDelegate,UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.expensesTable.dequeueReusableCell(withIdentifier: "expenseCell", for: indexPath) as! ExpenseTableViewCell
-        cell.expenseName.text = self.expenses.getExpenseByIndex(index: indexPath.row)?.ename
+        cell.expenseConcerned.text = self.expenses.getExpenseByIndex(index: indexPath.row)?.ename
         cell.expenseAmount.text = self.expenses.getExpenseByIndex(index: indexPath.row)?.amount as! String?
         return cell
     }

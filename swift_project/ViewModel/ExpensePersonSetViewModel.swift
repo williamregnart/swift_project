@@ -16,7 +16,7 @@ class ExpensePersonSetViewModel{
     }
     
     init(expensePersonSet: ExpensePersonSet){
-        for expensePerson in expensePersonSet.personsExpense{
+        for expensePerson in expensePersonSet.expensesPerson{
             self.expensePersonSet.append(expensePerson)
         }
     }

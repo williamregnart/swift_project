@@ -16,7 +16,7 @@ class PaidByTableViewController: UITableViewController {
 
     var personTable : [Person] = []
     
-    var costPersonTable : [CostPerson] = []
+    var costPersonTable : [ExpensePerson] = []
     
     var amountInput: UITextField!
     

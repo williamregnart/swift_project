@@ -22,7 +22,7 @@ extension Expense{
     
     var amount :  Double{
         var total:Double=0
-        for expensePerson in self.epersonsWhoPaid.personsExpense {
+        for expensePerson in self.epersonsWhoPaid.expensesPerson {
             total += expensePerson.amount
         }
         return total
