@@ -50,8 +50,8 @@ class ExpensesViewController: UIViewController,UITextFieldDelegate,UITableViewDa
         performSegue(withIdentifier: "newExpense", sender: segue.source)
     }
  
-     func saveNewExpense(cname: String,personsWhoPaid: ExpensePersonSetViewModel, personsWhoHaveToPay: PersonSetViewModel){
-     expenses.addExpense(expense: expense)
+     func saveNewExpense(cname: String,personsWhoPaid: ExpensePersonSet, personsWhoHaveToPay: PersonSet){
+     expenses.addExpense(expense: Expense(name: cname, personsConcerned: personsWhoHaveToPay, personsWhoPaid: personsWhoPaid))
      expensesTable.reloadData()
      }
 

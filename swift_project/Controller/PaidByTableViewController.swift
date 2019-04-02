@@ -10,19 +10,22 @@ import UIKit
 
 class PaidByTableViewController: UITableViewController {
     
+    var expense: Expense!
+    
     var inputPerson: Person!
     
     var trip: TripViewModel!
 
     var personTable : [Person] = []
     
-    var costPersonTable : [ExpensePerson] = []
+    var expensePersonTable : [ExpensePerson] = []
     
     var amountInput: UITextField!
     
     @objc
     func addPersonWhoPaid(_ sender: Any) {
         personTable.append(inputPerson)
+        expensePersonTable.append(ExpensePerson(person: inputPerson, amount: amountInput.text as! Double, expense: <#T##Expense#>))
         self.paidByTable.reloadData()
     }
     
@@ -62,6 +65,7 @@ class PaidByTableViewController: UITableViewController {
             let cell = self.paidByTable.dequeueReusableCell(withIdentifier: "addPersonWhoPaidCell", for: indexPath) as! AddPersonWhoPaidTableViewCell
             cell.actionButton.addTarget(self, action: #selector(addPersonWhoPaid), for: .touchUpInside)
             amountInput = cell.amount
+            inputPerson = cell.personSelected
             cell.persons = trip.persons
             return cell
         }
