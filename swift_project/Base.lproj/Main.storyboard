@@ -219,6 +219,23 @@
                                     <outlet property="delegate" destination="WLD-8s-XYb" id="2Ml-KH-DNi"/>
                                 </connections>
                             </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j6z-ea-z60">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="trG-FG-VHv"/>
+                                    <barButtonItem title="Trip" id="kbd-ms-BhV"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="VwJ-B4-PQG"/>
+                                    <barButtonItem title="Required Paiements" id="xft-Ov-uzn"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="3UV-Q8-wnN"/>
+                                    <barButtonItem title="Expenses" id="tAx-d6-HLp" userLabel="Expenses">
+                                        <connections>
+                                            <segue destination="OwO-4E-PNd" kind="show" identifier="showExpenses" id="Svt-Qx-TQA"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="L9M-gh-0dL"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -237,19 +254,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SFP-Mp-3t8"/>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="trG-FG-VHv"/>
-                        <barButtonItem title="Trip" id="kbd-ms-BhV"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="VwJ-B4-PQG"/>
-                        <barButtonItem title="Required Paiements" id="xft-Ov-uzn"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="3UV-Q8-wnN"/>
-                        <barButtonItem title="Expenses" id="tAx-d6-HLp" userLabel="Expenses">
-                            <connections>
-                                <segue destination="OwO-4E-PNd" kind="show" identifier="showExpenses" id="9b3-Ub-ndC"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="L9M-gh-0dL"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="imageTrip" destination="CBx-V6-cZ5" id="WNT-7o-ErL"/>
