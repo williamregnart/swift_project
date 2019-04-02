@@ -24,12 +24,6 @@ class TripDAO{
     }
     
     static func insert(trip: Trip){
-        let tripData = Trip(context: CoreDataManager.context)
-        tripData.name = trip.name
-        tripData.date_creation = trip.date_creation
-        tripData.date_begin = trip.date_begin
-        tripData.date_end = trip.date_end
-        CoreDataManager.context.insert(trip)
         self.save()
     }
     

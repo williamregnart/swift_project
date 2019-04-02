@@ -126,7 +126,7 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txN-Wf-5cW">
                                 <rect key="frame" x="298" y="55" width="57" height="30"/>
-                                <state key="normal" title="Modifier"/>
+                                <state key="normal" title="Update"/>
                                 <connections>
                                     <segue destination="Fiu-0Z-8fr" kind="show" id="jZO-pE-NjT"/>
                                 </connections>
@@ -136,7 +136,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="trG-FG-VHv"/>
-                                    <barButtonItem title="Trip" id="kbd-ms-BhV"/>
+                                    <barButtonItem title="Back" id="kbd-ms-BhV">
+                                        <connections>
+                                            <action selector="goBackToTripTableView:" destination="WLD-8s-XYb" id="pue-nm-xvL"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="VwJ-B4-PQG"/>
                                     <barButtonItem title="Required Paiements" id="xft-Ov-uzn"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="3UV-Q8-wnN"/>
@@ -163,7 +167,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="58.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nom Personne" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vgX-HY-uM7">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Person name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vgX-HY-uM7">
                                                     <rect key="frame" x="15" y="14" width="160" height="30"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -286,14 +290,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Créances :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4X-Ag-Xgf">
-                                <rect key="frame" x="16" y="211" width="82" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Creances" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4X-Ag-Xgf">
+                                <rect key="frame" x="16" y="211" width="73" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dettes :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wiH-2U-d6c">
-                                <rect key="frame" x="16" y="415" width="60" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Debts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wiH-2U-d6c">
+                                <rect key="frame" x="16" y="415" width="46" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -445,8 +449,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nom du voyage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JEl-M1-5OZ">
-                                <rect key="frame" x="136" y="53" width="122" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name of the trip" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JEl-M1-5OZ">
+                                <rect key="frame" x="136" y="53" width="124" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="hSj-Ql-9uP"/>
                                 </constraints>
@@ -459,13 +463,13 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZzG-MS-BpB">
                                 <rect key="frame" x="16" y="217" width="122" height="32"/>
-                                <state key="normal" title="Ajouter une image"/>
+                                <state key="normal" title="add an image"/>
                                 <connections>
                                     <action selector="importImage:" destination="Fiu-0Z-8fr" eventType="touchUpInside" id="d26-FD-3AA"/>
                                 </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Jke-q8-mqT">
-                                <rect key="frame" x="125" y="439" width="320" height="100"/>
+                                <rect key="frame" x="107" y="439" width="320" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="xWg-P7-pH2"/>
                                 </constraints>
@@ -473,8 +477,8 @@
                                     <!--2019-03-25 18:29:38 +0000-->
                                 </date>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Début :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFT-bW-spW">
-                                <rect key="frame" x="23" y="355" width="56" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFT-bW-spW">
+                                <rect key="frame" x="23" y="355" width="38" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="8zp-aA-aVN"/>
                                 </constraints>
@@ -482,8 +486,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fin :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lyE-bB-aa1">
-                                <rect key="frame" x="35" y="460" width="32" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lyE-bB-aa1">
+                                <rect key="frame" x="27" y="460" width="30" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Ikm-ff-xCN"/>
                                 </constraints>
@@ -492,7 +496,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="KIU-3t-cob">
-                                <rect key="frame" x="125" y="315" width="320" height="101"/>
+                                <rect key="frame" x="107" y="315" width="320" height="101"/>
                                 <date key="date" timeIntervalSinceReferenceDate="575231378.02809203">
                                     <!--2019-03-25 18:29:38 +0000-->
                                 </date>
@@ -511,13 +515,13 @@
                                 </constraints>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="3bt-De-xzE"/>
-                                    <barButtonItem title="Annuler" id="wO1-4T-sa3">
+                                    <barButtonItem title="Back" id="wO1-4T-sa3">
                                         <connections>
                                             <action selector="cancel:" destination="Fiu-0Z-8fr" id="0JQ-5w-R7b"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="kbM-gd-x1r"/>
-                                    <barButtonItem title="Modifier" id="zcG-hQ-Lqw">
+                                    <barButtonItem title="Update" id="zcG-hQ-Lqw">
                                         <connections>
                                             <segue destination="Y1q-Q9-osb" kind="unwind" unwindAction="unwindAfterEditTripWithSegue:" id="Icd-Ho-FRm"/>
                                         </connections>
@@ -630,11 +634,15 @@
                                 <rect key="frame" x="0.0" y="579" width="375" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="rln-UV-T5r"/>
-                                    <barButtonItem title="Trip" id="f3O-W6-1eR"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="qK4-UU-mPb"/>
-                                    <barButtonItem title="Required Paiements" id="rjV-DZ-Ji1"/>
+                                    <barButtonItem title="Back" id="f3O-W6-1eR">
+                                        <connections>
+                                            <action selector="goToTrip:" destination="OwO-4E-PNd" id="Guf-dV-ca2"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem id="rjV-DZ-Ji1"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="uSX-GR-w5q"/>
-                                    <barButtonItem title="Expenses" id="qhA-mw-Lzh" userLabel="Expenses"/>
+                                    <barButtonItem id="qhA-mw-Lzh" userLabel="Expenses"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="gq5-1V-dyK"/>
                                 </items>
                             </toolbar>
@@ -867,7 +875,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nom du voyage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8as-Gw-3P8">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name of the trip" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8as-Gw-3P8">
                                 <rect key="frame" x="136" y="50" width="122" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Vkt-B4-Iao"/>
@@ -888,7 +896,7 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wV1-P1-8Ba">
                                 <rect key="frame" x="20" y="215" width="125" height="30"/>
-                                <state key="normal" title="Ajouter une image"/>
+                                <state key="normal" title="add an image"/>
                                 <connections>
                                     <action selector="importImage:" destination="Uc8-7j-FCu" eventType="touchUpInside" id="hDn-sC-kyx"/>
                                 </connections>
@@ -899,8 +907,8 @@
                                     <!--2019-03-25 18:29:38 +0000-->
                                 </date>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Début :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vez-Oj-a6g">
-                                <rect key="frame" x="25" y="399.5" width="56" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vez-Oj-a6g">
+                                <rect key="frame" x="25" y="399.5" width="38" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="URB-tb-n5W"/>
                                 </constraints>
@@ -908,7 +916,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fin :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIP-OF-Qy8">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIP-OF-Qy8">
                                 <rect key="frame" x="25" y="504.5" width="32" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="wLr-J7-JSn"/>

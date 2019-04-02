@@ -91,7 +91,10 @@ class ShowTripViewController: UIViewController,UITextFieldDelegate,UITableViewDa
         }
     }
     
-
+    @IBAction func goBackToTripTableView(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

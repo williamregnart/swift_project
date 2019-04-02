@@ -20,6 +20,10 @@ class ExpensesViewController: UIViewController,UITextFieldDelegate,UITableViewDa
         return trip.expenses.count
     }
     
+    @IBAction func goToTrip(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.expensesTable.dequeueReusableCell(withIdentifier: "expenseCell", for: indexPath) as! ExpenseTableViewCell
         cell.expenseConcerned.text = self.expenses.getExpenseByIndex(index: indexPath.row)?.ename
