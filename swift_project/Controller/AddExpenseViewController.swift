@@ -13,6 +13,7 @@ class AddExpenseViewController: UIViewController, UITextFieldDelegate {
     var trip: TripViewModel!
     var paidByTableController: PaidByTableViewController = PaidByTableViewController()
     
+    @IBOutlet weak var expenseName: UITextField!
     @IBOutlet weak var personsWhoPaidTable: UITableView!
     @IBOutlet weak var personsWhoHaveToPayTable: UITableView!
     

@@ -25,7 +25,7 @@ class PaidByTableViewController: UITableViewController {
     @objc
     func addPersonWhoPaid(_ sender: Any) {
         personTable.append(inputPerson)
-        expensePersonTable.append(ExpensePerson(person: inputPerson, amount: amountInput.text as! Double, expense: <#T##Expense#>))
+        expensePersonTable.append(ExpensePerson(person: inputPerson, amount: Double(amountInput.text!) ?? 0, expense: expense))
         self.paidByTable.reloadData()
     }
     

@@ -46,8 +46,10 @@ class ExpensesViewController: UIViewController,UITextFieldDelegate,UITableViewDa
     
     @IBAction func unwindAfterSaveExpense(segue: UIStoryboardSegue){
         let newExpenseController = segue.source as! AddExpenseViewController
-        self.saveNewExpense(cname: newExpenseController.ename, personsWhoPaid: newExpenseController.personsWhoPaid, personsWhoHaveToPay: newExpenseController.personsWhoHaveToPay)
+        if let name = newExpenseController.expenseName.text{
+        self.saveNewExpense(cname: name, personsWhoPaid: newExpenseController.personsWhoPaidTable, personsWhoHaveToPay: newExpenseController.personsWhoHaveToPayTable)
         performSegue(withIdentifier: "newExpense", sender: segue.source)
+        }
     }
  
      func saveNewExpense(cname: String,personsWhoPaid: ExpensePersonSet, personsWhoHaveToPay: PersonSet){

@@ -43,6 +43,10 @@ class PersonViewModel{
         return nil
     }
     
+    func addExpense(expense : Expense) {
+        PersonDAO.addExpense(expense : expense)
+    }
+    
     func getCreanceByIndex(index: Int?) -> Expense?{
         if let i = index {
             if i>=0 && i<self.creances.count {

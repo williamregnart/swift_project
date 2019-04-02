@@ -71,4 +71,8 @@ class ExpenseSet : Sequence{
         let iterator: ItExpenseSet = ItExpenseSet(expenses: self)
         return iterator
     }
+    
+    func addExpense(expense : Expense){
+        expenseList.append(expense)
+    }
 }
