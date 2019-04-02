@@ -131,11 +131,28 @@
                                     <segue destination="Fiu-0Z-8fr" kind="show" id="jZO-pE-NjT"/>
                                 </connections>
                             </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j6z-ea-z60">
+                                <rect key="frame" x="0.0" y="579" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="trG-FG-VHv"/>
+                                    <barButtonItem title="Trip" id="kbd-ms-BhV"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="VwJ-B4-PQG"/>
+                                    <barButtonItem title="Required Paiements" id="xft-Ov-uzn"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="3UV-Q8-wnN"/>
+                                    <barButtonItem title="Expenses" id="tAx-d6-HLp" userLabel="Expenses">
+                                        <connections>
+                                            <segue destination="OwO-4E-PNd" kind="show" identifier="showExpenses" id="Svt-Qx-TQA"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="L9M-gh-0dL"/>
+                                </items>
+                            </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="elO-cO-8sz">
-                                <rect key="frame" x="0.0" y="164" width="375" height="439"/>
+                                <rect key="frame" x="0.0" y="164" width="375" height="415"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="439" id="KoT-VK-jeQ"/>
+                                    <constraint firstAttribute="height" constant="415" id="1YX-jg-1p8"/>
                                     <constraint firstAttribute="width" constant="375" id="WMX-Gh-xeW"/>
                                 </constraints>
                                 <prototypes>
@@ -219,23 +236,6 @@
                                     <outlet property="delegate" destination="WLD-8s-XYb" id="2Ml-KH-DNi"/>
                                 </connections>
                             </tableView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j6z-ea-z60">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="trG-FG-VHv"/>
-                                    <barButtonItem title="Trip" id="kbd-ms-BhV"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="VwJ-B4-PQG"/>
-                                    <barButtonItem title="Required Paiements" id="xft-Ov-uzn"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="3UV-Q8-wnN"/>
-                                    <barButtonItem title="Expenses" id="tAx-d6-HLp" userLabel="Expenses">
-                                        <connections>
-                                            <segue destination="OwO-4E-PNd" kind="show" identifier="showExpenses" id="Svt-Qx-TQA"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="L9M-gh-0dL"/>
-                                </items>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -528,12 +528,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="rg0-ox-sfD" firstAttribute="bottom" secondItem="3PI-4j-iE5" secondAttribute="bottom" id="1OK-Ll-rnl"/>
                             <constraint firstItem="oFT-bW-spW" firstAttribute="centerX" secondItem="lyE-bB-aa1" secondAttribute="centerX" id="2B9-Qg-DLL"/>
                             <constraint firstItem="rg0-ox-sfD" firstAttribute="bottom" secondItem="3PI-4j-iE5" secondAttribute="bottom" id="A4Y-vG-ecM"/>
                             <constraint firstItem="rg0-ox-sfD" firstAttribute="top" secondItem="Jke-q8-mqT" secondAttribute="bottom" constant="39" id="AMr-Fk-yD3"/>
                             <constraint firstItem="ZzG-MS-BpB" firstAttribute="centerY" secondItem="zDV-Ed-ziF" secondAttribute="centerY" id="IO2-qj-oa3"/>
                             <constraint firstItem="rg0-ox-sfD" firstAttribute="leading" secondItem="VY0-lS-mSa" secondAttribute="leading" id="JwT-S4-mc1"/>
                             <constraint firstItem="oFT-bW-spW" firstAttribute="centerY" secondItem="KIU-3t-cob" secondAttribute="centerY" id="LMh-ri-Y1K"/>
+                            <constraint firstItem="rg0-ox-sfD" firstAttribute="leading" secondItem="3PI-4j-iE5" secondAttribute="leading" id="SXZ-u8-GRo"/>
                             <constraint firstItem="zDV-Ed-ziF" firstAttribute="leading" secondItem="ZzG-MS-BpB" secondAttribute="trailing" constant="21" id="Uln-ds-Fqz"/>
                             <constraint firstItem="oFT-bW-spW" firstAttribute="leading" secondItem="3PI-4j-iE5" secondAttribute="leading" constant="23" id="agf-7I-kJa"/>
                             <constraint firstItem="KIU-3t-cob" firstAttribute="leading" secondItem="oFT-bW-spW" secondAttribute="trailing" constant="46" id="cKJ-nh-wQa"/>
@@ -543,6 +545,7 @@
                             <constraint firstItem="lyE-bB-aa1" firstAttribute="top" secondItem="oFT-bW-spW" secondAttribute="bottom" constant="84" id="gIQ-bl-y0d"/>
                             <constraint firstItem="ZzG-MS-BpB" firstAttribute="top" secondItem="VY0-lS-mSa" secondAttribute="top" constant="217" id="gnN-s1-0mF"/>
                             <constraint firstItem="Jke-q8-mqT" firstAttribute="top" secondItem="KIU-3t-cob" secondAttribute="bottom" constant="23" id="hPN-Gs-4hd"/>
+                            <constraint firstItem="rg0-ox-sfD" firstAttribute="trailing" secondItem="3PI-4j-iE5" secondAttribute="trailing" id="hwy-ox-WdD"/>
                             <constraint firstAttribute="trailing" secondItem="rg0-ox-sfD" secondAttribute="trailing" id="kKS-Eg-U1u"/>
                             <constraint firstItem="ZzG-MS-BpB" firstAttribute="leading" secondItem="VY0-lS-mSa" secondAttribute="leadingMargin" id="lB2-8m-ZGR"/>
                             <constraint firstItem="JEl-M1-5OZ" firstAttribute="leading" secondItem="3PI-4j-iE5" secondAttribute="leading" constant="136" id="ui3-Tn-7N8"/>
@@ -571,19 +574,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QoJ-YI-eHl">
-                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <items>
-                                    <tabBarItem title="Trip" id="5R1-DP-VN8">
-                                        <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
-                                        <color key="badgeColor" red="0.75999165420000003" green="0.75999165420000003" blue="0.75999165420000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </tabBarItem>
-                                    <tabBarItem title="Required Paiements" id="dQR-0s-Yw5"/>
-                                    <tabBarItem title="Expenses" id="Qch-3V-sip"/>
-                                </items>
-                            </tabBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expenses" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vg-zX-qEM">
                                 <rect key="frame" x="150" y="35" width="80" height="40"/>
                                 <constraints>
@@ -633,15 +623,30 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMI-5p-Gmt">
-                                <rect key="frame" x="318" y="573" width="22" height="22"/>
+                                <rect key="frame" x="330" y="552" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1al-1O-38C">
+                                <rect key="frame" x="0.0" y="579" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="rln-UV-T5r"/>
+                                    <barButtonItem title="Trip" id="f3O-W6-1eR"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="qK4-UU-mPb"/>
+                                    <barButtonItem title="Required Paiements" id="rjV-DZ-Ji1"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="uSX-GR-w5q"/>
+                                    <barButtonItem title="Expenses" id="qhA-mw-Lzh" userLabel="Expenses"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="gq5-1V-dyK"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="1al-1O-38C" firstAttribute="bottom" secondItem="Kov-cV-7dG" secondAttribute="bottom" id="1AR-Am-Xtd"/>
                             <constraint firstItem="2vg-zX-qEM" firstAttribute="leading" secondItem="Kov-cV-7dG" secondAttribute="leading" constant="150" id="QUn-qZ-p80"/>
+                            <constraint firstAttribute="trailing" secondItem="1al-1O-38C" secondAttribute="trailing" id="afH-Nj-PHn"/>
                             <constraint firstItem="2vg-zX-qEM" firstAttribute="top" secondItem="Kov-cV-7dG" secondAttribute="top" constant="15" id="fpd-4a-4kV"/>
                             <constraint firstItem="Kov-cV-7dG" firstAttribute="trailing" secondItem="2vg-zX-qEM" secondAttribute="trailing" constant="145" id="nDp-l4-Qb4"/>
+                            <constraint firstItem="1al-1O-38C" firstAttribute="leading" secondItem="Kov-cV-7dG" secondAttribute="leading" id="rzh-0K-wjX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Kov-cV-7dG"/>
                     </view>
@@ -963,6 +968,7 @@
                             <constraint firstItem="aDG-8w-WXK" firstAttribute="top" secondItem="8as-Gw-3P8" secondAttribute="bottom" constant="50" id="UiA-OS-hed"/>
                             <constraint firstItem="8as-Gw-3P8" firstAttribute="leading" secondItem="5uH-Hp-Wzc" secondAttribute="leading" constant="136" id="b1y-ZP-SLL"/>
                             <constraint firstItem="vez-Oj-a6g" firstAttribute="leading" secondItem="KIP-OF-Qy8" secondAttribute="leading" id="h2B-9b-Tid"/>
+                            <constraint firstItem="yU2-Yy-bkP" firstAttribute="trailing" secondItem="5uH-Hp-Wzc" secondAttribute="trailing" id="khh-ib-sem"/>
                             <constraint firstItem="yU2-Yy-bkP" firstAttribute="leading" secondItem="5uH-Hp-Wzc" secondAttribute="leading" id="olI-6o-Wvn"/>
                             <constraint firstItem="aDG-8w-WXK" firstAttribute="trailing" secondItem="N3d-ns-Aec" secondAttribute="trailing" id="riu-cj-qEN"/>
                             <constraint firstItem="wV1-P1-8Ba" firstAttribute="leading" secondItem="5uH-Hp-Wzc" secondAttribute="leading" constant="20" id="wbi-DM-tOQ"/>
