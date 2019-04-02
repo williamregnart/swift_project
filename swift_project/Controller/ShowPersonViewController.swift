@@ -12,7 +12,7 @@ class ShowPersonViewController: UIViewController,UITextFieldDelegate,UITableView
     
     
     @IBOutlet weak var creanceTable: UITableView!
-    @IBOutlet weak var costTable: UITableView!
+    @IBOutlet weak var expenseTable: UITableView!
     @IBOutlet weak var namePersonLabel: UILabel!
     
     var person: PersonViewModel? = nil
@@ -31,15 +31,15 @@ class ShowPersonViewController: UIViewController,UITextFieldDelegate,UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if tableView == costTable{
-            let cell = self.costTable.dequeueReusableCell(withIdentifier: "costCell", for: indexPath) as! CostTableViewCell
-            cell.costConcerned.text = self.person?.getDebtByIndex(index: indexPath.row)?.cname
-            cell.amount.text = self.person?.getDebtByIndex(index: indexPath.row)?.amount as! String?
+        if tableView == expenseTable{
+            let cell = self.expenseTable.dequeueReusableCell(withIdentifier: "expenseCell", for: indexPath) as! ExpenseTableViewCell
+            cell.expenseConcerned.text = self.person?.getDebtByIndex(index: indexPath.row)?.ename
+            cell.expenseAmount.text = self.person?.getDebtByIndex(index: indexPath.row)?.amount as! String?
             return cell
         }
         else{
-            let cell = self.costTable.dequeueReusableCell(withIdentifier: "costCell", for: indexPath) as! CreanceTableViewCell
-            cell.costConcerned.text = self.person?.getCreanceByIndex(index: indexPath.row)?.cname
+            let cell = self.expenseTable.dequeueReusableCell(withIdentifier: "expenseCell", for: indexPath) as! CreanceTableViewCell
+            cell.expenseConcerned.text = self.person?.getCreanceByIndex(index: indexPath.row)?.ename
             cell.amount.text = self.person?.getCreanceByIndex(index: indexPath.row)?.amount as! String?
             return cell
         }

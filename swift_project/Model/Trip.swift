@@ -27,6 +27,15 @@ extension Trip{
         }
         return personList
     }
+    
+    var expenses: ExpenseSet {
+        let expensesList = ExpenseSet()
+        for e in self.hasExpense!{
+            expensesList.add(expense: e as! Expense)
+        }
+        return expensesList
+    }
+    
     var tdate_creation:Date {return self.date_creation!}
     var tdate_begin:Date? {return self.date_begin}
     var tdate_end:Date? {return self.date_end}

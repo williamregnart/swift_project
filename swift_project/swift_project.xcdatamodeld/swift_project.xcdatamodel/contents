@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="17G4015" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Cost" representedClassName="Cost" syncable="YES" codeGenerationType="class">
+    <entity name="Expense" representedClassName="Expense" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="paidBy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CostPerson" inverseName="concernCost" inverseEntity="CostPerson" syncable="YES"/>
-        <relationship name="paidFor" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" inverseName="hasToPayCost" inverseEntity="Person" syncable="YES"/>
+        <relationship name="belongsTo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trip" inverseName="hasExpense" inverseEntity="Trip" syncable="YES"/>
+        <relationship name="paidBy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExpensePerson" inverseName="concernExpense" inverseEntity="ExpensePerson" syncable="YES"/>
+        <relationship name="paidFor" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" inverseName="hasToPayExpense" inverseEntity="Person" syncable="YES"/>
     </entity>
-    <entity name="CostPerson" representedClassName="CostPerson" syncable="YES" codeGenerationType="class">
+    <entity name="ExpensePerson" representedClassName="ExpensePerson" syncable="YES" codeGenerationType="class">
         <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="concernCost" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cost" inverseName="paidBy" inverseEntity="Cost" syncable="YES"/>
-        <relationship name="concernPerson" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="payCost" inverseEntity="Person" syncable="YES"/>
+        <relationship name="concernExpense" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Expense" inverseName="paidBy" inverseEntity="Expense" syncable="YES"/>
+        <relationship name="concernPerson" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="payExpense" inverseEntity="Person" syncable="YES"/>
     </entity>
     <entity name="Person" representedClassName="Person" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="belongsTo" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Trip" inverseName="hasPerson" inverseEntity="Trip" syncable="YES"/>
-        <relationship name="hasToPayCost" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Cost" inverseName="paidFor" inverseEntity="Cost" syncable="YES"/>
-        <relationship name="payCost" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CostPerson" inverseName="concernPerson" inverseEntity="CostPerson" syncable="YES"/>
+        <relationship name="hasToPayExpense" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Expense" inverseName="paidFor" inverseEntity="Expense" syncable="YES"/>
+        <relationship name="payExpense" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExpensePerson" inverseName="concernPerson" inverseEntity="ExpensePerson" syncable="YES"/>
     </entity>
     <entity name="Trip" representedClassName="Trip" syncable="YES" codeGenerationType="class">
         <attribute name="date_begin" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -22,12 +23,13 @@
         <attribute name="date_end" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="name" attributeType="String" minValueString="3" syncable="YES"/>
+        <relationship name="hasExpense" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Expense" inverseName="belongsTo" inverseEntity="Expense" syncable="YES"/>
         <relationship name="hasPerson" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Person" inverseName="belongsTo" inverseEntity="Person" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Cost" positionX="148.52734375" positionY="280.46484375" width="128" height="88"/>
-        <element name="CostPerson" positionX="169.83203125" positionY="37.90234375" width="128" height="90"/>
-        <element name="Person" positionX="-180.87890625" positionY="25.53515625" width="128" height="105"/>
-        <element name="Trip" positionX="204.7421875" positionY="-310.10546875" width="128" height="135"/>
+        <element name="Expense" positionX="-206.99609375" positionY="-4808.453125" width="128" height="105"/>
+        <element name="ExpensePerson" positionX="-444.37890625" positionY="-4913.76171875" width="128" height="90"/>
+        <element name="Person" positionX="-150.44140625" positionY="-4989.23828125" width="128" height="105"/>
+        <element name="Trip" positionX="73.42578125" positionY="-4804.8125" width="128" height="150"/>
     </elements>
 </model>

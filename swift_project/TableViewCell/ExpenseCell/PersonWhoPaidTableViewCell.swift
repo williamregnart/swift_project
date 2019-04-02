@@ -1,17 +1,18 @@
 //
-//  CreanceTableViewCell.swift
+//  PersonWhoPaidTableViewCell.swift
 //  swift_project
 //
-//  Created by DIEGO KRZYZANOWSKI on 27/03/2019.
+//  Created by DIEGO KRZYZANOWSKI on 02/04/2019.
 //  Copyright © 2019 REGNART-SANCHEZ. All rights reserved.
 //
 
 import UIKit
 
-class CreanceTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var costConcerned: UILabel!
+class PersonWhoPaidTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var personName: UILabel!
     @IBOutlet weak var amount: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

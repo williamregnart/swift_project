@@ -85,6 +85,10 @@ class ShowTripViewController: UIViewController,UITextFieldDelegate,UITableViewDa
                 showPersonViewController.person?.person = (self.trip!.getPersonByIndex(index: indexPath.row))!
             }
         }
+        if segue.identifier == "showExpenses"{
+            let expensesViewController = segue.destination as! ExpensesViewController
+            expensesViewController.trip = self.trip
+        }
     }
     
 

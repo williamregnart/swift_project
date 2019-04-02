@@ -14,27 +14,27 @@ class PersonViewModel{
     
     var name: String
     
-    var debts: [Cost] = []
+    var debts: [Expense] = []
     
-    var creances: [Cost] = []
+    var creances: [Expense] = []
     
-    var creancesCostPerson: [CostPerson] = []
+    var creancesExpensePerson: [ExpensePerson] = []
     
     init(person: Person){
         self.person = person
         self.name = person.name ?? ""
-        for debt in person.costs{
+        for debt in person.expenses{
             self.debts.append(debt)
         }
         for creance in person.creances{
             self.creances.append(creance)
         }
-        for creanceCostPerson in person.creancesCostPerson{
-            self.creancesCostPerson.append(creanceCostPerson)
+        for creanceExpensePerson in person.creancesExpensePerson{
+            self.creancesExpensePerson.append(creanceExpensePerson)
         }
     }
     
-    func getDebtByIndex(index: Int?) -> Cost?{
+    func getDebtByIndex(index: Int?) -> Expense?{
         if let i = index {
             if i>=0 && i<self.debts.count {
                 return self.debts[i]
@@ -43,7 +43,7 @@ class PersonViewModel{
         return nil
     }
     
-    func getCreanceByIndex(index: Int?) -> Cost?{
+    func getCreanceByIndex(index: Int?) -> Expense?{
         if let i = index {
             if i>=0 && i<self.creances.count {
                 return self.creances[i]

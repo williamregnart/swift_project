@@ -13,31 +13,31 @@ extension Person{
     
     var pname: String{return self.name!}
     
-    //Liste de type CostSet des depenses de la personne
-    var costs: CostSet{
-        let costList = CostDAO.getDebtByPerson(person: self)
-        let result = CostSet()
-        for cost in costList{
-            result.add(cost: cost)
+    //Liste de type ExpenseSet des depenses de la personne
+    var expenses: ExpenseSet{
+        let expenseList = ExpenseDAO.getDebtByPerson(person: self)
+        let result = ExpenseSet()
+        for expense in expenseList{
+            result.add(expense: expense)
         }
         return result
     }
     
-    //Liste de type CostSet des creances de la personne
-    var creances: CostSet{
-        let creanceList = CostDAO.getCreanceByPerson(person: self)
-        let result = CostSet()
+    //Liste de type ExpenseSet des creances de la personne
+    var creances: ExpenseSet{
+        let creanceList = ExpenseDAO.getCreanceByPerson(person: self)
+        let result = ExpenseSet()
         for creance in creanceList{
-            result.add(cost: creance)
+            result.add(expense: creance)
         }
         return result
     }
     
-    var creancesCostPerson: CostPersonSet{
-        let creanceList = CostPersonDAO.getCostsPersonByPerson(person: self)
-        let result = CostPersonSet()
+    var creancesExpensePerson: ExpensePersonSet{
+        let creanceList = ExpensePersonDAO.getExpensesPersonByPerson(person: self)
+        let result = ExpensePersonSet()
         for creance in creanceList{
-            result.add(personCost: creance)
+            result.add(expensePerson: creance)
         }
         return result
     }
@@ -62,12 +62,12 @@ extension Person{
         var blc: Double = 0.0
         
         //Parcours de la liste des dépenses pour le voyage
-        for cost in self.costs {
-            blc -= cost.amount / Double(cost.cpersonsConcerned.count)
+        for expense in self.expenses {
+            blc -= expense.amount / Double(expense.epersonsConcerned.count)
         }
         //Parcours de la liste des personnes ayant payé pour la dépense
         //Si la personne a payé, on ajoute le montant qu'elle a payé à sa balance
-        for creance in self.creancesCostPerson{
+        for creance in self.creancesExpensePerson{
             blc += creance.amount
         }
         
