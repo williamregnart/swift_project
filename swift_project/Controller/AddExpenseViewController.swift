@@ -11,12 +11,15 @@ import UIKit
 class AddExpenseViewController: UIViewController, UITextFieldDelegate {
     
     var trip: TripViewModel!
+    var paidByTableController: PaidByTableViewController = PaidByTableViewController()
+    
     @IBOutlet weak var personsWhoPaidTable: UITableView!
     @IBOutlet weak var personsWhoHaveToPayTable: UITableView!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        paidByTableController.trip = self.trip
 
         // Do any additional setup after loading the view.
     }

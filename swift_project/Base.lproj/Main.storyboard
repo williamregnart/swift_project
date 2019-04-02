@@ -627,7 +627,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="addExpense:" destination="OwO-4E-PNd" eventType="touchUpInside" id="R1I-jo-eM2"/>
-                                    <segue destination="OPD-YJ-xBw" kind="presentation" id="4sE-7b-0HC"/>
+                                    <segue destination="OPD-YJ-xBw" kind="presentation" identifier="newExpense" id="4sE-7b-0HC"/>
                                 </connections>
                             </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1al-1O-38C">
