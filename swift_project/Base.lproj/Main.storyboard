@@ -629,6 +629,10 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMI-5p-Gmt">
                                 <rect key="frame" x="330" y="552" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="addExpense:" destination="OwO-4E-PNd" eventType="touchUpInside" id="R1I-jo-eM2"/>
+                                    <segue destination="OPD-YJ-xBw" kind="presentation" identifier="newExpense" id="4sE-7b-0HC"/>
+                                </connections>
                             </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1al-1O-38C">
                                 <rect key="frame" x="0.0" y="579" width="375" height="44"/>

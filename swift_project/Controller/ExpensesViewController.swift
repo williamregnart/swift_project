@@ -39,19 +39,21 @@ class ExpensesViewController: UIViewController,UITextFieldDelegate,UITableViewDa
         // Do any additional setup after loading the view.
     }
     
-    /*@IBAction func unwindAfterSaveExpense(segue: UIStoryboardSegue){
-        let newExpenseController = segue.source as! NewExpenseViewController
-        self.saveNewExpense(cname: newExpenseController.cname, personsWhoPaid: newExpenseController.personsWhoPaid, personsWhoHaveToPay: newExpenseController.personsWhoHaveToPay)
-        }
+    @IBAction func addExpense(_ sender: Any) {
+        performSegue(withIdentifier: "newExpense", sender: sender)
+        
+    }
+    
+    @IBAction func unwindAfterSaveExpense(segue: UIStoryboardSegue){
+        let newExpenseController = segue.source as! AddExpenseViewController
+        self.saveNewExpense(cname: newExpenseController.ename, personsWhoPaid: newExpenseController.personsWhoPaid, personsWhoHaveToPay: newExpenseController.personsWhoHaveToPay)
         performSegue(withIdentifier: "newExpense", sender: segue.source)
     }
  
      func saveNewExpense(cname: String,personsWhoPaid: ExpensePersonSetViewModel, personsWhoHaveToPay: PersonSetViewModel){
-     let trip = Trip(name: Name, image: Image, date_begin: Date_begin, date_end: Date_end)
-     trips.addTrip(trip: trip)
-     tripTable.reloadData()
+     expenses.addExpense(expense: expense)
+     expensesTable.reloadData()
      }
- */
 
     /*
     // MARK: - Navigation
@@ -61,6 +63,7 @@ class ExpensesViewController: UIViewController,UITextFieldDelegate,UITableViewDa
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
+     
      
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
          if segue.identifier == "ExpenseDetails"{
