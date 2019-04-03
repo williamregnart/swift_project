@@ -37,6 +37,13 @@ class ExpensePersonDAO{
     
     static func getExpensesPersonByPerson(person: Person) -> [ExpensePerson]{
         let expensesPerson = person.payExpense
-        return expensesPerson as! [ExpensePerson]? ?? []
+        var result : [ExpensePerson] = []
+        if expensesPerson == nil {
+            return result
+        }
+        for expensePerson in expensesPerson!{
+            result.append(expensePerson as! ExpensePerson)
+        }
+        return result
     }
 }

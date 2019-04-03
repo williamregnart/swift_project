@@ -61,6 +61,7 @@ class ShowTripViewController: UIViewController,UITextFieldDelegate,UITableViewDa
         else{
             let cell = self.personsTable.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as! PersonTableViewCell
             cell.personName.text = self.trip?.getPersonByIndex(index: indexPath.row)?.name
+            cell.personAmount.text = String(format : "%f", self.trip?.getPersonByIndex(index: indexPath.row)?.balance ?? 0)
             return cell
         }
     }
@@ -92,10 +93,9 @@ class ShowTripViewController: UIViewController,UITextFieldDelegate,UITableViewDa
         }
     }
     
-    @IBAction func goBackToTripTableView(_ sender: Any) {
+    @IBAction func goBack(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
     /*
     // MARK: - Navigation
 
