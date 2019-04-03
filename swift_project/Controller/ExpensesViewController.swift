@@ -51,19 +51,29 @@ class ExpensesViewController: UIViewController,UITextFieldDelegate,UITableViewDa
         }
     }
     
-    /*@IBAction func unwindAfterSaveExpense(segue: UIStoryboardSegue){
-        let newExpenseController = segue.source as! AddExpenseViewController
-        if let name = newExpenseController.expenseName.text{
-        self.saveNewExpense(cname: name, personsWhoPaid: newExpenseController.personsWhoPaidTable, personsWhoHaveToPay: newExpenseController.personsWhoHaveToPayTable)
+    @IBAction func unwindAfterSaveExpense(segue: UIStoryboardSegue){
+        let addExpenseController = segue.source as! AddExpenseViewController
+        self.saveNewExpense(addExpenseController: addExpenseController)
         performSegue(withIdentifier: "newExpense", sender: segue.source)
-        }
     }
- 
-     func saveNewExpense(cname: String,personsWhoPaid: ExpensePersonSet, personsWhoHaveToPay: PersonSet){
-     expenses.addExpense(expense: Expense(name: cname, personsConcerned: personsWhoHaveToPay, personsWhoPaid: personsWhoPaid))
-     expensesTable.reloadData()
-     }
-*/
+    
+    func saveNewExpense(addExpenseController: AddExpenseViewController){
+        let expense = Expense(name: addExpenseController.expenseName.text!)
+        for c in addExpenseController.paidByTableController.cells{
+            let expensePerson = ExpensePerson(person: c.person, amount: NumberFormatter().number(from: c.amount.text!) as! Double, expense: expense)
+            expense.addToPaidBy(expensePerson)
+            c.person.addToPayExpense(expensePerson)
+        }
+        for c in addExpenseController.paidForTable.getPersonsChecked(){
+            expense.addToPaidFor(c)
+            c.addToHasToPayExpense(expense)
+        }
+        print("ok")
+        self.expenses.addExpense(expense: expense)
+        print("maybeok")
+        
+        
+    }
     /*
     // MARK: - Navigation
 

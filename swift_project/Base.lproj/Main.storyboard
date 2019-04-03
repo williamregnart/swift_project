@@ -613,13 +613,13 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="expenseAmount" destination="HOf-WM-AmZ" id="3ct-f2-TG7"/>
-                                            <outlet property="expenseName" destination="vcS-Ec-wSo" id="fgD-TW-KYP"/>
+                                            <outlet property="expenseConcerned" destination="vcS-Ec-wSo" id="npW-Ua-1Zz"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="OwO-4E-PNd" id="K67-K7-ghw"/>
-                                    <outlet property="delegate" destination="OwO-4E-PNd" id="KBc-La-fUy"/>
+                                    <outlet property="dataSource" destination="OwO-4E-PNd" id="FKI-Wz-XYv"/>
+                                    <outlet property="delegate" destination="OwO-4E-PNd" id="hPy-tG-dp3"/>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMI-5p-Gmt">
@@ -794,7 +794,7 @@
                                         <connections>
                                             <outlet property="amount" destination="xGK-dr-Pq0" id="nXr-ev-osx"/>
                                             <outlet property="checkButton" destination="s22-Yv-RXA" id="aFi-e1-e6d"/>
-                                            <outlet property="person" destination="zhd-af-Uyd" id="nur-O3-imi"/>
+                                            <outlet property="personName" destination="zhd-af-Uyd" id="09Q-OE-zSs"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -827,6 +827,7 @@
                                     <barButtonItem title="Save" id="qnj-q7-bha">
                                         <connections>
                                             <action selector="addExpense:" destination="OPD-YJ-xBw" id="xF6-sv-1vS"/>
+                                            <segue destination="iUN-OJ-pny" kind="unwind" identifier="" unwindAction="unwindAfterSaveExpenseWithSegue:" id="s3q-wS-vtq"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="qqG-3h-wLy"/>
@@ -850,6 +851,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nSE-2I-nRC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="iUN-OJ-pny" userLabel="Exit" sceneMemberID="exit"/>
                 <customObject id="aql-0l-CKw" customClass="PaidForTableViewController" customModule="swift_project" customModuleProvider="target">
                     <connections>
                         <outlet property="paidForTable" destination="UWU-pV-8tQ" id="ihG-cs-0sP"/>

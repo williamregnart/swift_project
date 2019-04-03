@@ -59,12 +59,11 @@ class PaidByTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return trip.persons.count
     }
-
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.paidByTable.dequeueReusableCell(withIdentifier: "personWhoPaidCell", for: indexPath) as! PersonWhoPaidTableViewCell
         cell.personName.text = self.trip.getPersonByIndex(index: indexPath.row)?.name
         cell.index = indexPath.row
-        cell.person = self.trip.getPersonByIndex(index: indexPath.row)
-        return cell
         cell.person = self.trip.getPersonByIndex(index: indexPath.row)
         return cell
     }

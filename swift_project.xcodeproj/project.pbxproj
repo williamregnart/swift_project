@@ -32,7 +32,6 @@
 		C40D845F224A11D1007864CC /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D845E224A11D1007864CC /* CoreDataManager.swift */; };
 		C40D8461224A136B007864CC /* TripSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D8460224A136B007864CC /* TripSet.swift */; };
 		C40D8463224A1528007864CC /* ItTripSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D8462224A1528007864CC /* ItTripSet.swift */; };
-		C40D8467224A5F4A007864CC /* ExpenseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D8466224A5F4A007864CC /* ExpenseTableViewController.swift */; };
 		C40D846B224A6288007864CC /* ExpenseDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D846A224A6288007864CC /* ExpenseDAO.swift */; };
 		C40D8473224B91C7007864CC /* ShowPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D8472224B91C7007864CC /* ShowPersonViewController.swift */; };
 		C40D8475224B9740007864CC /* PersonSetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D8474224B9740007864CC /* PersonSetViewModel.swift */; };
@@ -109,7 +108,6 @@
 		C40D845E224A11D1007864CC /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		C40D8460224A136B007864CC /* TripSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripSet.swift; sourceTree = "<group>"; };
 		C40D8462224A1528007864CC /* ItTripSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItTripSet.swift; sourceTree = "<group>"; };
-		C40D8466224A5F4A007864CC /* ExpenseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTableViewController.swift; sourceTree = "<group>"; };
 		C40D846A224A6288007864CC /* ExpenseDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDAO.swift; sourceTree = "<group>"; };
 		C40D8472224B91C7007864CC /* ShowPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPersonViewController.swift; sourceTree = "<group>"; };
 		C40D8474224B9740007864CC /* PersonSetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonSetViewModel.swift; sourceTree = "<group>"; };
@@ -249,7 +247,6 @@
 				C44C3E632249AAA000AAA767 /* EditTripViewController.swift */,
 				C44C3E612249A19100AAA767 /* ShowTripViewController.swift */,
 				2C1F600722495E7C00039118 /* NewTripViewController.swift */,
-				C40D8466224A5F4A007864CC /* ExpenseTableViewController.swift */,
 				C40D8472224B91C7007864CC /* ShowPersonViewController.swift */,
 				C410E09E2252D17D002781CA /* AddExpenseViewController.swift */,
 				C4E220352252DB1700750EC9 /* PaidByTableViewController.swift */,
@@ -474,7 +471,6 @@
 				C4E2203A2252DD3300750EC9 /* PersonWhoHaveToPayTableViewCell.swift in Sources */,
 				2C1B25962244EAB200AD2E80 /* ExpensePerson.swift in Sources */,
 				C4E220412253A69600750EC9 /* ItExpenseSet.swift in Sources */,
-				C40D8467224A5F4A007864CC /* ExpenseTableViewController.swift in Sources */,
 				C40D845F224A11D1007864CC /* CoreDataManager.swift in Sources */,
 				C40D8475224B9740007864CC /* PersonSetViewModel.swift in Sources */,
 				C40D846B224A6288007864CC /* ExpenseDAO.swift in Sources */,
