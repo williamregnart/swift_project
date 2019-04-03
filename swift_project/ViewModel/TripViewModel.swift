@@ -2,7 +2,7 @@
 //  TripViewModel.swift
 //  swift_project
 //
-//  Created by DIEGO KRZYZANOWSKI on 28/03/2019.
+//  Created by WILLIAM REGNART on 28/03/2019.
 //  Copyright © 2019 REGNART-SANCHEZ. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class TripViewModel{
-    
+
     var trip: Trip
     var name:String
     var image: UIImage?
@@ -19,7 +19,7 @@ class TripViewModel{
     var date_creation:Date
     var date_begin:Date?
     var date_end:Date?
-    
+
     init(trip: Trip){
         self.trip = trip
         self.name = trip.name ?? ""
@@ -33,9 +33,9 @@ class TripViewModel{
         self.date_creation = trip.date_creation!
         self.date_begin = trip.date_begin
         self.date_end = trip.date_end
-        
+
     }
-    
+
     func getExpenseByIndex(index: Int?) -> Expense?{
         if let i = index {
             if i>=0 && i<self.expenses.expenseSet.count {
@@ -44,7 +44,7 @@ class TripViewModel{
         }
         return nil
     }
-    
+
     func getPersonByIndex(index: Int?) -> Person?{
         if let i = index {
             if i>=0 && i<self.persons.count {
@@ -53,18 +53,18 @@ class TripViewModel{
         }
         return nil
     }
-    
+
     static func == (t1 : TripViewModel,t2 : TripViewModel)->Bool{
         return t1.name == t2.name
     }
-    
+
     func addPerson(person: Person){
         persons.append(person)
         trip.addPerson(p: person)
         TripDAO.save()
-        
+
     }
-    
+
     func editTrip(name: String?,image: UIImage?,date_begin: Date?,date_end: Date?){
         self.name = name ?? self.name
         self.image = image ?? self.image

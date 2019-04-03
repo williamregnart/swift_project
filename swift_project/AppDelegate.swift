@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  swift_project
 //
-//  Created by William REGNART on 22/03/2019.
+//  Created by WILLIAM REGNART on 22/03/2019.
 //  Copyright © 2019 REGNART-SANCHEZ. All rights reserved.
 //
 
@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    //Updated to display the .sqlite file path
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
         print(paths[0])
@@ -59,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                 
+
                 /*
                  Typical reasons for an error here include:
                  * The parent directory does not exist, cannot be created, or disallows writing.
@@ -91,4 +91,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
-

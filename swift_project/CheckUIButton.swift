@@ -2,17 +2,18 @@
 //  ExpenseUIButton.swift
 //  swift_project
 //
-//  Created by DIEGO KRZYZANOWSKI on 03/04/2019.
+//  Created by WILLIAM REGNART on 03/04/2019.
 //  Copyright © 2019 REGNART-SANCHEZ. All rights reserved.
 //
 
 import UIKit
 
+//Checkboxes
 class CheckUIButton: UIButton {
 
     let checkedImage = UIImage(named: "check")! as UIImage
     let uncheckedImage = UIImage(named: "uncheck")! as UIImage
-    
+
     // Bool property
     var isChecked: Bool = false {
         didSet{
@@ -23,17 +24,17 @@ class CheckUIButton: UIButton {
             }
         }
     }
-    
+
     override func awakeFromNib() {
         self.addTarget(self, action:#selector(buttonClicked(sender:)), for: UIControl.Event.touchUpInside)
         self.isChecked = false
     }
-    
+
     @objc func buttonClicked(sender: UIButton) {
         if sender == self {
             isChecked = !isChecked
         }
-        
+
     }
     /*
     // Only override draw() if you perform custom drawing.

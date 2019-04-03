@@ -2,7 +2,7 @@
 //  PaidTableViewController.swift
 //  swift_project
 //
-//  Created by DIEGO KRZYZANOWSKI on 03/04/2019.
+//  Created by ANTOINE SANCHEZ on 03/04/2019.
 //  Copyright © 2019 REGNART-SANCHEZ. All rights reserved.
 //
 
@@ -32,7 +32,7 @@ class PaidTableViewController: UITableViewController {
         return 0
     }
 
-    /*
+    /* unused
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
@@ -58,7 +58,7 @@ class PaidTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 

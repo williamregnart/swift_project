@@ -2,7 +2,7 @@
 //  TripSetFetchController.swift
 //  swift_project
 //
-//  Created by Antoine SANCHEZ on 26/03/2019.
+//  Created by ANTOINE SANCHEZ on 26/03/2019.
 //  Copyright © 2019 REGNART-SANCHEZ. All rights reserved.
 //
 
@@ -12,7 +12,7 @@ import UIKit
 
 class TripSetFetchController: NSObject, NSFetchedResultsControllerDelegate {
     let tripTableView : UITableView
-    
+
     init(view: UITableView){
         self.tripTableView = view
         super.init()
@@ -22,7 +22,7 @@ class TripSetFetchController: NSObject, NSFetchedResultsControllerDelegate {
             fatalError(error.description)
         }
     }
-    
+
     var tripsFetched : NSFetchedResultsController<Trip> {
         let request : NSFetchRequest<Trip> = Trip.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key:#keyPath(Trip.name), ascending: true)]
@@ -31,16 +31,16 @@ class TripSetFetchController: NSObject, NSFetchedResultsControllerDelegate {
         fetchResultController.delegate = self
         return fetchResultController
     }
-    
+
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>){
         self.tripTableView.beginUpdates()
     }
-    
+
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>){
         self.tripTableView.endUpdates()
         CoreDataManager.save()
     }
-    
+
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at
         indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch type {
@@ -58,6 +58,6 @@ class TripSetFetchController: NSObject, NSFetchedResultsControllerDelegate {
             } default:
             break
         } }
-    
-    
+
+
 }

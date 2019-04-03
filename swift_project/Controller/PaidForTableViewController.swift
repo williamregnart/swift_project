@@ -2,7 +2,7 @@
 //  PaidForTableViewController.swift
 //  swift_project
 //
-//  Created by DIEGO KRZYZANOWSKI on 03/04/2019.
+//  Created by WILLIAM REGNART on 03/04/2019.
 //  Copyright © 2019 REGNART-SANCHEZ. All rights reserved.
 //
 
@@ -13,9 +13,10 @@ class PaidForTableViewController: UITableViewController {
     @IBOutlet weak var paidForTable: UITableView!
     var trip: TripViewModel!
     var expense: Expense!
-    
+
     var personTable : [Person] = []
-    
+
+    //Returns cells whose checkboxes have been checked
     func getPersonsChecked()->[Person]{
         var result: [Person] = []
         for cell in paidForTable.visibleCells{
@@ -23,11 +24,11 @@ class PaidForTableViewController: UITableViewController {
             if(cell.checkButton.isChecked){
                 result.append(personTable[cell.index])
             }
-            
+
         }
         return result
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -50,7 +51,7 @@ class PaidForTableViewController: UITableViewController {
         return trip.persons.count
     }
 
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "personWhoHaveToPayCell", for: indexPath) as! PersonWhoHaveToPayTableViewCell
 
@@ -63,7 +64,7 @@ class PaidForTableViewController: UITableViewController {
                 cell.checkButton.isChecked = true
             }
         }
-        
+
         return cell
     }
 
@@ -83,7 +84,7 @@ class PaidForTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 

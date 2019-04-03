@@ -2,7 +2,7 @@
 //  TableViewCell.swift
 //  swift_project
 //
-//  Created by DIEGO KRZYZANOWSKI on 03/04/2019.
+//  Created by ANTOINE SANCHEZ on 03/04/2019.
 //  Copyright © 2019 REGNART-SANCHEZ. All rights reserved.
 //
 
@@ -20,9 +20,9 @@ class PersonWhoTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
     func checkChanged(check: Bool){
-        
+
     }
 
 }

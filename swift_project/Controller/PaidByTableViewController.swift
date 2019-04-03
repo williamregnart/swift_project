@@ -2,27 +2,28 @@
 //  PaidByTableViewController.swift
 //  swift_project
 //
-//  Created by DIEGO KRZYZANOWSKI on 02/04/2019.
+//  Created by WILLIAM REGNART on 02/04/2019.
 //  Copyright © 2019 REGNART-SANCHEZ. All rights reserved.
 //
 
 import UIKit
 
 class PaidByTableViewController: UITableViewController {
-    
+
     var expense: Expense!
-    
+
     var inputPerson: Person!
-    
+
     var trip: TripViewModel!
 
     var personTable : [Person] = []
-    
-    
+
+
     var cells: [PersonWhoPaidTableViewCell] = []
-    
+
     var amountChecked : [Double] = []
-    
+
+    //Returns the cells of those whose checkboxes has been checked
     func getPersonsChecked()->[PersonWhoPaidTableViewCell]{
         var result: [PersonWhoPaidTableViewCell] = []
         for cell in paidByTable.visibleCells{
@@ -30,14 +31,11 @@ class PaidByTableViewController: UITableViewController {
             if(cell.checkButton.isChecked){
                 result.append(cell)
             }
-            
+
         }
         return result
     }
-    
-    
 
-    
     @IBOutlet weak var paidByTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +57,8 @@ class PaidByTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return trip.persons.count
     }
-    
+
+    //Fills the cells with the right elements
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.paidByTable.dequeueReusableCell(withIdentifier: "personWhoPaidCell", for: indexPath) as! PersonWhoPaidTableViewCell
         cell.personName.text = self.trip.getPersonByIndex(index: indexPath.row)?.name
@@ -72,10 +71,10 @@ class PaidByTableViewController: UITableViewController {
                 cell.checkButton.isChecked = true
             }
         }
-        
+
         return cell
     }
-    
+
 
     /*
     // Override to support conditional editing of the table view.
@@ -93,7 +92,7 @@ class PaidByTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 

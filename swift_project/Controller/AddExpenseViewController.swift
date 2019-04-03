@@ -2,20 +2,20 @@
 //  AddExpenseViewController.swift
 //  swift_project
 //
-//  Created by DIEGO KRZYZANOWSKI on 02/04/2019.
+//  Created by ANTOINE SANCHEZ on 02/04/2019.
 //  Copyright © 2019 REGNART-SANCHEZ. All rights reserved.
 //
 
 import UIKit
 
 class AddExpenseViewController: UIViewController, UITextFieldDelegate {
-    
+
     @IBOutlet var paidByTableController: PaidByTableViewController!
     @IBOutlet var paidForTable: PaidForTableViewController!
     var trip: TripViewModel!
-    
+
     @IBOutlet weak var expenseName: UITextField!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         paidByTableController.trip = self.trip
@@ -24,12 +24,12 @@ class AddExpenseViewController: UIViewController, UITextFieldDelegate {
         paidForTable.personTable = trip.persons
         // Do any additional setup after loading the view.
     }
-    
-    
+
+    //Allows the user to go back to previous screen
     @IBAction func goBack(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
+
     /*
     // MARK: - Navigation
 

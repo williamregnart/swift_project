@@ -2,7 +2,7 @@
 //  PersonSetViewModel.swift
 //  swift_project
 //
-//  Created by DIEGO KRZYZANOWSKI on 27/03/2019.
+//  Created by WILLIAM REGNART on 27/03/2019.
 //  Copyright © 2019 REGNART-SANCHEZ. All rights reserved.
 //
 
@@ -10,19 +10,19 @@ import Foundation
 import UIKit
 
 class PersonSetViewModel{
-    
+
     var personSet:[Person] = []
-    
+
     init(personSet: PersonSet){
         for person in personSet.personList{
             self.personSet.append(person)
         }
     }
-    
+
     init(){
         self.personSet = []
     }
-    
+
     func getPersonByIndex(index: Int?) -> Person?{
         if let i = index {
             if i>=0 && i<self.personSet.count {
@@ -31,7 +31,7 @@ class PersonSetViewModel{
         }
         return nil
     }
-    
+
     func addPerson(personName name : String?){
         if name == nil {
             return
@@ -51,7 +51,7 @@ class PersonSetViewModel{
         }
         self.personSet = PersonDAO.getAllPerson()
     }
-    
+
     func getIndexByPerson(person: Person) -> Int?{
         var indexPath = -1
         for index in 0...personSet.count{
@@ -64,5 +64,5 @@ class PersonSetViewModel{
         }
         return indexPath
     }
-    
+
 }

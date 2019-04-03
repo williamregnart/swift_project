@@ -2,7 +2,7 @@
 //  PersonWhoHaveToPayTableViewCell.swift
 //  swift_project
 //
-//  Created by DIEGO KRZYZANOWSKI on 02/04/2019.
+//  Created by WILLIAM REGNART on 02/04/2019.
 //  Copyright © 2019 REGNART-SANCHEZ. All rights reserved.
 //
 
@@ -13,7 +13,7 @@ class PersonWhoHaveToPayTableViewCell: UITableViewCell {
     @IBOutlet weak var checkButton: CheckUIButton!
     @IBOutlet weak var personName: UILabel!
     var person: Person!
-    
+
     var index: Int!
     override func awakeFromNib() {
         super.awakeFromNib()

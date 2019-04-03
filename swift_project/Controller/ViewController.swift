@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  swift_project
 //
-//  Created by William REGNART on 22/03/2019.
+//  Created by WILLIAM REGNART on 22/03/2019.
 //  Copyright © 2019 REGNART-SANCHEZ. All rights reserved.
 //
 
@@ -11,47 +11,48 @@ import UIKit
 import CoreData
 
 class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
-    
-    
-    
+
+
+
     @IBOutlet weak var titleApp: UILabel!
-    
+
     @IBOutlet weak var tripTable: UITableView!
     var trips: TripSetViewModel2 = TripSetViewModel2(tripSet: TripSet())
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.trips.tripSet.count
     }
-    
+
+    //Fills the trip table with trips and their images
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tripTable.dequeueReusableCell(withIdentifier: "tripCell", for: indexPath) as! TripTableViewCell
         cell.voyage.text = self.trips.getTripByIndex(index: indexPath.row)?.name
         cell.imgVoyage.image = self.trips.getTripByIndex(index: indexPath.row)?.image
         return cell
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         guard self.getContext(errorMsg: "Save failed") != nil else {return}
-        
+
         // Do any additional setup after loading the view, typically from a nib.
     }
-    
+
     func alertError(errorMsg error : String, userInfo user: String = ""){
         let alert = UIAlertController(title: error, message: user, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title:"OK",style:.default)
         alert.addAction(cancelAction)
         present(alert,animated: true)
     }
-    
+
     func alert(WithTitle title: String, andMessage msg: String = ""){
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title:"OK",style:.default)
         alert.addAction(cancelAction)
         present(alert,animated: true)
     }
-    
-    
+
+    //Catches the trip when he's saved
     @IBAction func unwindAfterSaveTrip(segue: UIStoryboardSegue){
         let newTripController = segue.source as! NewTripViewController
         if let name = newTripController.nameInput.text{
@@ -59,7 +60,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         }
         performSegue(withIdentifier: "newTrip", sender: segue.source)
     }
-    
+
     func getContext(errorMsg: String, userInfoMsg: String = "could not retrieve data context") -> NSManagedObjectContext?{
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{
             self.alert(WithTitle: errorMsg, andMessage: userInfoMsg)
@@ -67,7 +68,8 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         }
         return appDelegate.persistentContainer.viewContext
     }
-    
+
+    //Handles the segue to the tripDetails page
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "tripDetails"{
             if let indexPath = self.tripTable.indexPathForSelectedRow{
@@ -76,16 +78,17 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             }
         }
     }
-    
+
+    //Allows the user to go to the trip creation page
     @IBAction func addTrip(_ sender: Any) {
         performSegue(withIdentifier: "newTrip", sender: sender)
     }
-    
+
+    //Catches the trip creation
     func saveNewTrip(Name:String,Image:UIImage?,Date_begin:Date?,Date_end:Date?){
         let trip = Trip(name: Name, image: Image, date_begin: Date_begin, date_end: Date_end)
         trips.addTrip(trip: trip)
         tripTable.reloadData()
     }
-    
-}
 
+}

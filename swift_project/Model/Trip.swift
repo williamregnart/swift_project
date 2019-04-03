@@ -2,7 +2,7 @@
 //  Trip.swift
 //  swift_project
 //
-//  Created by William REGNART on 22/03/2019.
+//  Created by ANTOINE SANCHEZ on 22/03/2019.
 //  Copyright © 2019 REGNART-SANCHEZ. All rights reserved.
 //
 
@@ -11,7 +11,7 @@ import UIKit
 import CoreData
 
 extension Trip{
-    
+
     var tname:String {return self.name ?? ""}
     var timage: UIImage? {
         get{if(self.image == nil){
@@ -27,7 +27,7 @@ extension Trip{
         }
         return personList
     }
-    
+
     var expenses: ExpenseSet {
         let expensesList = ExpenseSet()
         for e in self.hasExpense!{
@@ -35,11 +35,11 @@ extension Trip{
         }
         return expensesList
     }
-    
+
     var tdate_creation:Date {return self.date_creation!}
     var tdate_begin:Date? {return self.date_begin}
     var tdate_end:Date? {return self.date_end}
-    
+
     convenience init(name:String,image: UIImage?,date_begin: Date?,date_end: Date?){
         self.init(context: CoreDataManager.context)
         self.name=name
@@ -50,7 +50,7 @@ extension Trip{
         self.image = image?.pngData()
         self.date_creation=Date()
     }
-    
+
     /*
     func getPersons(){
         for p: Any in self.mutableArrayValue(forKey: "hasPerson"){
@@ -60,19 +60,19 @@ extension Trip{
         }
     }
  */
-    
+
     func addPerson(p : Person){
         persons.add(person: p)
         self.hasPerson?.adding(p)
         p.belongsTo = self
     }
-    
+
     func editTrip(name: String?,image: UIImage?,date_begin: Date?,date_end: Date?){
         self.name = name ?? self.name
         self.image = image?.pngData() ?? self.image
         self.date_begin = date_begin ?? self.date_begin
         self.date_end = date_end ?? self.date_end
     }
-    
-    
+
+
 }

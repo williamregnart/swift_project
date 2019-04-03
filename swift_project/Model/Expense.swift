@@ -2,7 +2,7 @@
 //  Cost.swift
 //  swift_project
 //
-//  Created by William REGNART on 22/03/2019.
+//  Created by WILLIAM REGNART on 22/03/2019.
 //  Copyright © 2019 REGNART-SANCHEZ. All rights reserved.
 //
 
@@ -24,14 +24,15 @@ extension Expense{
         }
         return result
     }
-    
+
     convenience init(name:String){
         self.init(context: CoreDataManager.context)
         self.name=name
         //self.cpersonsConcerned=personsConcerned
         //self.cpersonsWhoPaid=personsWhoPaid
     }
-    
+
+    //equals sum of amounts paid by each person paying for it
     var amount :  Double{
         var total:Double = 0
         for expensePerson in ExpensePersonDAO.getAllExpensePerson() {
@@ -41,17 +42,18 @@ extension Expense{
         }
         return total
     }
-    
+
     static func == (e1: Expense, e2: Expense) -> Bool{
         return e1.name == e2.name
     }
-    
+
     static func !=(e1: Expense, e2: Expense) -> Bool{
         return !(e1 == e2)
     }
-    
+
+    //adds persons to an expense
     func addPersonWhoPaid(expensePerson: ExpensePerson){
         self.paidBy?.adding(expensePerson)
     }
-    
+
 }

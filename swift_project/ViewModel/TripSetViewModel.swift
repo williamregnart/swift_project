@@ -2,7 +2,7 @@
 //  PersonSetViewModel.swift
 //  swift_project
 //
-//  Created by Antoine SANCHEZ on 22/03/2019.
+//  Created by ANTOINE SANCHEZ on 22/03/2019.
 //  Copyright © 2019 REGNART-SANCHEZ. All rights reserved.
 //
 
@@ -11,7 +11,7 @@ import UIKit
 import CoreData
 
 protocol TripSetViewModelDelegate {
-    
+
     // MARK: -
     /// called when set globally changes
     func dataSetChanged()
@@ -35,7 +35,7 @@ protocol TripSetViewModelDelegate {
 class TripSetViewModel {
     // MARK: -
     var delegate : TripSetViewModelDelegate? = nil
-    
+
     var tripsFetched : NSFetchedResultsController<Trip>
     init(data: NSFetchedResultsController<Trip>){
         self.tripsFetched = data
@@ -50,13 +50,13 @@ class TripSetViewModel {
             self.delegate?.tripAdded(at: indexPath)
         }
     }
-    
+
     public var count : Int {
         return self.tripsFetched.fetchedObjects?.count ?? 0
     }
-    
+
     public func get(tripAt index: Int) -> Trip?{
         return self.tripsFetched.object(at: IndexPath(row: index, section: 0))
     }
-    
+
 }

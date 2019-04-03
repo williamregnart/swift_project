@@ -2,7 +2,7 @@
 //  CostUITabBarItem.swift
 //  swift_project
 //
-//  Created by DIEGO KRZYZANOWSKI on 01/04/2019.
+//  Created by ANTOINE SANCHEZ on 01/04/2019.
 //  Copyright © 2019 REGNART-SANCHEZ. All rights reserved.
 //
 

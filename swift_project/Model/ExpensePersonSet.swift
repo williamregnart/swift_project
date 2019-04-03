@@ -9,17 +9,17 @@
 import Foundation
 
 class ExpensePersonSet: Sequence{
-    
+
     var expensesPerson:[ExpensePerson]
-    
+
     init(){
         self.expensesPerson=[]
     }
-    
+
     var isEmpty : Bool {
         return self.expensesPerson.isEmpty
     }
-    
+
     func add(expensePerson : ExpensePerson){
         if self.contains(expensePerson : expensePerson){
             return
@@ -27,18 +27,18 @@ class ExpensePersonSet: Sequence{
             expensesPerson.append(expensePerson)
         }
     }
-    
+
     func remove(expensePerson : ExpensePerson){
         guard let index = self.indexOf(expensePerson : expensePerson) else {
             return
         }
         expensesPerson.remove(at: index)
     }
-    
+
     var count : Int {
         return self.expensesPerson.count
     }
-    
+
     func indexOf(expensePerson : ExpensePerson) -> Int? {
         var i : Int? = nil
         for index in 0..<expensesPerson.count {
@@ -48,7 +48,7 @@ class ExpensePersonSet: Sequence{
         }
         return i
     }
-    
+
     func contains(person : Person)-> Bool {
         var cont : Bool = false
         for p in expensesPerson {
@@ -58,7 +58,7 @@ class ExpensePersonSet: Sequence{
         }
         return cont
     }
-    
+
     func contains(expensePerson : ExpensePerson) -> Bool {
         var cont : Bool = false
         for p in expensesPerson {
@@ -68,14 +68,14 @@ class ExpensePersonSet: Sequence{
         }
         return cont
     }
-    
+
     func look(expensePerson: ExpensePerson) -> ExpensePerson? {
         guard let index = indexOf(expensePerson: expensePerson) else{
             return nil
         }
         return expensesPerson[index]
     }
-    
+
     func look(person: Person) -> ExpensePerson? {
         var result: ExpensePerson!
         for ep in self.expensesPerson{
@@ -85,7 +85,8 @@ class ExpensePersonSet: Sequence{
         }
         return result
     }
-    
+
+    //Makes iterating through it trivial with a foreach
     func makeIterator() -> ItExpensePersonSet{
         let iterator: ItExpensePersonSet = ItExpensePersonSet(expensePersons: self)
         return iterator

@@ -2,7 +2,7 @@
 //  ShowExpenseViewController.swift
 //  swift_project
 //
-//  Created by DIEGO KRZYZANOWSKI on 03/04/2019.
+//  Created by WILLIAM REGNART on 03/04/2019.
 //  Copyright © 2019 REGNART-SANCHEZ. All rights reserved.
 //
 
@@ -15,7 +15,7 @@ class ShowExpenseViewController: ViewController {
 
         // Do any additional setup after loading the view.
     }
-    
+
 
     /*
     // MARK: - Navigation

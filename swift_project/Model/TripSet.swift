@@ -2,24 +2,24 @@
 //  TripSet.swift
 //  swift_project
 //
-//  Created by DIEGO KRZYZANOWSKI on 26/03/2019.
+//  Created by ANTOINE SANCHEZ on 26/03/2019.
 //  Copyright © 2019 REGNART-SANCHEZ. All rights reserved.
 //
 
 import Foundation
 
 class TripSet: Sequence {
-    
+
     var tripList : [Trip]
-    
+
     init(){
         self.tripList = TripDAO.getAllTrip()
     }
-    
+
     var isEmpty : Bool {
         return self.tripList.isEmpty
     }
-    
+
     func add(trip : Trip){
         if self.contains(trip : trip){
             return
@@ -27,18 +27,18 @@ class TripSet: Sequence {
             tripList.append(trip)
         }
     }
-    
+
     func remove(trip : Trip){
         guard let index = self.indexOf(trip: trip) else {
             return
         }
         tripList.remove(at: index)
     }
-    
+
     var count : Int {
         return self.tripList.count
     }
-    
+
     func indexOf(trip : Trip) -> Int? {
         var i : Int? = nil
         for index in 0..<tripList.count {
@@ -48,7 +48,7 @@ class TripSet: Sequence {
         }
         return i
     }
-    
+
     func contains(trip : Trip)-> Bool {
         var cont : Bool = false
         for t in tripList {
@@ -58,15 +58,15 @@ class TripSet: Sequence {
         }
         return cont
     }
-    
+
     func look(trip: Trip) -> Trip? {
         guard let index = indexOf(trip: trip) else{
             return nil
         }
         return tripList[index]
     }
-    
-    
+
+
     func look(name: String) -> [Trip]{
         var trips : [Trip] = []
         for t in self.tripList {
@@ -76,12 +76,12 @@ class TripSet: Sequence {
         }
         return trips
     }
-    
+
     func makeIterator() -> ItTripSet{
         let iterator: ItTripSet = ItTripSet(trips: self)
         return iterator
     }
-    
-    
-    
+
+
+
 }

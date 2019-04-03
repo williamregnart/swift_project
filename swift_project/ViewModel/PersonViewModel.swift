@@ -2,24 +2,24 @@
 //  PersonViewModel.swift
 //  swift_project
 //
-//  Created by DIEGO KRZYZANOWSKI on 27/03/2019.
+//  Created by WILLIAM REGNART on 27/03/2019.
 //  Copyright © 2019 REGNART-SANCHEZ. All rights reserved.
 //
 
 import Foundation
 
 class PersonViewModel{
-    
+
     var person : Person
-    
+
     var name: String
-    
+
     var debts: [Expense] = []
-    
+
     var creances: [Expense] = []
-    
+
     var creancesExpensePerson: [ExpensePerson] = []
-    
+
     init(person: Person){
         self.person = person
         self.name = person.name ?? ""
@@ -33,7 +33,7 @@ class PersonViewModel{
             self.creancesExpensePerson.append(creanceExpensePerson)
         }
     }
-    
+
     func getDebtByIndex(index: Int?) -> Expense?{
         if let i = index {
             if i>=0 && i<self.debts.count {
@@ -42,11 +42,11 @@ class PersonViewModel{
         }
         return nil
     }
-    
+
     func addExpense(expense : Expense) {
         PersonDAO.addExpense(expense : expense)
     }
-    
+
     func getCreanceByIndex(index: Int?) -> Expense?{
         if let i = index {
             if i>=0 && i<self.creances.count {
