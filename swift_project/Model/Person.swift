@@ -18,6 +18,7 @@ extension Person{
         let expenseList = ExpenseDAO.getDebtByPerson(person: self)
         let result = ExpenseSet()
         for expense in expenseList{
+            
             result.add(expense: expense)
         }
         return result
@@ -61,14 +62,19 @@ extension Person{
     var balance:Double{
         var blc: Double = 0.0
         
-        //Parcours de la liste des dépenses pour le voyage
+        //Parcours de la liste des dépenses pour la personne
         for expense in self.expenses {
-            blc -= expense.amount / Double(expense.epersonsConcerned.count)
+            if(expense.epersonsConcerned.count != 0 && (expense.paidBy?.contains(self))!){
+                let sumToAdd = (expense.paidBy?.anyObject() as! ExpensePerson).amount
+                blc = blc - sumToAdd / Double(expense.epersonsConcerned.count)
+            }
         }
         //Parcours de la liste des personnes ayant payé pour la dépense
         //Si la personne a payé, on ajoute le montant qu'elle a payé à sa balance
         for creance in self.creancesExpensePerson{
-            blc += creance.amount
+            if creance.concernPerson == self {
+                blc += creance.amount
+            }
         }
         
         return blc

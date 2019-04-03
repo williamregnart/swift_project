@@ -47,6 +47,10 @@ class ShowPersonViewController: UIViewController,UITextFieldDelegate,UITableView
     }
     
 
+    @IBAction func goBack(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

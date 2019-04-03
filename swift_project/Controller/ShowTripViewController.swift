@@ -71,7 +71,7 @@ class ShowTripViewController: UIViewController,UITextFieldDelegate,UITableViewDa
         if let name = editTripController.nameInput.text{
             self.editTrip(name: name, image: nil, date_begin: nil, date_end: nil)
         }
-
+        self.personsTable.reloadData()
     }
     
     func editTrip(name:String?,image:UIImage?,date_begin:Date?,date_end:Date?){
