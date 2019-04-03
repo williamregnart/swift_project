@@ -75,9 +75,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
                 showTripViewController.trip = self.trips.getTripByIndex(index: indexPath.row)
             }
         }
-        
     }
-
     
     @IBAction func addTrip(_ sender: Any) {
         performSegue(withIdentifier: "newTrip", sender: sender)
