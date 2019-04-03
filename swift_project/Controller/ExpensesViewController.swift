@@ -59,9 +59,11 @@ class ExpensesViewController: UIViewController,UITextFieldDelegate,UITableViewDa
     
     func saveNewExpense(addExpenseController: AddExpenseViewController){
         let expense = Expense(name: addExpenseController.expenseName.text!)
-        for c in addExpenseController.paidByTableController.getPersonsChecked(){
+        let personsWhoPaid = addExpenseController.paidByTableController.getPersonsChecked()
+        for c in personsWhoPaid{
             let expensePerson = ExpensePerson(person: c.person, amount: NumberFormatter().number(from: c.amount.text!) as! Double, expense: expense)
-            expense.addToPaidBy(expensePerson)
+            print(expensePerson.amount)
+            expense.addPersonWhoPaid(expensePerson: expensePerson)
             c.person.addToPayExpense(expensePerson)
         }
         for c in addExpenseController.paidForTable.getPersonsChecked(){
@@ -69,6 +71,7 @@ class ExpensesViewController: UIViewController,UITextFieldDelegate,UITableViewDa
             c.addToHasToPayExpense(expense)
         }
         self.expenses.addExpense(expense: expense)
+        self.expensesTable.reloadData()
         
         
     }

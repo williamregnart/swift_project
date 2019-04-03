@@ -34,8 +34,10 @@ extension Expense{
     
     var amount :  Double{
         var total:Double = 0
-        for expensePerson in self.epersonsWhoPaid {
-            total += expensePerson.amount
+        for expensePerson in ExpensePersonDAO.getAllExpensePerson() {
+            if(expensePerson.concernExpense == self){
+                total += expensePerson.amount
+            }
         }
         return total
     }
@@ -48,5 +50,8 @@ extension Expense{
         return !(e1 == e2)
     }
     
+    func addPersonWhoPaid(expensePerson: ExpensePerson){
+        self.paidBy?.adding(expensePerson)
+    }
     
 }
