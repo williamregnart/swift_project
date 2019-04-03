@@ -12,6 +12,7 @@ class PaidForTableViewController: UITableViewController {
 
     @IBOutlet weak var paidForTable: UITableView!
     var trip: TripViewModel!
+    var expense: Expense!
     
     var personTable : [Person] = []
     
@@ -56,6 +57,13 @@ class PaidForTableViewController: UITableViewController {
         cell.personName.text = trip.getPersonByIndex(index: indexPath.row)?.name
         cell.person = trip.getPersonByIndex(index: indexPath.row)
         cell.index = indexPath.row
+        if (expense != nil){
+            let person = expense.epersonsConcerned.look(person: cell.person)
+            if(person != nil){
+                cell.checkButton.isChecked = true
+            }
+        }
+        
         return cell
     }
 

@@ -10,16 +10,16 @@ import Foundation
 import UIKit
 
 class ShowExpenseDetailViewController: UIViewController,UITextFieldDelegate{
+    @IBOutlet var showPaidForTableController: ShowPaidForTableViewController!
     
+    @IBOutlet var showPaidByTableController: ShowPaidByTableViewController!
+    var expense: Expense!
     var trip: TripViewModel!
     
     @IBOutlet weak var expenseName: UITextField!
     
     @IBOutlet weak var expenseAmount: UILabel!
-    
-    @IBOutlet var paidForTableController: PaidForTableViewController!
-    
-    @IBOutlet var paidByTableController: PaidByTableViewController!
+
     
     @IBAction func goBack(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -27,10 +27,10 @@ class ShowExpenseDetailViewController: UIViewController,UITextFieldDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        paidByTableController.trip = self.trip
-        paidByTableController.personTable = trip.persons
-        paidForTableController.trip = self.trip
-        paidForTableController.personTable = trip.persons
+        showPaidByTableController.trip = self.trip
+        showPaidByTableController.personTable = trip.persons
+        showPaidForTableController.trip = self.trip
+        showPaidForTableController.personTable = trip.persons
         // Do any additional setup after loading the view.
     }
     

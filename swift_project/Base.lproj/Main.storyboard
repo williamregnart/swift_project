@@ -592,6 +592,7 @@
                                         <connections>
                                             <outlet property="expenseAmount" destination="HOf-WM-AmZ" id="3ct-f2-TG7"/>
                                             <outlet property="expenseConcerned" destination="vcS-Ec-wSo" id="npW-Ua-1Zz"/>
+                                            <segue destination="X8R-MS-r8z" kind="presentation" identifier="expenseDetails" id="Yk6-nK-Gt6"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -667,7 +668,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="personWhoPaidCell" id="Yux-7j-sDu" customClass="PersonWhoPaidTableViewCell" customModule="swift_project" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="showPersonWhoPaidCell" id="Yux-7j-sDu" customClass="ShowPersonWhoPaidTableViewCell" customModule="swift_project" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yux-7j-sDu" id="if1-un-llC">
@@ -712,9 +713,9 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="amount" destination="M1l-bq-oVb" id="8Vo-Yp-SVq"/>
-                                            <outlet property="checkButton" destination="y69-73-A9F" id="Iic-C4-jJ9"/>
-                                            <outlet property="personName" destination="A2z-ZR-B9Y" id="6cM-XE-00q"/>
+                                            <outlet property="amount" destination="M1l-bq-oVb" id="hrJ-SN-GTz"/>
+                                            <outlet property="checkButton" destination="y69-73-A9F" id="WWG-QT-X9w"/>
+                                            <outlet property="personName" destination="A2z-ZR-B9Y" id="aHO-7T-5vy"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -728,7 +729,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="personWhoHaveToPayCell" id="4pv-C0-EBM" customClass="PersonWhoHaveToPayTableViewCell" customModule="swift_project" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="showPersonWhoHaveToPayCell" id="4pv-C0-EBM" customClass="ShowPersonWhoHaveToPayTableViewCell" customModule="swift_project" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4pv-C0-EBM" id="AAZ-E8-w2r">
@@ -802,13 +803,21 @@
                     <connections>
                         <outlet property="expenseAmount" destination="ubn-hS-JWS" id="zwn-kN-7L1"/>
                         <outlet property="expenseName" destination="G7W-pM-jSm" id="7u4-hK-b1b"/>
-                        <outlet property="paidByController" destination="H3w-BE-BOl" id="2zj-FB-Gax"/>
-                        <outlet property="paidForController" destination="flh-Xn-V7P" id="6zX-uI-Vbo"/>
+                        <outlet property="showPaidByTable" destination="H3w-BE-BOl" id="QZJ-Mb-CPB"/>
+                        <outlet property="showPaidForTable" destination="flh-Xn-V7P" id="X5t-He-tHP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8OS-tB-d41" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="flh-Xn-V7P" customClass="PaidForTableViewController" customModule="swift_project" customModuleProvider="target"/>
-                <customObject id="H3w-BE-BOl" customClass="PaidByTableViewController" customModule="swift_project" customModuleProvider="target"/>
+                <customObject id="flh-Xn-V7P" customClass="ShowPaidForTableViewController" customModule="swift_project" customModuleProvider="target">
+                    <connections>
+                        <outlet property="showPaidForTable" destination="SBd-F8-rAj" id="UcY-mg-8aW"/>
+                    </connections>
+                </customObject>
+                <customObject id="H3w-BE-BOl" customClass="ShowPaidByTableViewController" customModule="swift_project" customModuleProvider="target">
+                    <connections>
+                        <outlet property="showPaidByTable" destination="657-L5-HTy" id="iTU-JZ-6GM"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="1873" y="1481"/>
         </scene>

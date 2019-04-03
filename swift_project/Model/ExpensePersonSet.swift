@@ -76,6 +76,16 @@ class ExpensePersonSet: Sequence{
         return expensesPerson[index]
     }
     
+    func look(person: Person) -> ExpensePerson? {
+        var result: ExpensePerson!
+        for ep in self.expensesPerson{
+            if ep.concernPerson == person{
+                result = ep
+            }
+        }
+        return result
+    }
+    
     func makeIterator() -> ItExpensePersonSet{
         let iterator: ItExpensePersonSet = ItExpensePersonSet(expensePersons: self)
         return iterator

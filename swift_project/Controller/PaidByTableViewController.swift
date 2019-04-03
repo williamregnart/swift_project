@@ -65,6 +65,14 @@ class PaidByTableViewController: UITableViewController {
         cell.personName.text = self.trip.getPersonByIndex(index: indexPath.row)?.name
         cell.index = indexPath.row
         cell.person = self.trip.getPersonByIndex(index: indexPath.row)
+        if (expense != nil){
+            let person = expense.epersonsWhoPaid.look(person: cell.person)
+            cell.amount.text = String(person!.amount)
+            if(person != nil){
+                cell.checkButton.isChecked = true
+            }
+        }
+        
         return cell
     }
     

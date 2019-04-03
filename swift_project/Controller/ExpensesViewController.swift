@@ -49,6 +49,12 @@ class ExpensesViewController: UIViewController,UITextFieldDelegate,UITableViewDa
             let addExpenseViewController = segue.destination as! AddExpenseViewController
             addExpenseViewController.trip = self.trip
         }
+        if segue.identifier == "expenseDetails"{
+            if let indexPath = self.expensesTable.indexPathForSelectedRow{
+                let showExpenseDetailViewController = segue.destination as! ShowExpenseDetailViewController
+                showExpenseDetailViewController.expense = self.expenses.getExpenseByIndex(index: indexPath.row)
+            }
+        }
     }
     
     @IBAction func unwindAfterSaveExpense(segue: UIStoryboardSegue){
@@ -82,16 +88,6 @@ class ExpensesViewController: UIViewController,UITextFieldDelegate,UITableViewDa
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-    }
-     
-     */
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         if segue.identifier == "ExpenseDetails"{
-             if let indexPath = self.expensesTable.indexPathForSelectedRow{
-                 let showExpenseViewController = segue.destination as! ShowExpenseViewController
-                 showExpenseViewController.expense = self.expenses.getExpenseByIndex(index: indexPath.row)
-             }
-        }
      }
      
     */
