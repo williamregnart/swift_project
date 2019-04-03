@@ -49,4 +49,8 @@ class PersonDAO{
         }
         return result
     }
+    
+    static func addExpense(expense : Expense){
+            CoreDataManager.context.setValue(expense, forKey: "payExpense")
+    }
 }

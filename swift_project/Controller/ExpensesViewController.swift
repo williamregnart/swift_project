@@ -20,6 +20,10 @@ class ExpensesViewController: UIViewController,UITextFieldDelegate,UITableViewDa
         return trip.expenses.count
     }
     
+    @IBAction func goToTrip(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.expensesTable.dequeueReusableCell(withIdentifier: "expenseCell", for: indexPath) as! ExpenseTableViewCell
         cell.expenseConcerned.text = self.expenses.getExpenseByIndex(index: indexPath.row)?.ename
@@ -49,12 +53,14 @@ class ExpensesViewController: UIViewController,UITextFieldDelegate,UITableViewDa
     
     /*@IBAction func unwindAfterSaveExpense(segue: UIStoryboardSegue){
         let newExpenseController = segue.source as! AddExpenseViewController
-        self.saveNewExpense(cname: newExpenseController.ename, personsWhoPaid: newExpenseController.personsWhoPaid, personsWhoHaveToPay: newExpenseController.personsWhoHaveToPay)
+        if let name = newExpenseController.expenseName.text{
+        self.saveNewExpense(cname: name, personsWhoPaid: newExpenseController.personsWhoPaidTable, personsWhoHaveToPay: newExpenseController.personsWhoHaveToPayTable)
         performSegue(withIdentifier: "newExpense", sender: segue.source)
+        }
     }
  
-     func saveNewExpense(cname: String,personsWhoPaid: ExpensePersonSetViewModel, personsWhoHaveToPay: PersonSetViewModel){
-     expenses.addExpense(expense: expense)
+     func saveNewExpense(cname: String,personsWhoPaid: ExpensePersonSet, personsWhoHaveToPay: PersonSet){
+     expenses.addExpense(expense: Expense(name: cname, personsConcerned: personsWhoHaveToPay, personsWhoPaid: personsWhoPaid))
      expensesTable.reloadData()
      }
 */

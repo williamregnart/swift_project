@@ -10,6 +10,10 @@ import UIKit
 
 class PaidByTableViewController: UITableViewController {
     
+    var expense: Expense!
+    
+    var inputPerson: Person!
+    
     var trip: TripViewModel!
 
     var personTable : [Person] = []
@@ -30,6 +34,8 @@ class PaidByTableViewController: UITableViewController {
         }
         return result
     }
+    
+    
 
     
     @IBOutlet weak var paidByTable: UITableView!
@@ -54,11 +60,11 @@ class PaidByTableViewController: UITableViewController {
         return trip.persons.count
     }
 
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.paidByTable.dequeueReusableCell(withIdentifier: "personWhoPaidCell", for: indexPath) as! PersonWhoPaidTableViewCell
         cell.personName.text = self.trip.getPersonByIndex(index: indexPath.row)?.name
         cell.index = indexPath.row
+        cell.person = self.trip.getPersonByIndex(index: indexPath.row)
+        return cell
         cell.person = self.trip.getPersonByIndex(index: indexPath.row)
         return cell
     }
