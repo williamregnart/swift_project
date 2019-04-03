@@ -55,6 +55,7 @@
 		C4E220432253A6DD00750EC9 /* ItExpensePersonSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E220422253A6DD00750EC9 /* ItExpensePersonSet.swift */; };
 		C4E2204522548BAE00750EC9 /* CheckUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E2204422548BAE00750EC9 /* CheckUIButton.swift */; };
 		C4E22047225492FD00750EC9 /* PaidForTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E22046225492FD00750EC9 /* PaidForTableViewController.swift */; };
+		C4E2204D2254FD9100750EC9 /* ShowExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E2204C2254FD9100750EC9 /* ShowExpenseViewController.swift */; };
 		C4E8ABA5224E2ED0007C0853 /* TripDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E8ABA4224E2ED0007C0853 /* TripDAO.swift */; };
 		C4E8ABA7224E5447007C0853 /* AddPersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E8ABA6224E5447007C0853 /* AddPersonTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -131,6 +132,7 @@
 		C4E220422253A6DD00750EC9 /* ItExpensePersonSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItExpensePersonSet.swift; sourceTree = "<group>"; };
 		C4E2204422548BAE00750EC9 /* CheckUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUIButton.swift; sourceTree = "<group>"; };
 		C4E22046225492FD00750EC9 /* PaidForTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaidForTableViewController.swift; sourceTree = "<group>"; };
+		C4E2204C2254FD9100750EC9 /* ShowExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowExpenseViewController.swift; sourceTree = "<group>"; };
 		C4E8ABA4224E2ED0007C0853 /* TripDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDAO.swift; sourceTree = "<group>"; };
 		C4E8ABA6224E5447007C0853 /* AddPersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -191,6 +193,7 @@
 				2C1B258A2244DF3B00AD2E80 /* Model */,
 				2C1B25592244D96A00AD2E80 /* AppDelegate.swift */,
 				2C1B255D2244D96A00AD2E80 /* Main.storyboard */,
+				C4E2204C2254FD9100750EC9 /* ShowExpenseViewController.swift */,
 				C4E2204422548BAE00750EC9 /* CheckUIButton.swift */,
 				2C1B25632244D96B00AD2E80 /* Assets.xcassets */,
 				2C1B25652244D96B00AD2E80 /* LaunchScreen.storyboard */,
@@ -460,6 +463,7 @@
 				2C1B25982244EB1000AD2E80 /* ExpensePersonSet.swift in Sources */,
 				2C1B258C2244E15700AD2E80 /* Person.swift in Sources */,
 				C40D8483224D0B16007864CC /* TripViewModel.swift in Sources */,
+				C4E2204D2254FD9100750EC9 /* ShowExpenseViewController.swift in Sources */,
 				C40D8461224A136B007864CC /* TripSet.swift in Sources */,
 				C40D847F224BFC2E007864CC /* ExpenseSetViewModel.swift in Sources */,
 				C4E8ABA5224E2ED0007C0853 /* TripDAO.swift in Sources */,
