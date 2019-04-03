@@ -22,7 +22,7 @@ class ExpenseDAO{
     }
     
     static func insert(expense: Expense){
-        CoreDataManager.context.insert(expense)
+        CoreDataManager.save()
     }
     
     static func getAllExpense() -> [Expense]{

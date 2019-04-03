@@ -1,38 +1,32 @@
 //
-//  PaidByTableViewController.swift
+//  PaidForTableViewController.swift
 //  swift_project
 //
-//  Created by DIEGO KRZYZANOWSKI on 02/04/2019.
+//  Created by DIEGO KRZYZANOWSKI on 03/04/2019.
 //  Copyright © 2019 REGNART-SANCHEZ. All rights reserved.
 //
 
 import UIKit
 
-class PaidByTableViewController: UITableViewController {
-    
-    var trip: TripViewModel!
+class PaidForTableViewController: UITableViewController {
 
+    @IBOutlet weak var paidForTable: UITableView!
+    var trip: TripViewModel!
+    
     var personTable : [Person] = []
     
-    
-    var cells: [PersonWhoPaidTableViewCell] = []
-    
-    var amountChecked : [Double] = []
-    
-    func getPersonsChecked()->[PersonWhoPaidTableViewCell]{
-        var result: [PersonWhoPaidTableViewCell] = []
-        for cell in paidByTable.visibleCells{
-            let cell = cell as! PersonWhoPaidTableViewCell
+    func getPersonsChecked()->[Person]{
+        var result: [Person] = []
+        for cell in paidForTable.visibleCells{
+            let cell = cell as! PersonWhoHaveToPayTableViewCell
             if(cell.checkButton.isChecked){
-                result.append(cell)
+                result.append(personTable[cell.index])
             }
             
         }
         return result
     }
-
     
-    @IBOutlet weak var paidByTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,18 +45,19 @@ class PaidByTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
         return trip.persons.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.paidByTable.dequeueReusableCell(withIdentifier: "personWhoPaidCell", for: indexPath) as! PersonWhoPaidTableViewCell
-        cell.personName.text = self.trip.getPersonByIndex(index: indexPath.row)?.name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "personWhoHaveToPayCell", for: indexPath) as! PersonWhoHaveToPayTableViewCell
+
+        cell.personName.text = trip.getPersonByIndex(index: indexPath.row)?.name
+        cell.person = trip.getPersonByIndex(index: indexPath.row)
         cell.index = indexPath.row
-        cell.person = self.trip.getPersonByIndex(index: indexPath.row)
         return cell
     }
-    
 
     /*
     // Override to support conditional editing of the table view.

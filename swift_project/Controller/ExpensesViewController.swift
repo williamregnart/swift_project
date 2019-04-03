@@ -40,7 +40,14 @@ class ExpensesViewController: UIViewController,UITextFieldDelegate,UITableViewDa
         
     }
     
-    @IBAction func unwindAfterSaveExpense(segue: UIStoryboardSegue){
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "newExpense"{
+            let addExpenseViewController = segue.destination as! AddExpenseViewController
+            addExpenseViewController.trip = self.trip
+        }
+    }
+    
+    /*@IBAction func unwindAfterSaveExpense(segue: UIStoryboardSegue){
         let newExpenseController = segue.source as! AddExpenseViewController
         self.saveNewExpense(cname: newExpenseController.ename, personsWhoPaid: newExpenseController.personsWhoPaid, personsWhoHaveToPay: newExpenseController.personsWhoHaveToPay)
         performSegue(withIdentifier: "newExpense", sender: segue.source)
@@ -50,7 +57,7 @@ class ExpensesViewController: UIViewController,UITextFieldDelegate,UITableViewDa
      expenses.addExpense(expense: expense)
      expensesTable.reloadData()
      }
-
+*/
     /*
     // MARK: - Navigation
 

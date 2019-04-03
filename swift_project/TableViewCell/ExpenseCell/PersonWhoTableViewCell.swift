@@ -1,21 +1,15 @@
 //
-//  PersonWhoPaidTableViewCell.swift
+//  TableViewCell.swift
 //  swift_project
 //
-//  Created by DIEGO KRZYZANOWSKI on 02/04/2019.
+//  Created by DIEGO KRZYZANOWSKI on 03/04/2019.
 //  Copyright © 2019 REGNART-SANCHEZ. All rights reserved.
 //
 
 import UIKit
 
-class PersonWhoPaidTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var personName: UILabel!
-    var person: Person!
-    @IBOutlet weak var amount: UILabel!
-    @IBOutlet weak var checkButton: CheckUIButton!
-    var index: Int!
-    
+class PersonWhoTableViewCell: UITableViewCell {
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,6 +19,10 @@ class PersonWhoPaidTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func checkChanged(check: Bool){
+        
     }
 
 }

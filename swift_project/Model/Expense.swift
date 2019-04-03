@@ -13,7 +13,7 @@ extension Expense{
     var epersonsConcerned:PersonSet {return PersonSet()}
     var epersonsWhoPaid:ExpensePersonSet {return ExpensePersonSet()}
     
-    convenience init(name:String, personsConcerned:PersonSet,personsWhoPaid:ExpensePersonSet){
+    convenience init(name:String){
         self.init(context: CoreDataManager.context)
         self.name=name
         //self.cpersonsConcerned=personsConcerned

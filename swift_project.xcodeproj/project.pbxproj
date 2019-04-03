@@ -51,10 +51,10 @@
 		C4E220362252DB1700750EC9 /* PaidByTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E220352252DB1700750EC9 /* PaidByTableViewController.swift */; };
 		C4E220382252DD0E00750EC9 /* PersonWhoPaidTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E220372252DD0E00750EC9 /* PersonWhoPaidTableViewCell.swift */; };
 		C4E2203A2252DD3300750EC9 /* PersonWhoHaveToPayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E220392252DD3300750EC9 /* PersonWhoHaveToPayTableViewCell.swift */; };
-		C4E2203C2252DD7F00750EC9 /* AddPersonWhoPaidTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E2203B2252DD7F00750EC9 /* AddPersonWhoPaidTableViewCell.swift */; };
-		C4E2203E2252DDA600750EC9 /* AddPersonWhoHaveToPayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E2203D2252DDA600750EC9 /* AddPersonWhoHaveToPayTableViewCell.swift */; };
 		C4E220412253A69600750EC9 /* ItExpenseSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E220402253A69600750EC9 /* ItExpenseSet.swift */; };
 		C4E220432253A6DD00750EC9 /* ItExpensePersonSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E220422253A6DD00750EC9 /* ItExpensePersonSet.swift */; };
+		C4E2204522548BAE00750EC9 /* CheckUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E2204422548BAE00750EC9 /* CheckUIButton.swift */; };
+		C4E22047225492FD00750EC9 /* PaidForTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E22046225492FD00750EC9 /* PaidForTableViewController.swift */; };
 		C4E8ABA5224E2ED0007C0853 /* TripDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E8ABA4224E2ED0007C0853 /* TripDAO.swift */; };
 		C4E8ABA7224E5447007C0853 /* AddPersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E8ABA6224E5447007C0853 /* AddPersonTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -127,10 +127,10 @@
 		C4E220352252DB1700750EC9 /* PaidByTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaidByTableViewController.swift; sourceTree = "<group>"; };
 		C4E220372252DD0E00750EC9 /* PersonWhoPaidTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonWhoPaidTableViewCell.swift; sourceTree = "<group>"; };
 		C4E220392252DD3300750EC9 /* PersonWhoHaveToPayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonWhoHaveToPayTableViewCell.swift; sourceTree = "<group>"; };
-		C4E2203B2252DD7F00750EC9 /* AddPersonWhoPaidTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonWhoPaidTableViewCell.swift; sourceTree = "<group>"; };
-		C4E2203D2252DDA600750EC9 /* AddPersonWhoHaveToPayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonWhoHaveToPayTableViewCell.swift; sourceTree = "<group>"; };
 		C4E220402253A69600750EC9 /* ItExpenseSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItExpenseSet.swift; sourceTree = "<group>"; };
 		C4E220422253A6DD00750EC9 /* ItExpensePersonSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItExpensePersonSet.swift; sourceTree = "<group>"; };
+		C4E2204422548BAE00750EC9 /* CheckUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUIButton.swift; sourceTree = "<group>"; };
+		C4E22046225492FD00750EC9 /* PaidForTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaidForTableViewController.swift; sourceTree = "<group>"; };
 		C4E8ABA4224E2ED0007C0853 /* TripDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDAO.swift; sourceTree = "<group>"; };
 		C4E8ABA6224E5447007C0853 /* AddPersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -191,6 +191,7 @@
 				2C1B258A2244DF3B00AD2E80 /* Model */,
 				2C1B25592244D96A00AD2E80 /* AppDelegate.swift */,
 				2C1B255D2244D96A00AD2E80 /* Main.storyboard */,
+				C4E2204422548BAE00750EC9 /* CheckUIButton.swift */,
 				2C1B25632244D96B00AD2E80 /* Assets.xcassets */,
 				2C1B25652244D96B00AD2E80 /* LaunchScreen.storyboard */,
 				2C1B25682244D96B00AD2E80 /* Info.plist */,
@@ -249,6 +250,7 @@
 				C40D8472224B91C7007864CC /* ShowPersonViewController.swift */,
 				C410E09E2252D17D002781CA /* AddExpenseViewController.swift */,
 				C4E220352252DB1700750EC9 /* PaidByTableViewController.swift */,
+				C4E22046225492FD00750EC9 /* PaidForTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -303,8 +305,6 @@
 		C4E2203F2252DDE300750EC9 /* ExpenseCell */ = {
 			isa = PBXGroup;
 			children = (
-				C4E2203B2252DD7F00750EC9 /* AddPersonWhoPaidTableViewCell.swift */,
-				C4E2203D2252DDA600750EC9 /* AddPersonWhoHaveToPayTableViewCell.swift */,
 				C4E220392252DD3300750EC9 /* PersonWhoHaveToPayTableViewCell.swift */,
 				C4E220372252DD0E00750EC9 /* PersonWhoPaidTableViewCell.swift */,
 			);
@@ -448,6 +448,7 @@
 				C40D8463224A1528007864CC /* ItTripSet.swift in Sources */,
 				C4E220432253A6DD00750EC9 /* ItExpensePersonSet.swift in Sources */,
 				2C1B25902244E28E00AD2E80 /* ItPersonSet.swift in Sources */,
+				C4E2204522548BAE00750EC9 /* CheckUIButton.swift in Sources */,
 				90361C12224A878B0062E27C /* PersonDAO.swift in Sources */,
 				C410E09B2252C186002781CA /* ExpenseTableViewCell.swift in Sources */,
 				2C1B258E2244E24000AD2E80 /* PersonSet.swift in Sources */,
@@ -465,6 +466,7 @@
 				C40D8477224BB03F007864CC /* ExpensePersonDAO.swift in Sources */,
 				C4E220362252DB1700750EC9 /* PaidByTableViewController.swift in Sources */,
 				C410E0992252BD43002781CA /* ExpensesViewController.swift in Sources */,
+				C4E22047225492FD00750EC9 /* PaidForTableViewController.swift in Sources */,
 				C4E220382252DD0E00750EC9 /* PersonWhoPaidTableViewCell.swift in Sources */,
 				C4E2203A2252DD3300750EC9 /* PersonWhoHaveToPayTableViewCell.swift in Sources */,
 				2C1B25962244EAB200AD2E80 /* ExpensePerson.swift in Sources */,
@@ -478,7 +480,6 @@
 				C410E09D2252C6B5002781CA /* ExpensePersonSetViewModel.swift in Sources */,
 				2C1B25922244E2C100AD2E80 /* Trip.swift in Sources */,
 				2C1B259F2245261C00AD2E80 /* TripTableViewCell.swift in Sources */,
-				C4E2203E2252DDA600750EC9 /* AddPersonWhoHaveToPayTableViewCell.swift in Sources */,
 				C40D8485224D0E32007864CC /* TripSetViewModel2.swift in Sources */,
 				2C1F600822495E7C00039118 /* NewTripViewController.swift in Sources */,
 				C410E09F2252D17D002781CA /* AddExpenseViewController.swift in Sources */,
@@ -486,7 +487,6 @@
 				2C1B259A2244FBAA00AD2E80 /* ExpenseSet.swift in Sources */,
 				2C1B25942244E9C100AD2E80 /* Expense.swift in Sources */,
 				2C1B255A2244D96A00AD2E80 /* AppDelegate.swift in Sources */,
-				C4E2203C2252DD7F00750EC9 /* AddPersonWhoPaidTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

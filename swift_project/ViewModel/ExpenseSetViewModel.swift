@@ -43,4 +43,8 @@ class ExpenseSetViewModel{
         return indexPath
     }
     
+    func addExpense(expense: Expense){
+        self.expenseSet.append(expense)
+        ExpenseDAO.insert(expense: expense)
+    }
 }

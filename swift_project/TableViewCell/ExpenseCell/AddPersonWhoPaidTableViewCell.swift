@@ -14,6 +14,8 @@ class AddPersonWhoPaidTableViewCell: UITableViewCell, UIPickerViewDelegate, UIPi
     @IBOutlet weak var amount: UITextField!
     @IBOutlet weak var actionButton: UIButton!
     
+
+    
     var persons : [Person] = []
     
     var personSelected : Person!

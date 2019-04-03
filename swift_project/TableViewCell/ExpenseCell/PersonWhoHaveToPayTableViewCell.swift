@@ -10,6 +10,12 @@ import UIKit
 
 class PersonWhoHaveToPayTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var checkButton: CheckUIButton!
+    @IBOutlet weak var personName: UILabel!
+    var person: Person!
+    @IBOutlet weak var amount: UILabel!
+    
+    var index: Int!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
