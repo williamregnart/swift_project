@@ -15,10 +15,6 @@ class AddExpenseViewController: UIViewController, UITextFieldDelegate {
     var trip: TripViewModel!
     
     @IBOutlet weak var expenseName: UITextField!
-
-    
-
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +24,6 @@ class AddExpenseViewController: UIViewController, UITextFieldDelegate {
         paidForTable.personTable = trip.persons
         // Do any additional setup after loading the view.
     }
-    
     
     /*
     // MARK: - Navigation
