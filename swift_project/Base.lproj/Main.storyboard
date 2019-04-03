@@ -334,10 +334,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="haV-Ft-03s" id="hb5-KL-H8C"/>
-                                    <outlet property="delegate" destination="haV-Ft-03s" id="Bu9-6K-R5C"/>
-                                </connections>
                             </tableView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ejz-3n-30f">
                                 <rect key="frame" x="20" y="441" width="335" height="177"/>
@@ -374,16 +370,8 @@
                                                 <constraint firstItem="nnY-yo-OvZ" firstAttribute="top" secondItem="xyl-sr-c8Q" secondAttribute="topMargin" constant="1" id="rgH-5X-YEj"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="amount" destination="rKx-71-f2Z" id="CtC-rQ-UI0"/>
-                                            <outlet property="costConcerned" destination="nnY-yo-OvZ" id="lmh-nX-QbE"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="haV-Ft-03s" id="mAV-ZE-CZX"/>
-                                    <outlet property="delegate" destination="haV-Ft-03s" id="5v4-et-HQw"/>
-                                </connections>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="obf-gl-jta">
                                 <rect key="frame" x="0.0" y="-1" width="375" height="44"/>
@@ -417,18 +405,13 @@
                         <viewLayoutGuide key="safeArea" id="9JY-Fp-kXT"/>
                     </view>
                     <connections>
-                        <outlet property="costTable" destination="Ejz-3n-30f" id="YaP-ti-zsZ"/>
-                        <outlet property="cranceTable" destination="FHm-YA-b1v" id="cje-x0-Qhe"/>
-                        <outlet property="creanceTable" destination="FHm-YA-b1v" id="ioD-8u-XO4"/>
+                        <outlet property="creanceTable" destination="FHm-YA-b1v" id="PnV-lK-gX5"/>
+                        <outlet property="debtTable" destination="Ejz-3n-30f" id="mjF-Kg-G1t"/>
                         <outlet property="namePersonLabel" destination="0g9-Ce-vmE" id="iZv-9G-pt2"/>
+                        <outlet property="personBalanceLabel" destination="ScA-vi-e9U" id="K9N-DM-gFZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yfQ-7g-ulB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="haV-Ft-03s" customClass="CostTableViewController" customModule="swift_project" customModuleProvider="target">
-                    <connections>
-                        <outlet property="costsTable" destination="Ejz-3n-30f" id="uzc-5q-QIU"/>
-                    </connections>
-                </customObject>
             </objects>
             <point key="canvasLocation" x="1885.5999999999999" y="26.53673163418291"/>
         </scene>

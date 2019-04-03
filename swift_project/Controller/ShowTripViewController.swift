@@ -61,7 +61,7 @@ class ShowTripViewController: UIViewController,UITextFieldDelegate,UITableViewDa
         else{
             let cell = self.personsTable.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as! PersonTableViewCell
             cell.personName.text = self.trip?.getPersonByIndex(index: indexPath.row)?.name
-            cell.personAmount.text = String(format : "%f", self.trip?.getPersonByIndex(index: indexPath.row)?.balance ?? 0)
+            cell.personAmount.text = String(format : "%.2f", self.trip?.getPersonByIndex(index: indexPath.row)?.balance ?? 0)
             return cell
         }
     }
@@ -82,8 +82,8 @@ class ShowTripViewController: UIViewController,UITextFieldDelegate,UITableViewDa
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "showPerson"){
             if let indexPath = self.personsTable.indexPathForSelectedRow{
-                let showPersonViewController = segue.destination as! ShowPersonViewController
-                showPersonViewController.person?.person = (self.trip!.getPersonByIndex(index: indexPath.row))!
+                let showPersonViewController = segue.destination as! ShowPersonViewController        
+                showPersonViewController.person = PersonViewModel(person : self.trip!.getPersonByIndex(index: indexPath.row)!)
             }
         }
         if segue.identifier == "showExpenses"{
