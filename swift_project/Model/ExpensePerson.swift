@@ -12,14 +12,14 @@ extension ExpensePerson{
     
     
     convenience init(person:Person,amount:Double, expense: Expense){
-        self.init()
+        self.init(context: CoreDataManager.context)
         self.concernPerson=person
         self.concernExpense=expense
         self.amount = amount
     }
     
     convenience init(expensePerson: ExpensePerson){
-        self.init()
+        self.init(context: CoreDataManager.context)
         self.concernPerson = expensePerson.concernPerson!
         self.concernExpense = expensePerson.concernExpense!
         self.amount = expensePerson.amount

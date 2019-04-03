@@ -15,7 +15,7 @@ class TripViewModel{
     var name:String
     var image: UIImage?
     var persons: [Person] = []
-    var expenses: [Expense] = []
+    var expenses: ExpenseSetViewModel = ExpenseSetViewModel()
     var date_creation:Date
     var date_begin:Date?
     var date_end:Date?
@@ -28,7 +28,7 @@ class TripViewModel{
             self.persons.append(person)
         }
         for expense in trip.expenses{
-            self.expenses.append(expense)
+            expenses.addExpense(expense: expense)
         }
         self.date_creation = trip.date_creation!
         self.date_begin = trip.date_begin
@@ -38,8 +38,8 @@ class TripViewModel{
     
     func getExpenseByIndex(index: Int?) -> Expense?{
         if let i = index {
-            if i>=0 && i<self.expenses.count {
-                return self.expenses[i]
+            if i>=0 && i<self.expenses.expenseSet.count {
+                return self.expenses.getExpenseByIndex(index: i)
             }
         }
         return nil

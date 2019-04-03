@@ -88,6 +88,7 @@ class ShowTripViewController: UIViewController,UITextFieldDelegate,UITableViewDa
         if segue.identifier == "showExpenses"{
             let expensesViewController = segue.destination as! ExpensesViewController
             expensesViewController.trip = self.trip
+            expensesViewController.expenses = self.trip?.expenses
         }
     }
     

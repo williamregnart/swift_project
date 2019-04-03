@@ -10,8 +10,20 @@ import Foundation
 
 extension Expense{
     var ename:String {return self.name ?? ""}
-    var epersonsConcerned:PersonSet {return PersonSet()}
-    var epersonsWhoPaid:ExpensePersonSet {return ExpensePersonSet()}
+    var epersonsConcerned:PersonSet {
+        let result = PersonSet()
+        for p in self.paidFor!{
+            result.add(person: p as! Person)
+        }
+        return result
+    }
+    var epersonsWhoPaid:ExpensePersonSet {
+        let result = ExpensePersonSet()
+        for ep in self.paidBy!{
+            result.add(expensePerson: ep as! ExpensePerson)
+        }
+        return result
+    }
     
     convenience init(name:String){
         self.init(context: CoreDataManager.context)
@@ -21,8 +33,8 @@ extension Expense{
     }
     
     var amount :  Double{
-        var total:Double=0
-        for expensePerson in self.epersonsWhoPaid.expensesPerson {
+        var total:Double = 0
+        for expensePerson in self.epersonsWhoPaid {
             total += expensePerson.amount
         }
         return total

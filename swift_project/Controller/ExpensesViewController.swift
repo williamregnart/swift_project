@@ -14,10 +14,10 @@ class ExpensesViewController: UIViewController,UITextFieldDelegate,UITableViewDa
     
     var trip: TripViewModel!
     
-    var expenses: ExpenseSetViewModel = ExpenseSetViewModel()
+    var expenses: ExpenseSetViewModel!
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return trip.expenses.count
+        return expenses.expenseSet.count
     }
     
     @IBAction func goToTrip(_ sender: Any) {
@@ -26,8 +26,8 @@ class ExpensesViewController: UIViewController,UITextFieldDelegate,UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.expensesTable.dequeueReusableCell(withIdentifier: "expenseCell", for: indexPath) as! ExpenseTableViewCell
-        cell.expenseConcerned.text = self.expenses.getExpenseByIndex(index: indexPath.row)?.ename
-        cell.expenseAmount.text = self.expenses.getExpenseByIndex(index: indexPath.row)?.amount as! String?
+        cell.expenseConcerned.text = self.expenses.getExpenseByIndex(index: indexPath.row)!.ename
+        cell.expenseAmount.text = String(self.expenses.getExpenseByIndex(index: indexPath.row)!.amount)
         return cell
     }
     
@@ -59,7 +59,7 @@ class ExpensesViewController: UIViewController,UITextFieldDelegate,UITableViewDa
     
     func saveNewExpense(addExpenseController: AddExpenseViewController){
         let expense = Expense(name: addExpenseController.expenseName.text!)
-        for c in addExpenseController.paidByTableController.cells{
+        for c in addExpenseController.paidByTableController.getPersonsChecked(){
             let expensePerson = ExpensePerson(person: c.person, amount: NumberFormatter().number(from: c.amount.text!) as! Double, expense: expense)
             expense.addToPaidBy(expensePerson)
             c.person.addToPayExpense(expensePerson)
@@ -68,9 +68,7 @@ class ExpensesViewController: UIViewController,UITextFieldDelegate,UITableViewDa
             expense.addToPaidFor(c)
             c.addToHasToPayExpense(expense)
         }
-        print("ok")
         self.expenses.addExpense(expense: expense)
-        print("maybeok")
         
         
     }

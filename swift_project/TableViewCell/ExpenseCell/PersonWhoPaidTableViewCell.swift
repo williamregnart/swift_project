@@ -12,7 +12,7 @@ class PersonWhoPaidTableViewCell: UITableViewCell {
     
     @IBOutlet weak var personName: UILabel!
     var person: Person!
-    @IBOutlet weak var amount: UILabel!
+    @IBOutlet weak var amount: UITextField!
     @IBOutlet weak var checkButton: CheckUIButton!
     var index: Int!
     
