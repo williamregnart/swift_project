@@ -28,6 +28,7 @@
 		90361C12224A878B0062E27C /* PersonDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90361C11224A878B0062E27C /* PersonDAO.swift */; };
 		90AF496822452DFA0090C242 /* TripSetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AF496722452DFA0090C242 /* TripSetViewModel.swift */; };
 		90B1EAE8224A2AE800A5C36A /* TripSetFetchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B1EAE7224A2AE800A5C36A /* TripSetFetchController.swift */; };
+		90BD1D942255196800D3569C /* DebtTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BD1D932255196800D3569C /* DebtTableViewCell.swift */; };
 		90C1A4F52253CA38008E0CCC /* showExpenseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C1A4F42253CA38008E0CCC /* showExpenseDetailViewController.swift */; };
 		C40D845F224A11D1007864CC /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D845E224A11D1007864CC /* CoreDataManager.swift */; };
 		C40D8461224A136B007864CC /* TripSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D8460224A136B007864CC /* TripSet.swift */; };
@@ -109,6 +110,7 @@
 		90361C11224A878B0062E27C /* PersonDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDAO.swift; sourceTree = "<group>"; };
 		90AF496722452DFA0090C242 /* TripSetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripSetViewModel.swift; sourceTree = "<group>"; };
 		90B1EAE7224A2AE800A5C36A /* TripSetFetchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripSetFetchController.swift; sourceTree = "<group>"; };
+		90BD1D932255196800D3569C /* DebtTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebtTableViewCell.swift; sourceTree = "<group>"; };
 		90C1A4F42253CA38008E0CCC /* showExpenseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showExpenseDetailViewController.swift; sourceTree = "<group>"; };
 		C40D845E224A11D1007864CC /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		C40D8460224A136B007864CC /* TripSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripSet.swift; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 				C40D8478224BEA94007864CC /* PersonTableViewCell.swift */,
 				C40D847C224BF770007864CC /* CreanceTableViewCell.swift */,
 				C4E8ABA6224E5447007C0853 /* AddPersonTableViewCell.swift */,
+				90BD1D932255196800D3569C /* DebtTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -492,6 +495,7 @@
 				C40D845F224A11D1007864CC /* CoreDataManager.swift in Sources */,
 				C40D8475224B9740007864CC /* PersonSetViewModel.swift in Sources */,
 				C40D846B224A6288007864CC /* ExpenseDAO.swift in Sources */,
+				90BD1D942255196800D3569C /* DebtTableViewCell.swift in Sources */,
 				90C1A4F52253CA38008E0CCC /* showExpenseDetailViewController.swift in Sources */,
 				90AF496822452DFA0090C242 /* TripSetViewModel.swift in Sources */,
 				C4E2205322550FEC00750EC9 /* ShowPersonWhoPaidTableViewCell.swift in Sources */,

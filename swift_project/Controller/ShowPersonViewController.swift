@@ -33,15 +33,15 @@ class ShowPersonViewController: UIViewController,UITextFieldDelegate,UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == debtTable{
-            let cell = self.debtTable.dequeueReusableCell(withIdentifier: "expenseCell", for: indexPath) as! ExpenseTableViewCell
-            cell.expenseConcerned.text = self.person?.getDebtByIndex(index: indexPath.row)?.ename
-            cell.expenseAmount.text = self.person?.getDebtByIndex(index: indexPath.row)?.amount as! String?
+            let cell = self.debtTable.dequeueReusableCell(withIdentifier: "expenseCell", for: indexPath) as! DebtTableViewCell
+            cell.concernedExpense.text = self.person?.getDebtByIndex(index: indexPath.row)?.ename
+            cell.amount.text = String(format : "%.2f", self.person?.getDebtByIndex(index: indexPath.row)?.amount ?? 0)
             return cell
         }
         else{
             let cell = self.creanceTable.dequeueReusableCell(withIdentifier: "expenseCell", for: indexPath) as! CreanceTableViewCell
             cell.expenseConcerned.text = self.person?.getCreanceByIndex(index: indexPath.row)?.ename
-            cell.amount.text = self.person?.getCreanceByIndex(index: indexPath.row)?.amount as! String?
+            cell.amount.text = String(format : "%.2f", self.person?.getCreanceByIndex(index: indexPath.row)?.amount ?? 0)
             return cell
         }
     }

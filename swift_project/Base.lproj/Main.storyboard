@@ -343,7 +343,7 @@
                                     <constraint firstAttribute="height" constant="125" id="TKJ-nV-Jdo"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="costCell" id="Gft-24-RXu" customClass="CostTableViewCell" customModule="swift_project" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="costCell" id="Gft-24-RXu" customClass="DebtTableViewCell" customModule="swift_project" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="335" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gft-24-RXu" id="xyl-sr-c8Q">
@@ -374,6 +374,10 @@
                                                 <constraint firstItem="nnY-yo-OvZ" firstAttribute="top" secondItem="xyl-sr-c8Q" secondAttribute="topMargin" constant="1" id="rgH-5X-YEj"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="amount" destination="rKx-71-f2Z" id="1Lf-hW-xu1"/>
+                                            <outlet property="concernedExpense" destination="nnY-yo-OvZ" id="IvH-rq-Qnf"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
