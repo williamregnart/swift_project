@@ -220,6 +220,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="personAmount" destination="u2P-tq-WC2" id="4D8-fJ-mpY"/>
                                             <outlet property="personName" destination="SR2-ZR-v4U" id="fQa-pG-ykQ"/>
                                             <segue destination="EWM-JS-m4c" kind="show" identifier="showPerson" id="3xB-go-9wB"/>
                                         </connections>

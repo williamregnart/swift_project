@@ -37,7 +37,14 @@ class ExpenseDAO{
     
     static func getDebtByPerson(person: Person) -> [Expense]{
         let expenses = person.hasToPayExpense
-        return expenses as! [Expense]? ?? []
+        var result : [Expense] = []
+        if expenses == nil {
+            return result
+        }
+        for expense in expenses!{
+            result.append(expense as! Expense)
+        }
+        return result
     }
     
     static func getCreanceByPerson(person: Person) -> [Expense]{
